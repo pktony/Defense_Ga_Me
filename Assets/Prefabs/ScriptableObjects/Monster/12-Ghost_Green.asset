@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd873ac13482f45e98defeba22aad11f, type: 3}
-  m_Name: Slime_Red
+  m_Name: 12-Ghost_Green
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8783790626947317518, guid: 03f927a544c8b471b819c3defcc874fe, type: 3}
-  maxHP: 10
-  dp: 1
-  moveSpeed: 3
+  prefab: {fileID: 1000010538092382, guid: 940f17d4826b44265a8ac2760e62c44a, type: 3}
+  maxHP: 40
+  dp: 4
+  moveSpeed: 6
