@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class FactoryAbs_Monster<T> : MonoBehaviour
 {
+    GameManager gameManager;
     protected Transform[] waypoints;
 
     private void Awake()
@@ -17,11 +18,17 @@ public abstract class FactoryAbs_Monster<T> : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        gameManager = GameManager.Inst;
+    }
+
     public Enemy SpawnMonster(T type, Transform parent)
     {
         Enemy enemy = this.Create(type);
         enemy.transform.SetParent(parent);
         enemy.transform.position = parent.position;
+        gameManager.EnemyCount++;
         return enemy;
     }
 

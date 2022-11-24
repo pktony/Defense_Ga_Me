@@ -4,14 +4,19 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IAttackable
 {
+    GameManager gameManager;
+
     protected float maxhealthPoint;
     protected float healthPoint;
     protected float defencePower;
     protected float moveSpeed;
+    protected float shield;
 
     private Transform[] waypoints;
     private int currentIndex = 0;
     private const float STOPPING_DIST = 0.1f;
+
+    private bool isDead = false;
 
     public float HP
     {
@@ -19,6 +24,10 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         set
         {
             healthPoint = Mathf.Clamp(value, 0f, MaxHP);
+            if(healthPoint <= 0f)
+            {
+                Die();
+            }
         }
     }
     public float MaxHP => maxhealthPoint;
@@ -29,13 +38,17 @@ public abstract class Enemy : MonoBehaviour, IAttackable
 
     private void Start()
     {
+        gameManager = GameManager.Inst;
         HP = MaxHP;
         LookTowardsWaypoint();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if(!isDead)
+        {
+            Move();
+        }
     }
 
     #region PRIVATE 함수 ########################################################
@@ -59,7 +72,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         currentIndex++;
         currentIndex %= waypoints.Length;
         LookTowardsWaypoint();
-        Debug.Log(currentIndex);
     }
 
     private void LookTowardsWaypoint()
@@ -67,14 +79,21 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         transform.rotation = Quaternion.LookRotation(
                     waypoints[currentIndex].position - transform.position);
     }
+
+    private void Die()
+    {
+        isDead = true;
+        gameManager.EnemyCount--;
+        Destroy(this.gameObject);
+    }
     #endregion
 
 
     #region PUBLIC 함수 #########################################################
-    public void GetAttack(float damage)
+    public virtual void GetAttack(float damage)
     {
         HP -= Mathf.Max(1f, damage - DP);
-        Debug.Log($"{gameObject.name} HP : {HP}");
+        //Debug.Log($"{gameObject.name} HP : {HP}");
     }
 
     public void InitializeWaypoints(Transform[] waypoints)
@@ -84,6 +103,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
             this.waypoints[i] = waypoints[i];
     }
 
-    public abstract void SetStats(float maxHP, float dp, float moveSpeed);
+    public abstract void SetStats(float maxHP, float dp, float moveSpeed, float shield = 0f);
     #endregion
 }
