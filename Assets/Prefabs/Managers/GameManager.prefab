@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3476359212360026050}
   - component: {fileID: 3476359212360026053}
+  - component: {fileID: 1730783704}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -124,4 +125,55 @@ MonoBehaviour:
     spawnNumber: 1
     isBoss: 0
   bossRounds: 17000000230000003200000041000000500000005a00000064000000
-  tempRound: 0
+  unitClassInfo:
+  - className: Normal
+    percentage: 50
+    unitClasses: 0
+    isSellable: 1
+    isExchangable: 0
+  - className: Rare
+    percentage: 25
+    unitClasses: 1
+    isSellable: 1
+    isExchangable: 0
+  - className: Ancient
+    percentage: 18.815
+    unitClasses: 2
+    isSellable: 1
+    isExchangable: 0
+  - className: Epic
+    percentage: 5.125
+    unitClasses: 3
+    isSellable: 1
+    isExchangable: 0
+  - className: Legend
+    percentage: 1
+    unitClasses: 4
+    isSellable: 0
+    isExchangable: 0
+  - className: Myth
+    percentage: 0.05
+    unitClasses: 5
+    isSellable: 0
+    isExchangable: 1
+  - className: Initium
+    percentage: 0.01
+    unitClasses: 6
+    isSellable: 0
+    isExchangable: 0
+  tempRound: 1
+--- !u!114 &1730783704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476359212360026052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c5efddfa6604be1829e6df7e9a3abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileDatas:
+  - {fileID: 11400000, guid: ab2a20650a9694576bce9eedb88de8b0, type: 2}
+  - {fileID: 11400000, guid: 3ff912ecefb734cc3af6e9dd4fefda63, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1895541ae83434cdcb6263122ea63589, type: 3}
+  m_Name: Gunner_Ancient
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 742485362280789759, guid: 08bf13f77ac5f47cd8a40d7d94381996,
+    type: 3}
+  attackPower: 10
+  attackNumber: 1
+  attackCoolTime: 3
+  attackRange: 20
+  projectileData: {fileID: 11400000, guid: ab2a20650a9694576bce9eedb88de8b0, type: 2}
