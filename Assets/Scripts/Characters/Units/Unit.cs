@@ -8,23 +8,27 @@ using UnityEditor;
 public abstract class Unit : MonoBehaviour, IUnit
 {
     private GameObject selectionCircle;
-    private Rigidbody rigid;
     private Animator anim;
     
     private bool isSelected;
     private bool isMoving = false;
 
-    private IAttackable attackTarget;
     private float attackTimer = 0f;
     private WaitForSeconds detectWaitSeconds;
+    private IEnumerator detectCoroutine;
+    private Vector3 destination;
     private float detectInterval = 0.5f;
+    private float stoppingDistance = 1;
 
-    [SerializeField] private float attackCoolTime = 3.0f;
-    [SerializeField] float stoppingDistance = 0.1f;
-    [SerializeField] float moveSpeed = 3.0f;
-    [SerializeField] float turnSpeed = 10f;
-    [SerializeField] float detectRadius = 10f;
+    private float attackCoolTime = 3.0f;
+    private float attackRange = 10f;
+    private int attackPower = 1;
 
+    [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] protected float turnSpeed = 10f;
+    [SerializeField] protected bool isDPPentratable = false;
+
+    protected IAttackable attackTarget;
     #region IUNIT #############################################################
     public virtual bool IsSelected
     {
@@ -44,27 +48,32 @@ public abstract class Unit : MonoBehaviour, IUnit
             isSelected = value;
         }
     }
-    public int AttackPower { get; set; }
+
+    public int AttackPower
+    {
+        get => attackPower;
+        set
+        {
+            attackPower = value;
+        }
+    }
 
     /// <summary>
-    /// 예외처리 필요
+    /// 예외처리 필수 ! !!
     /// </summary>
     /// <param name="target"></param>
     public virtual void Attack(IAttackable target)
     {
-        //if(target != null)
-        //{
-            anim.SetTrigger("onShoot");
-            target.GetAttack(AttackPower);
-        //}
+        anim.SetTrigger("onAttack");
     }
 
     public void Move(Vector3 destination)
-    {
+    { 
         if(isSelected)
         {
-            isMoving = true;
-            StartCoroutine(MoveTo(destination));
+            IsMoving = true;
+            destination.y = 0f;
+            this.destination = destination;
         }
     }
 
@@ -78,18 +87,32 @@ public abstract class Unit : MonoBehaviour, IUnit
     {
         selectionCircle.SetActive(false);
         isSelected = false;
-        Debug.Log("unselected");
     }
     #endregion
+
+    public bool IsMoving
+    {
+        get => isMoving;
+        set
+        {
+            isMoving = value;
+            if (!isMoving)
+                StartCoroutine(detectCoroutine);
+            else
+                StopCoroutine(detectCoroutine);
+        }
+    }
 
     #region UNITY EVENT 함수 ####################################################
     protected virtual void Awake()
     {
         selectionCircle = transform.GetChild(1).gameObject;
-        rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
 
         detectWaitSeconds = new WaitForSeconds(detectInterval);
+        detectCoroutine = FindTarget();
+        
+        IsMoving = false;
     }
 
     private void Update()
@@ -98,11 +121,7 @@ public abstract class Unit : MonoBehaviour, IUnit
         {
             if (attackTarget != null)
             {
-                Vector3 lookDir = attackTarget.CurrentPos - transform.position;
-                lookDir = lookDir.normalized;
-                transform.rotation = Quaternion.Slerp(transform.rotation,
-                    Quaternion.LookRotation(lookDir),
-                    turnSpeed * Time.deltaTime);
+                LookTowardsTarget();
             }
 
             attackTimer += Time.deltaTime;
@@ -113,33 +132,54 @@ public abstract class Unit : MonoBehaviour, IUnit
             }
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (isMoving)
+            MoveTo(destination);
+    }
     #endregion
 
-    private IEnumerator MoveTo(Vector3 destination)
+    public void SetStats(int attackPower, float attackRange, float attackCoolTime)
     {
-        Vector3 direction = (destination - transform.position).normalized;
+        this.attackPower = attackPower;
+        this.attackRange = attackRange;
+        this.attackCoolTime = attackCoolTime;
+    }
+
+    private void MoveTo(Vector3 destination)
+    {
+        Vector3 direction = destination - transform.position;
         transform.rotation = Quaternion.LookRotation(direction);
-        while ((transform.position - destination).sqrMagnitude >
-            stoppingDistance * stoppingDistance)
+        transform.position += moveSpeed * Time.deltaTime * direction.normalized;
+        if (direction.sqrMagnitude < stoppingDistance * stoppingDistance)
+            IsMoving = false;
+    }
+
+    protected virtual void LookTowardsTarget()
+    {
+        if (!attackTarget.IsDead && attackTarget != null)
         {
-            rigid.position += moveSpeed * Time.deltaTime * direction;
-            yield return null;
+            Vector3 lookDir = attackTarget.CurrentPos - transform.position;
+            lookDir = lookDir.normalized;
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.LookRotation(lookDir),
+                turnSpeed * Time.deltaTime);
         }
-        isMoving = false;
-        StartCoroutine(FindTarget());
     }
 
     private IEnumerator FindTarget()
     {
         while (!isMoving)
         {
+            Debug.Log("Detecting");
             Collider[] colls = Physics.OverlapSphere(
-                transform.position, detectRadius, LayerMask.GetMask("Enemy"));
+                transform.position, attackRange, LayerMask.GetMask("Enemy"));
 
-            if(colls != null)
-            {
+            if (colls.Length > 0)
                 attackTarget = colls[0].GetComponent<IAttackable>();
-            }
+            else
+                attackTarget = null;
             yield return detectWaitSeconds;
         }
     }
@@ -149,7 +189,7 @@ public abstract class Unit : MonoBehaviour, IUnit
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        Handles.DrawWireDisc(transform.position, transform.up, detectRadius);
+        Handles.DrawWireDisc(transform.position, transform.up, attackRange);
     }
 #endif
 }

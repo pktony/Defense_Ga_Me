@@ -12,15 +12,19 @@ public class ShieldEnemy : Enemy
         this.shield = shield;
     }
 
-    public override void GetAttack(float damage)
+    public override void GetAttack(float damage, bool isDPPenetratable = false)
     {
         if(shield > 0f)
         {// 실드가 있을 때는 실드를 깍고
-            shield -= Mathf.Max(1f, damage - DP);
+            if (!isDPPenetratable)
+                shield -= Mathf.Max(1f, damage - DP);
+            else
+                shield -= Mathf.Max(1f, damage);
+
             if (shield < 0f)
-            {// 실드보다 데미지가 쎌경우 남은 데미지를 HP로 데미지 입힘 
-                damage = -shield;
-            }
+                {// 실드보다 데미지가 쎌경우 남은 데미지를 HP로 데미지 입힘 
+                    damage = -shield;
+                }
             else
                 return;
         }

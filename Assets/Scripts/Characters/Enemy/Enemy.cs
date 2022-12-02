@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour, IAttackable
 {
     GameManager gameManager;
+    Transform model;
 
     protected float maxhealthPoint;
     protected float healthPoint;
@@ -12,11 +13,13 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     protected float moveSpeed;
     protected float shield;
 
+    private Transform particleParent;
     private Transform[] waypoints;
     private int currentIndex = 0;
     private const float STOPPING_DIST = 0.1f;
 
     private bool isDead = false;
+    public System.Action<float, float> onHealthChange;
 
     public float HP
     {
@@ -24,6 +27,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         set
         {
             healthPoint = Mathf.Clamp(value, 0f, MaxHP);
+            onHealthChange?.Invoke(healthPoint, MaxHP);
             if(healthPoint <= 0f)
             {
                 Die();
@@ -31,10 +35,24 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         }
     }
     public float MaxHP => maxhealthPoint;
-
     public float DP => defencePower;
 
+    public bool IsDead
+    {
+        get => isDead;
+        set => isDead = value; //파티클 돌려주는 작업 필요 
+    }
     public Vector3 CurrentPos => transform.position;
+    public Transform Trans => this.transform;
+
+    public Transform ParticleParent => particleParent;
+
+
+    private void Awake()
+    {
+        model = transform.GetChild(0);
+        particleParent = transform.GetChild(2);
+    }
 
     private void Start()
     {
@@ -76,7 +94,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
 
     private void LookTowardsWaypoint()
     {
-        transform.rotation = Quaternion.LookRotation(
+        model.rotation = Quaternion.LookRotation(
                     waypoints[currentIndex].position - transform.position);
     }
 
@@ -90,10 +108,16 @@ public abstract class Enemy : MonoBehaviour, IAttackable
 
 
     #region PUBLIC 함수 #########################################################
-    public virtual void GetAttack(float damage)
+    public virtual void GetAttack(float damage, bool isDPPenetratable = false)
     {
-        HP -= Mathf.Max(1f, damage - DP);
-        //Debug.Log($"{gameObject.name} HP : {HP}");
+        if (!isDead)
+        {
+            if (!isDPPenetratable)
+                HP -= Mathf.Max(1f, damage - DP);
+            else
+                HP -= Mathf.Max(1f, damage);
+            //Debug.Log($"{gameObject.name} HP : {HP}");
+        }
     }
 
     public void InitializeWaypoints(Transform[] waypoints)

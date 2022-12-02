@@ -78,3 +78,60 @@ public enum BossType : byte
     golem_Poly = 0,
     Lurker,
 }
+
+
+public enum ProjectileID : byte
+{
+    Bullet_7mm = 0,
+    Rocket,
+    Missile,
+}
+
+namespace UnitSpace
+{
+    public enum UnitClasses : byte
+    {
+        Normal,
+        Rare,
+        Ancient,
+        Epic,
+        Legend,
+        Myth,
+        Initium
+    }
+
+    public enum InstantUnitType : byte
+    {
+        //Normal
+        gunner_Single = 0,
+        pistol_Male,
+        pistol_Female,
+
+        //Rare
+        gunner_Multiple,
+        AR_Male,
+        AR_Female,
+
+        //Ancient(스플래시)
+        Gunner_Rocket,
+        Turret_Rocket,
+        Wizard_Fire,
+
+        //Epic (방어력 무시)
+        Drone_Laser,
+
+        //Initium (전 타일 공격)
+    }
+
+    public enum ProjectileUnitType : byte
+    {
+        //Ancient
+        gunner_7mmBullet = 0,
+        Turret_Rocket,
+
+        //Myth (방어력 무시 , 스플레시 , 빠른 공격력 )
+
+        //Legend(방어력 무시, 스플레시)
+        Tank_Missile,
+    }   
+}
