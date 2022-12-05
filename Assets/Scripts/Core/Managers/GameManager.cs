@@ -8,9 +8,12 @@ using UnityEngine.InputSystem;
 public class GameManager : Singleton<GameManager>
 {
     public List<LevelInfos> levelInfos;
-    [SerializeField] private int[] bossRounds; 
+    [SerializeField] private int[] bossRounds;
+
+    public List<UnitProbabilityInfo> unitClassInfo;
 
     Spawner spawner;
+    ProjectileDataManager projectileDatas;
 
 #if UNITY_EDITOR
     public int tempRound;
@@ -32,6 +35,7 @@ public class GameManager : Singleton<GameManager>
     public System.Action<int> onEnemyCountChange;
     public System.Action<float> onTimeChange;
 
+    public ProjectileDataManager ProjectileDatas => projectileDatas;
     public int Round
     {
         get => round;
@@ -96,6 +100,7 @@ public class GameManager : Singleton<GameManager>
     {
         base.Initialize();
         spawner = FindObjectOfType<Spawner>();
+        projectileDatas = GetComponent<ProjectileDataManager>();
         EnemyCount = 0;
         round = -1;
     }

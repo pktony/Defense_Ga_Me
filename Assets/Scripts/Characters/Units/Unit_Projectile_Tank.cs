@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit_Projectile_Tank : Unit_Projectile
 {
-    private Transform barrelPivot;
+    protected Transform barrelPivot;
 
     protected override void Awake()
     {

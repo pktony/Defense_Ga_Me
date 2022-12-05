@@ -43,12 +43,6 @@ public class Projectiles : MonoBehaviour
         }
     }
 
-    public void SetShootSpeed(Vector3 velocity)
-    {
-        //rigid.AddRelativeForce(velocity, ForceMode.VelocityChange);
-        rigid.velocity = velocity;
-    }
-
     protected virtual void Update()
     {
         if (!isExploded)
@@ -71,6 +65,8 @@ public class Projectiles : MonoBehaviour
     protected void Explode()
     {
         isExploded = true;
+        rigid.velocity = Vector3.zero;
+        rigid.isKinematic = true;
         coll.enabled = true;
         StartCoroutine(DisableCollider());
         explosionParticle.gameObject.SetActive(true);
