@@ -85,6 +85,8 @@ public enum ProjectileID : byte
     Bullet_7mm = 0,
     Rocket,
     Missile,
+    Mine_Legend,
+    Nuclear,
 }
 
 namespace UnitSpace
@@ -119,8 +121,11 @@ namespace UnitSpace
 
         //Epic (방어력 무시)
         Drone_Laser,
+        DroneRed,
+
 
         //Initium (전 타일 공격)
+        GunnerNuclear,
     }
 
     public enum ProjectileUnitType : byte
@@ -133,5 +138,9 @@ namespace UnitSpace
 
         //Legend(방어력 무시, 스플레시)
         Tank_Missile,
+        Miner,
+
+        //Initium
+        Tank_Nuclear,
     }   
 }

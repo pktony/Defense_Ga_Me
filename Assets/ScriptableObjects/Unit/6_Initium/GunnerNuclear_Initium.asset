@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa15393be4534583bfdc1fc4159cc1c, type: 3}
+  m_Name: GunnerNuclear_Initium
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 8574254178818929727, guid: 8357db5dfb1b14a0689f88be92c62578,
+    type: 3}
+  attackPower: 1
+  attackNumber: 1
+  attackCoolTime: 5
+  attackRange: 999

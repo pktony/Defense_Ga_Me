@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Unit_Magic : Unit
 {
     [SerializeField] private GameObject magicPrefab;
     [SerializeField] private float magicDuration = 2.0f;
 
-    private WaitForSeconds magicWaitSeconds;
+    protected WaitForSeconds magicWaitSeconds;
 
     private Queue<GameObject> magics;
     private Queue<GameObject> usedMagics;
+    private Vector3[] targetPos;
 
     private Transform magicParent;
 
@@ -27,6 +27,7 @@ public class Unit_Magic : Unit
             magics.Enqueue(obj);
             obj.SetActive(false);
         }
+        targetPos = new Vector3[1];
 
         magicWaitSeconds = new WaitForSeconds(magicDuration);
     }
@@ -40,14 +41,14 @@ public class Unit_Magic : Unit
         }
     }
 
-    private IEnumerator MagicSwitch(Vector3 position)
+    protected virtual IEnumerator MagicSwitch(Vector3 position)
     {
         UseMagic(position);
         yield return magicWaitSeconds;
         DisableMagic();
     }
 
-    private void UseMagic(Vector3 position)
+    protected void UseMagic(Vector3 position)
     {
         if (magics.TryDequeue(out GameObject magic))
         {
@@ -65,7 +66,7 @@ public class Unit_Magic : Unit
         }
     }
 
-    private void DisableMagic()
+    protected void DisableMagic()
     {
         if(usedMagics.TryDequeue(out GameObject usedMagic))
         {
