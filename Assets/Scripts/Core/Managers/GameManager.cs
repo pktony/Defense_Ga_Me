@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEngine.InputSystem;
-#endif
 
 public class GameManager : Singleton<GameManager>
 {
@@ -23,7 +20,7 @@ public class GameManager : Singleton<GameManager>
     private const int MAX_ROUND = 100;
 
     private float timeLeft;
-    private const float TIME_NORMAL = 1f;
+    private const float TIME_NORMAL = 5f;
     private const float TIME_BOSS = 330f;
 
     private int enemyCount;
@@ -70,15 +67,15 @@ public class GameManager : Singleton<GameManager>
 
             if (timeLeft <= 0f && round < MAX_ROUND)
             {
-                //ToNextRound();
+                ToNextRound();
             }
         }
     }
 
     private void Start()
     {
-        //ResetTime(false);
-        //ToNextRound();
+        ResetTime(false);
+        ToNextRound();
     }
 
     private void Update()
@@ -87,13 +84,13 @@ public class GameManager : Singleton<GameManager>
         {
             TimeLeft -= Time.deltaTime;
         }
-#if UNITY_EDITOR
-        if(Keyboard.current.digit1Key.wasPressedThisFrame)
-        {
-            Round = tempRound;
-            RequestSpawn(Round, 1);
-        }
-#endif
+//#if UNITY_EDITOR
+//        if(Keyboard.current.digit1Key.wasPressedThisFrame)
+//        {
+//            Round = tempRound;
+//            RequestSpawn(Round, 1);
+//        }
+//#endif
     }
 
     protected override void Initialize()
@@ -117,24 +114,7 @@ public class GameManager : Singleton<GameManager>
 
     private void RequestSpawn(int round, int spawnNumber)
     {
-        if(round > 0 && round <= 22)
-        {
-            StartCoroutine(
-                spawner.SpawnNormalEnemy((NormalEnemyType)(round - 1), spawnNumber));
-        }
-        else if(round == bossRounds[0]) // 23 
-        {
-            spawner.SpawnBoss(BossType.golem_Poly);
-        }
-        else if(round > 23 && round <= bossRounds[1])
-        {
-            StartCoroutine(
-                spawner.SpawnShieldEnemy((ShieldEnemyType)(round % (bossRounds[0] + 1)), spawnNumber));
-        }
-        else if(round == bossRounds[1])
-        {
-            spawner.SpawnBoss(BossType.Lurker);
-        }
+        spawner.SpawnEnemy((Monsters)round, spawnNumber);
     }
 
     private void ResetTime(bool isBoss = false)
@@ -144,6 +124,7 @@ public class GameManager : Singleton<GameManager>
 
     private void GameOver()
     {
+        StopAllCoroutines();
         isGameover = true;
     }
 }

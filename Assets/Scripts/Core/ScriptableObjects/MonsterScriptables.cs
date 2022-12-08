@@ -9,4 +9,5 @@ public class MonsterScriptables : ScriptableObject
     public float maxHP;
     public float dp;
     public float moveSpeed;
+    public float shield = 0f;
 }
