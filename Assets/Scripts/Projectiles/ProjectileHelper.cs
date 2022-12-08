@@ -16,7 +16,7 @@ public class ProjectileHelper : MonoBehaviour
     /// <param name="velocity">shooting initial velocity</param>
     /// <param name="gravity"> The bigger, the faster trajectory</param>
     /// <returns></returns>
-    private static float CalculateElevationAngle(float distance, ref float velocity)
+    public static float CalculateElevationAngle(float distance, ref float velocity)
     {
         float theta = float.NaN;
 
@@ -30,7 +30,7 @@ public class ProjectileHelper : MonoBehaviour
         return theta;
     }
 
-    private static float CalculateYawAngle(Vector3 v1, Vector3 v2)
+    public static float CalculateYawAngle(Vector3 v1, Vector3 v2)
     {
         return Vector3.Angle(v1, v2);
     }

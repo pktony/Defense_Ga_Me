@@ -1,3 +1,10 @@
+public enum MonsterTypes : byte
+{
+    NormalEnemy,
+    ShieldEnemy,
+    Boss,
+}
+
 public enum Monsters : byte
 {
     slime_Red = 0,
@@ -35,49 +42,49 @@ public enum Monsters : byte
     metalon_Red,
 }
 
-public enum NormalEnemyType : byte
-{
-    slime_Red = 0,
-    slime_Blue,
-    slime_Green,
+//public enum NormalEnemyType : byte
+//{
+//    slime_Red = 0,
+//    slime_Blue,
+//    slime_Green,
 
-    spiky_Blue,
-    spiky_Green,
-    spiky_Red,
+//    spiky_Blue,
+//    spiky_Green,
+//    spiky_Red,
 
-    bat_Red,
-    bat_Green,
-    bat_Violet,
-    bat_yellow,
+//    bat_Red,
+//    bat_Green,
+//    bat_Violet,
+//    bat_yellow,
 
-    Ghost_Brown,
-    Ghost_Green,
-    Ghost_Violet,
-    Ghost_White,
+//    Ghost_Brown,
+//    Ghost_Green,
+//    Ghost_Violet,
+//    Ghost_White,
 
-    Rabbit_Cyan,
-    Rabbit_Green,
-    Rabbit_Red,
-    Rabbit_Yellow,
+//    Rabbit_Cyan,
+//    Rabbit_Green,
+//    Rabbit_Red,
+//    Rabbit_Yellow,
 
-    SlimeVar_Blue,
-    SlimeVar_Green,
-    SlimeVar_Red,
-    SlimeVar_Yellow,
-}
+//    SlimeVar_Blue,
+//    SlimeVar_Green,
+//    SlimeVar_Red,
+//    SlimeVar_Yellow,
+//}
 
-public enum ShieldEnemyType : byte
-{
-    metalon_Green = 0,
-    metalon_Purple,
-    metalon_Red,
-}
+//public enum ShieldEnemyType : byte
+//{
+//    metalon_Green = 0,
+//    metalon_Purple,
+//    metalon_Red,
+//}
 
-public enum BossType : byte
-{
-    golem_Poly = 0,
-    Lurker,
-}
+//public enum BossType : byte
+//{
+//    golem_Poly = 0,
+//    Lurker,
+//}
 
 
 public enum ProjectileID : byte
@@ -86,6 +93,7 @@ public enum ProjectileID : byte
     Rocket,
     Missile,
     Mine_Legend,
+    RocketFast,
     Nuclear,
 }
 
@@ -122,10 +130,14 @@ namespace UnitSpace
         //Epic (방어력 무시)
         Drone_Laser,
         DroneRed,
+        Wizard_Bolt,
 
+        //Legend(방어력 무시, 스플레시)
+        Wizard_Storm,
 
         //Initium (전 타일 공격)
         GunnerNuclear,
+        WizardWater,
     }
 
     public enum ProjectileUnitType : byte
@@ -134,11 +146,13 @@ namespace UnitSpace
         gunner_7mmBullet = 0,
         Turret_Rocket,
 
-        //Myth (방어력 무시 , 스플레시 , 빠른 공격력 )
-
         //Legend(방어력 무시, 스플레시)
         Tank_Missile,
         Miner,
+
+        //Myth (방어력 무시 , 스플레시 , 빠른 공격력 )
+        Turret_Fast,
+        Miner_Fast,
 
         //Initium
         Tank_Nuclear,

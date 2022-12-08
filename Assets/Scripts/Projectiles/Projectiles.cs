@@ -10,7 +10,7 @@ public class Projectiles : MonoBehaviour
 
     [SerializeField] protected ProjectileData projectileData;
     protected Vector3 destination;
-    private Vector3 direction;
+    protected Vector3 direction;
     private float attackPower;
 
     private const float INVALID_ANGLE = -9999f;
@@ -34,11 +34,11 @@ public class Projectiles : MonoBehaviour
     {
         this.attackPower = attackPower;
         this.destination = destination;
+        direction = destination - transform.position;
+        direction = direction.normalized;
 
         if (!isAngled)
         {
-            direction = destination - transform.position;
-            direction = direction.normalized;
             transform.LookAt(destination);
         }
     }

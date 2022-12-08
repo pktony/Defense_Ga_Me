@@ -10,7 +10,11 @@ public class Laser : MonoBehaviour
     private LineRenderer lineRend;
     private Transform target;
 
+    private float fpsCounter = 0f;
+    private int counter = 0;
+
     [SerializeField] private float laserWidth = 3.0f;
+    [SerializeField] private Texture[] boltTextures;
 
     private void Awake()
     {
@@ -25,6 +29,15 @@ public class Laser : MonoBehaviour
         if(lineRend.enabled == true && target != null)
         {
             FollowTarget();
+            fpsCounter += Time.deltaTime;
+            if(fpsCounter >= 0.1f)
+            {
+                Debug.Log(counter);
+                counter++;
+                counter %= boltTextures.Length;
+                lineRend.material.SetTexture("_MainTex", boltTextures[counter]);
+                fpsCounter = 0f;
+            }
         }
     }
 

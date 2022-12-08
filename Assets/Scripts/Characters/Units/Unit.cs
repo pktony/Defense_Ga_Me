@@ -172,7 +172,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     {
         while (!isMoving)
         {
-            Debug.Log("Detecting");
+            //Debug.Log("Detecting");
             Collider[] colls = Physics.OverlapSphere(
                 transform.position, attackRange, LayerMask.GetMask("Enemy"));
 

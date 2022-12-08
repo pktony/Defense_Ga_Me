@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa15393be4534583bfdc1fc4159cc1c, type: 3}
+  m_Name: WizardStorm_Legend
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 2150076745043923894, guid: 276aa738f7a2a4efea05c95d47c769da,
+    type: 3}
+  attackPower: 15
+  attackNumber: 1
+  attackCoolTime: 5
+  attackRange: 25

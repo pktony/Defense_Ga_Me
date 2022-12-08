@@ -19,5 +19,4 @@ public interface IUnit
     /// </summary>
     public bool GetSelected();
     public void UnSelect();
-
 }

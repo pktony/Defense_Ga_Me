@@ -42,11 +42,10 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         get => isDead;
         set => isDead = value; //파티클 돌려주는 작업 필요 
     }
-    public Vector3 CurrentPos => transform.position;
+    public Vector3 CurrentPos => model.transform.forward * 3.0f + transform.position;
     public Transform Trans => this.transform;
 
     public Transform ParticleParent => particleParent;
-
 
     private void Awake()
     {
