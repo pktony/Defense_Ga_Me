@@ -53,7 +53,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         particleParent = transform.GetChild(2);
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         gameManager = GameManager.Inst;
         HP = MaxHP;

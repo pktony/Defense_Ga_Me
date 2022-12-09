@@ -135,7 +135,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012323953278}
-  - component: {fileID: -1283568218874212761}
   - component: {fileID: 95000010230734170}
   m_Layer: 0
   m_Name: Ghost_White
@@ -153,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 1000011659465104}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 80, y: 80, z: 80}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000010835851742}
@@ -161,18 +160,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1283568218874212761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000011659465104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec360b0ba436c4ba8a0b2aacc503ac02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &95000010230734170
 Animator:
   serializedVersion: 4

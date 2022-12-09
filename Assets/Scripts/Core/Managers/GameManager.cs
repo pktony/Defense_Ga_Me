@@ -5,12 +5,10 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public List<LevelInfos> levelInfos;
-    [SerializeField] private int[] bossRounds;
-
     public List<UnitProbabilityInfo> unitClassInfo;
 
-    Spawner spawner;
-    ProjectileDataManager projectileDatas;
+    private Spawner spawner;
+    private ProjectileDataManager projectileDatas;
 
 #if UNITY_EDITOR
     public int tempRound;
@@ -38,7 +36,7 @@ public class GameManager : Singleton<GameManager>
         get => round;
         set
         {
-            round = value;
+            round = Mathf.Clamp(value, 0, levelInfos.Count - 1);
             onRoundChange?.Invoke(round);
         }
     }
@@ -75,22 +73,39 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         ResetTime(false);
-        ToNextRound();
     }
 
     private void Update()
     {
         if (!isGameover)
         {
-            TimeLeft -= Time.deltaTime;
+            //TimeLeft -= Time.deltaTime;
         }
-//#if UNITY_EDITOR
-//        if(Keyboard.current.digit1Key.wasPressedThisFrame)
-//        {
-//            Round = tempRound;
-//            RequestSpawn(Round, 1);
-//        }
-//#endif
+
+#if UNITY_EDITOR
+        for(int i = 0; i < levelInfos.Count; i++)
+        {
+            levelInfos[i].monster = (Monsters)i;
+            // Boss Rounds
+            //23, 35, 50, 66, 80, 95,96,97,98,99,100
+            if(i == 23 || i == 35 || i == 50 || i == 66 || i == 80 || i == 95 ||
+               (i >= 95 && i <= 100))
+            {
+                levelInfos[i].isBoss = true;
+            }
+        }
+
+
+        if (UnityEngine.InputSystem.Keyboard.current.digit1Key.wasPressedThisFrame)
+        {
+            Round = tempRound;
+            RequestSpawn(Round, 1);
+        }
+        else if (UnityEngine.InputSystem.Keyboard.current.digit2Key.wasPressedThisFrame)
+        {
+            ToNextRound();
+        }
+#endif
     }
 
     protected override void Initialize()
@@ -99,7 +114,7 @@ public class GameManager : Singleton<GameManager>
         spawner = FindObjectOfType<Spawner>();
         projectileDatas = GetComponent<ProjectileDataManager>();
         EnemyCount = 0;
-        round = -1;
+        Round = 0;
     }
 
     private void ToNextRound()
@@ -107,8 +122,8 @@ public class GameManager : Singleton<GameManager>
         Round++;
         if (round > 0)
         {
-            ResetTime(levelInfos[round - 1].isBoss);
-            RequestSpawn(round - 1, levelInfos[round - 1].spawnNumber);
+            ResetTime(levelInfos[round].isBoss);
+            RequestSpawn(round, levelInfos[round].spawnNumber);
         }
     }
 

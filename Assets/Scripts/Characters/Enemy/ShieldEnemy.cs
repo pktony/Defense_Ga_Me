@@ -4,12 +4,48 @@ using UnityEngine;
 
 public class ShieldEnemy : Enemy
 {
+    private readonly float shieldRechargeInterval = 1.0f;
+    private readonly float shieldRechargeAmount = 1f;
+    private float shieldTimer = 0f;
+
+    private float maxShield;
+
+    public System.Action<float, float> onShieldChange;
+
+    public float Shield
+    {
+        get => shield;
+        set
+        {
+            shield = Mathf.Clamp(value, 0f, maxShield);
+            onShieldChange?.Invoke(shield, maxShield);
+        }
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        Shield = maxShield;
+    }
+
+    private void Update()
+    {
+        if(!IsDead)
+        {
+            shieldTimer += Time.deltaTime;
+            if(shieldTimer > shieldRechargeInterval)
+            {
+                Shield += shieldRechargeAmount;
+            }
+        }
+    }
+
     public override void SetStats(float maxHP, float dp, float moveSpeed, float shield = 0)
     {
         this.maxhealthPoint = maxHP;
         this.defencePower = dp;
         this.moveSpeed = moveSpeed;
-        this.shield = shield;
+        this.maxShield = shield;
     }
 
     public override void GetAttack(float damage, bool isDPPenetratable = false)

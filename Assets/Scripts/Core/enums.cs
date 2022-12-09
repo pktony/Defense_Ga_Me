@@ -7,7 +7,9 @@ public enum MonsterTypes : byte
 
 public enum Monsters : byte
 {
-    slime_Red = 0,
+    STARTINGINDEX = 0,
+
+    slime_Red,
     slime_Blue,
     slime_Green,
 
@@ -35,56 +37,110 @@ public enum Monsters : byte
     SlimeVar_Red,
     SlimeVar_Yellow,
 
-    Golem_Poly = 22,
+    Golem_Poly = 23,
 
     metalon_Green,
     metalon_Purple,
     metalon_Red,
+
+    Chest_Red,
+    Chest_Glow,
+    Chest_Black,
+
+    Virus_Red,
+    Virus_Glow,
+    Virus_Black,
+
+    slime_Red_Mid,
+    slime_Blue_Mid,
+
+    Lurker_Boss = 35,
+
+    slime_Green_Mid,
+    spiky_Blue_Mid,
+    spiky_Green_Mid,
+    spiky_Red_Mid,
+
+    bat_Red_Mid,
+    bat_Green_Mid,
+    bat_Violet_Mid,
+    bat_yellow_Mid,
+
+    Ghost_Brown_Mid,
+    Ghost_Green_Mid,
+    Ghost_Violet_Mid,
+    Ghost_White_Mid,
+
+    Rabbit_Cyan_Mid,
+    Rabbit_Green_Mid,
+
+    Golem_SkillBoss,
+
+    Rabbit_Red_Mid,
+    SlimeVar_Blue_Mid,
+    SlimeVar_Green_Mid,
+    SlimeVar_Red_Mid,
+    SlimeVar_Yellow_Mid,
+
+    metalon_Green_Mid,
+    metalon_Purple_Mid,
+    metalon_Red_Mid,
+
+    Chest_Red_Mid,
+    Chest_Glow_Mid,
+    Chest_Black_Mid,
+
+    Virus_Red_Mid,
+    Virus_Glow_Mid,
+    Virus_Black_Mid,
+    Virus_White_Mid,
+
+    Lurker_SkillBoss,
+
+    slime_Red_Big,
+    slime_Blue_Big,
+    slime_Green_Big,
+
+    spiky_Blue_Big,
+    spiky_Green_Big,
+    spiky_Red_Big,
+
+    bat_Red_Big,
+    bat_Green_Big,
+    bat_Violet_Big,
+    bat_yellow_Big,
+
+    Ghost_Brown_Big,
+    Ghost_Green_Big,
+    Ghost_Violet_Big,
+
+    Golem_SkillBoss_Big,
+
+    Ghost_White_Big,
+    SlimeVar_Blue_Big,
+    SlimeVar_Green_Big,
+    SlimeVar_Red_Big,
+    SlimeVar_Yellow_Big,
+
+    metalon_Green_Big,
+    metalon_Purple_Big,
+    metalon_Red_Big,
+
+    Chest_Red_Big,
+    Chest_Glow_Big,
+    Chest_Black_Big,
+
+    Virus_Red_Big,
+    Virus_Glow_Big,
+    Virus_Black_Big,
+
+    Golem_Boss_Final,
+    Lurker_Boss_Final,
+    Golem_Skill_2,
+    Lurker_Skill_2,
+    Golem_Skill_3,
+    Lurker_Skill_3,
 }
-
-//public enum NormalEnemyType : byte
-//{
-//    slime_Red = 0,
-//    slime_Blue,
-//    slime_Green,
-
-//    spiky_Blue,
-//    spiky_Green,
-//    spiky_Red,
-
-//    bat_Red,
-//    bat_Green,
-//    bat_Violet,
-//    bat_yellow,
-
-//    Ghost_Brown,
-//    Ghost_Green,
-//    Ghost_Violet,
-//    Ghost_White,
-
-//    Rabbit_Cyan,
-//    Rabbit_Green,
-//    Rabbit_Red,
-//    Rabbit_Yellow,
-
-//    SlimeVar_Blue,
-//    SlimeVar_Green,
-//    SlimeVar_Red,
-//    SlimeVar_Yellow,
-//}
-
-//public enum ShieldEnemyType : byte
-//{
-//    metalon_Green = 0,
-//    metalon_Purple,
-//    metalon_Red,
-//}
-
-//public enum BossType : byte
-//{
-//    golem_Poly = 0,
-//    Lurker,
-//}
 
 
 public enum ProjectileID : byte

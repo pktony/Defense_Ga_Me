@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45ff24d1e5b14b8393d5e54c854fe6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: 6
-  projectileUnit: 1
+  unit: 11
+  projectileUnit: 4
 --- !u!114 &7653549143311673848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +69,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: da277d5c7fb104d8782b65bb2df15257, type: 2}
   - {fileID: 11400000, guid: c8818cdb20bc24cc999deabf81b3e67c, type: 2}
   - {fileID: 11400000, guid: 0adf7eab0bb17465cae8b591ee067f8e, type: 2}
-  - {fileID: 11400000, guid: 5cc0541d968ff4532b67db24c439b69a, type: 2}
+  - {fileID: 11400000, guid: 63cd731b25ecd496a8121282e1f05972, type: 2}
   - {fileID: 11400000, guid: 23092ff13fcef476cb7e54cb6ea51e7e, type: 2}
+  - {fileID: 11400000, guid: dd018c2bd5b164c13be62010e5def462, type: 2}
+  - {fileID: 11400000, guid: 88c9ca38bc1584dfeb54aa1818a3278c, type: 2}
+  - {fileID: 11400000, guid: 5cc0541d968ff4532b67db24c439b69a, type: 2}
+  - {fileID: 11400000, guid: 80f1aae23177949d7ac3b588b6a5e70f, type: 2}
+  - {fileID: 11400000, guid: 9ea4847062fde450c9953628483850cd, type: 2}
 --- !u!114 &7653549143311673853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,3 +91,8 @@ MonoBehaviour:
   unitDatas:
   - {fileID: 11400000, guid: c8818cdb20bc24cc999deabf81b3e67c, type: 2}
   - {fileID: 11400000, guid: 0adf7eab0bb17465cae8b591ee067f8e, type: 2}
+  - {fileID: 11400000, guid: ff6cd75115f08414a9f7b794f57fef06, type: 2}
+  - {fileID: 11400000, guid: c78fad117559e4b8891b460b08623bb0, type: 2}
+  - {fileID: 11400000, guid: 473b6eb5c543947718bffdf92c891687, type: 2}
+  - {fileID: 11400000, guid: 161cb535f22ef496cb6696ec2a88dcac, type: 2}
+  - {fileID: 11400000, guid: f7eda7421ac794d528bf4ce1cb2fc6bc, type: 2}

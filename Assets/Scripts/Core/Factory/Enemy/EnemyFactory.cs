@@ -8,7 +8,7 @@ public class EnemyFactory : FactoryAbs_Monster<Monsters>
 
     public override Enemy Create(Monsters type)
     {
-        MonsterScriptables monsterInfo = monsterScriptables[(int)type];
+        MonsterScriptables monsterInfo = monsterScriptables[(int)type - 1];
 
         Enemy enemy = null;
 

@@ -117,14 +117,238 @@ MonoBehaviour:
     isBoss: 0
   - monster: 23
     spawnNumber: 1
-    isBoss: 0
+    isBoss: 1
   - monster: 24
     spawnNumber: 1
     isBoss: 0
   - monster: 25
     spawnNumber: 1
     isBoss: 0
-  bossRounds: 17000000230000003200000041000000500000005a00000064000000
+  - monster: 26
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 27
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 28
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 29
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 30
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 31
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 32
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 33
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 34
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 35
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 36
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 37
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 38
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 39
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 40
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 41
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 42
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 43
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 44
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 45
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 46
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 47
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 48
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 49
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 50
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 51
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 52
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 53
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 54
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 55
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 56
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 57
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 58
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 59
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 60
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 61
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 62
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 63
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 64
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 65
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 66
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 67
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 68
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 69
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 70
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 71
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 72
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 73
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 74
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 75
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 76
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 77
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 78
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 79
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 80
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 81
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 82
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 83
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 84
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 85
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 86
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 87
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 88
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 89
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 90
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 91
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 92
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 93
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 94
+    spawnNumber: 1
+    isBoss: 0
+  - monster: 95
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 96
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 97
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 98
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 99
+    spawnNumber: 1
+    isBoss: 1
+  - monster: 100
+    spawnNumber: 1
+    isBoss: 1
   unitClassInfo:
   - className: Normal
     percentage: 50
@@ -177,3 +401,7 @@ MonoBehaviour:
   projectileDatas:
   - {fileID: 11400000, guid: ab2a20650a9694576bce9eedb88de8b0, type: 2}
   - {fileID: 11400000, guid: 3ff912ecefb734cc3af6e9dd4fefda63, type: 2}
+  - {fileID: 11400000, guid: 83ba1aa9e963e46679cb4cb44a4f8c18, type: 2}
+  - {fileID: 11400000, guid: 3d2890a6a28b243b68e006ae8205e23f, type: 2}
+  - {fileID: 11400000, guid: a8436d4e8bdf34fd190f62df2bce6526, type: 2}
+  - {fileID: 11400000, guid: 440138bddbd024f0da411c1b6453d823, type: 2}

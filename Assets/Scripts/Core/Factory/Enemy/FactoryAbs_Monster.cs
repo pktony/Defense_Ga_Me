@@ -28,7 +28,8 @@ public abstract class FactoryAbs_Monster<T> : MonoBehaviour
         Enemy enemy = this.Create(type);
         enemy.transform.SetParent(parent);
         enemy.transform.position = parent.position;
-        gameManager.EnemyCount++;
+        if(gameManager != null)
+            gameManager.EnemyCount++;
         return enemy;
     }
 
