@@ -179,8 +179,6 @@ namespace UnitSpace
         AR_Female,
 
         //Ancient(스플래시)
-        Gunner_Rocket,
-        Turret_Rocket,
         Wizard_Fire,
 
         //Epic (방어력 무시)
@@ -212,5 +210,44 @@ namespace UnitSpace
 
         //Initium
         Tank_Nuclear,
-    }   
+    }
+
+
+    public enum Units
+    {
+        //Normal
+        gunner_Single = 0,
+        pistol_Male,
+        pistol_Female,
+
+        //Rare
+        gunner_Multiple,
+        AR_Male,
+        AR_Female,
+
+        //Ancient(스플래시)
+        Wizard_Fire,
+        gunner_7mmBullet,
+        Turret_Rocket,
+
+        //Epic (방어력 무시)
+        Drone_Laser,
+        DroneRed,
+        Wizard_Bolt,
+
+        //Legend(방어력 무시, 스플레시)
+        Wizard_Storm,
+        Tank_Missile,
+        Miner,
+
+        //Myth(
+        Turret_Fast,
+        Miner_Fast,
+        TEMP_EMPTY,
+
+        //Initium (전 타일 공격)
+        GunnerNuclear,
+        WizardWater,
+        Tank_Nuclear,
+    }
 }
