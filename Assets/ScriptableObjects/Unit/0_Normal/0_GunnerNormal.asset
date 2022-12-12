@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 7589082241267804836, guid: 80eab8c7fa5f04ab6b054f4079eda6e7,
     type: 3}
-  attackPower: 5
+  classType: 0
+  attackPower: 1
+  attackNumber: 1
   attackCoolTime: 2
   attackRange: 10

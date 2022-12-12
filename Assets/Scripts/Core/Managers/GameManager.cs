@@ -5,31 +5,33 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public List<LevelInfos> levelInfos;
-    public List<UnitProbabilityInfo> unitClassInfo;
 
     private Spawner spawner;
     private ProjectileDataManager projectileDatas;
 
+    [HideInInspector] public Golds golds;
+    [HideInInspector] public EnemyCount enemyCount;
+    [HideInInspector] public KillCount killCount;
+
 #if UNITY_EDITOR
     public int tempRound;
 #endif
-
-    private int round = 1;
     private const int MAX_ROUND = 100;
-
-    private float timeLeft;
     private const float TIME_NORMAL = 5f;
     private const float TIME_BOSS = 330f;
+    private const int KILL_REWARD = 5;
 
-    private int enemyCount;
-    public const int MAX_ENEMYCOUNT = 150;
+    private int round = 1;
+    private float timeLeft;
 
     private bool isGameover;
 
+    #region DELEGATES #########################################################
     public System.Action<int> onRoundChange;
-    public System.Action<int> onEnemyCountChange;
     public System.Action<float> onTimeChange;
+    #endregion
 
+    #region PROPERTIES ########################################################
     public ProjectileDataManager ProjectileDatas => projectileDatas;
     public int Round
     {
@@ -38,20 +40,6 @@ public class GameManager : Singleton<GameManager>
         {
             round = Mathf.Clamp(value, 0, levelInfos.Count - 1);
             onRoundChange?.Invoke(round);
-        }
-    }
-
-    public int EnemyCount
-    {
-        get => enemyCount;
-        set
-        {
-            enemyCount = value;
-            onEnemyCountChange?.Invoke(enemyCount);
-            if(enemyCount == MAX_ENEMYCOUNT)
-            {
-                GameOver();
-            }
         }
     }
 
@@ -69,7 +57,9 @@ public class GameManager : Singleton<GameManager>
             }
         }
     }
+    #endregion
 
+    #region UNITY EVENT 함수 ####################################################
     private void Start()
     {
         ResetTime(false);
@@ -113,9 +103,17 @@ public class GameManager : Singleton<GameManager>
         base.Initialize();
         spawner = FindObjectOfType<Spawner>();
         projectileDatas = GetComponent<ProjectileDataManager>();
-        EnemyCount = 0;
+
+        enemyCount = GetComponent<EnemyCount>();
+        killCount = GetComponent<KillCount>();
+        golds = GetComponent<Golds>();
+
+        enemyCount.ResetCount();
+        golds.ResetCount();
         Round = 0;
     }
+    #endregion
+
 
     private void ToNextRound()
     {
@@ -130,6 +128,7 @@ public class GameManager : Singleton<GameManager>
     private void RequestSpawn(int round, int spawnNumber)
     {
         spawner.SpawnEnemy((Monsters)round, spawnNumber);
+        enemyCount.ChangeCountBy(1);
     }
 
     private void ResetTime(bool isBoss = false)
@@ -137,9 +136,20 @@ public class GameManager : Singleton<GameManager>
         TimeLeft = isBoss ? TIME_BOSS : TIME_NORMAL;
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         StopAllCoroutines();
         isGameover = true;
+    }
+
+    public void DecreaseEnemyCount()
+    {
+        enemyCount.ChangeCountBy(-1);
+        killCount.ChangeCountBy(1);
+    }
+
+    public void GetGolds()
+    {
+        golds.ChangeCountBy(KILL_REWARD);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class UnitData : ScriptableObject
 {
     public GameObject unitPrefab;
+    public UnitSpace.UnitClasses classType;
     public int attackPower;
     public int attackNumber = 1;
     public float attackCoolTime;
