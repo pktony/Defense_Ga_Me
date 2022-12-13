@@ -6,7 +6,6 @@ public class Unit_Laser : Unit_Instant
 {
     private Laser laser;
     private WaitForSeconds waitSeconds;
-    private Transform hitParticle;
 
     [SerializeField] private float laserTickInterval = 0.5f;
 
@@ -15,48 +14,29 @@ public class Unit_Laser : Unit_Instant
         base.Awake();
         laser = GetComponentInChildren<Laser>();
         waitSeconds = new WaitForSeconds(laserTickInterval);
-        hitParticle = particleParent.GetChild(0);
-        hitParticle.gameObject.SetActive(false);
     }
 
-    public override void Attack(IAttackable target)
-    {
-        if (target != null)
-        {
-            base.Attack(target);
-            StartCoroutine(ShootLaser(target));
-        }
-    }
-
-    private IEnumerator ShootLaser(IAttackable target)
+    protected override IEnumerator ShootProcess(IAttackable target)
     {
         laser.ShootLaser(target);
-        hitParticle.transform.parent = target.ParticleParent;
-        hitParticle.transform.position = target.CurrentPos;
-        hitParticle.gameObject.SetActive(true);
         int attackCount = 0;
         while (attackCount < attackNumber)
         {
             if (target != null && !target.IsDead)
             {
+                particle.UseParticle(target.ParticlePos);
                 target.GetAttack(AttackPower, isDPPentratable);
                 attackCount++;
             }
             else
             {
-                ReturnParticle();
+                particle.ReturnParitcle();
                 break;
             }
             yield return waitSeconds;
         }
         laser.TurnoffLaser();
-        ReturnParticle();
-    }
-
-    private void ReturnParticle()
-    {
-        hitParticle.transform.parent = this.particleParent;
-        hitParticle.gameObject.SetActive(false);
+        particle.ReturnParitcle();
     }
 
     protected override void Upgrade()

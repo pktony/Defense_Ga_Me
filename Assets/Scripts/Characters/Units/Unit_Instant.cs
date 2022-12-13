@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Unit_Instant : Unit
 {
-    protected Transform particleParent;
-    private ParticleSystem attackParticle;
+    protected UnitParticleController particle;
 
     private WaitForSeconds attackWaitSeconds;
     [SerializeField] protected int attackNumber = 3;
@@ -13,9 +12,8 @@ public class Unit_Instant : Unit
     protected override void Awake()
     {
         base.Awake();
-        particleParent = transform.GetChild(2);
-        attackParticle = particleParent.GetChild(0).GetComponent<ParticleSystem>();
-        attackParticle.gameObject.SetActive(false);
+        particle = GetComponentInChildren<UnitParticleController>();
+
         attackWaitSeconds = new WaitForSeconds(0.1f);
     }
 
@@ -24,24 +22,29 @@ public class Unit_Instant : Unit
         if (target != null)
         {
             base.Attack(target);
-            StartCoroutine(PlayParticle(target));
+            StartCoroutine(ShootProcess(target));
         }
     }
 
-    private IEnumerator PlayParticle(IAttackable target)
+    protected virtual IEnumerator ShootProcess(IAttackable target)
     {
         int playCount = attackNumber;
-        attackParticle.transform.parent = attackTarget.ParticleParent;
         while (playCount > 0)
         {
-            target.GetAttack(AttackPower);
-            attackParticle.transform.position = target.CurrentPos + Vector3.up * 1f;
-            attackParticle.gameObject.SetActive(true);
+            if (target != null || !target.IsDead)
+            {
+                target.GetAttack(AttackPower);
+                particle.UseParticle(target.ParticlePos);
+                particle.ReturnParitcle();
+                playCount--;
+            }
+            else
+            {
+                particle.ReturnParitcle();
+                break;
+            }
             yield return attackWaitSeconds;
-            attackParticle.gameObject.SetActive(false);
-            playCount--;
         }
-        attackParticle.transform.parent = particleParent ;
     }
 
     protected override void Upgrade()

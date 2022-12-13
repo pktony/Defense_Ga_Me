@@ -12,7 +12,7 @@ public class ProjectileUnit_Factory : FactoryAbs_Unit<ProjectileUnitType>
         GameObject obj = Instantiate(thisUnit.unitPrefab, this.transform);
         Unit_Projectile unit = obj.GetComponent<Unit_Projectile>();
 
-        unit.SetStats(thisUnit.attackPower, thisUnit.attackRange, thisUnit.attackCoolTime);
+        unit.SetStats(thisUnit);
         unit.InitializeProjectile((ProjectileID)thisUnit.projectileData.projectileID);
         unit.transform.localPosition = Vector3.zero;
         return unit;

@@ -7,10 +7,9 @@ using UnityEditor;
 
 public abstract class Unit : MonoBehaviour, IUnit
 {
-    private GameObject selectionCircle;
     private Animator anim;
+    private CharacterStats unitStats;
     
-    private bool isSelected;
     private bool isMoving = false;
 
     private float attackTimer = 0f;
@@ -20,9 +19,10 @@ public abstract class Unit : MonoBehaviour, IUnit
     private float detectInterval = 0.5f;
     private float stoppingDistance = 1;
 
-    private float attackCoolTime = 3.0f;
-    private float attackRange = 10f;
-    private int attackPower = 1;
+    //private Stats stats;
+    //private float attackCoolTime = 3.0f;
+    //private float attackRange = 10f;
+    //private int attackPower = 1;
 
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] protected float turnSpeed = 10f;
@@ -30,31 +30,13 @@ public abstract class Unit : MonoBehaviour, IUnit
 
     protected IAttackable attackTarget;
     #region IUNIT #############################################################
-    public virtual bool IsSelected
-    {
-        get => isSelected;
-        set
-        {
-            if (!isSelected)
-            {// 선택되지 않았으면
-                selectionCircle.SetActive(true);
-                Debug.Log("selected");
-            }
-            else
-            {// 이미 선택 됐으면
-                UnSelect();
-                return;
-            }
-            isSelected = value;
-        }
-    }
-
+    
     public int AttackPower
     {
-        get => attackPower;
+        get => unitStats.stats.attackPower;
         set
         {
-            attackPower = value;
+            unitStats.stats.attackPower = value;
         }
     }
 
@@ -69,25 +51,12 @@ public abstract class Unit : MonoBehaviour, IUnit
 
     public void Move(Vector3 destination)
     { 
-        if(isSelected)
-        {
-            IsMoving = true;
-            destination.y = 0f;
-            this.destination = destination;
-        }
+        IsMoving = true;
+        destination.y = 0f;
+        this.destination = destination;
     }
 
-    public bool GetSelected()
-    {
-        IsSelected = true;
-        return IsSelected;
-    }
-
-    public void UnSelect()
-    {
-        selectionCircle.SetActive(false);
-        isSelected = false;
-    }
+    
     #endregion
 
     public bool IsMoving
@@ -106,7 +75,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     #region UNITY EVENT 함수 ####################################################
     protected virtual void Awake()
     {
-        selectionCircle = transform.GetChild(1).gameObject;
+        unitStats = GetComponent<CharacterStats>();
         anim = GetComponentInChildren<Animator>();
 
         detectWaitSeconds = new WaitForSeconds(detectInterval);
@@ -125,7 +94,7 @@ public abstract class Unit : MonoBehaviour, IUnit
             }
 
             attackTimer += Time.deltaTime;
-            if(attackTimer > attackCoolTime)
+            if(attackTimer > unitStats.stats.attackCoolTime)
             {
                 Attack(attackTarget);
                 attackTimer = 0f;
@@ -140,11 +109,13 @@ public abstract class Unit : MonoBehaviour, IUnit
     }
     #endregion
 
-    public void SetStats(int attackPower, float attackRange, float attackCoolTime)
+    public void SetStats(UnitData data)
     {
-        this.attackPower = attackPower;
-        this.attackRange = attackRange;
-        this.attackCoolTime = attackCoolTime;
+        unitStats.stats = new Stats(data.name, data.attackPower,
+            data.attackCoolTime, data.attackRange);
+        //this.attackPower = attackPower;
+        //this.attackRange = attackRange;
+        //this.attackCoolTime = attackCoolTime;
     }
 
     private void MoveTo(Vector3 destination)
@@ -174,7 +145,7 @@ public abstract class Unit : MonoBehaviour, IUnit
         {
             //Debug.Log("Detecting");
             Collider[] colls = Physics.OverlapSphere(
-                transform.position, attackRange, LayerMask.GetMask("Enemy"));
+                transform.position, unitStats.stats.attackRange, LayerMask.GetMask("Enemy"));
 
             if (colls.Length > 0)
                 attackTarget = colls[0].GetComponent<IAttackable>();
@@ -189,7 +160,7 @@ public abstract class Unit : MonoBehaviour, IUnit
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        Handles.DrawWireDisc(transform.position, transform.up, attackRange);
+        Handles.DrawWireDisc(transform.position, transform.up, unitStats.stats.attackRange);
     }
 #endif
 }

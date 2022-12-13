@@ -15,7 +15,7 @@ public class Unit_Projectile : Unit
 
     public override void Attack(IAttackable target)
     {
-        if (target != null)
+        if (target != null && !target.IsDead)
         {
             base.Attack(target);
             SpawnProjectile(target.CurrentPos);

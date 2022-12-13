@@ -13,7 +13,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     protected float moveSpeed;
     protected float shield;
 
-    private Transform particleParent;
     private Transform[] waypoints;
     private int currentIndex = 0;
     private const float STOPPING_DIST = 0.1f;
@@ -43,14 +42,13 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         set => isDead = value; //파티클 돌려주는 작업 필요 
     }
     public Vector3 CurrentPos => model.transform.forward * 3.0f + transform.position;
+    public Vector3 ParticlePos => transform.position + Vector3.up * 1f;
     public Transform Trans => this.transform;
 
-    public Transform ParticleParent => particleParent;
 
     private void Awake()
     {
         model = transform.GetChild(0);
-        particleParent = transform.GetChild(2);
     }
 
     protected virtual void Start()
@@ -100,7 +98,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     private void Die()
     {
         isDead = true;
-        gameManager.EnemyCount--;
+        gameManager.DecreaseEnemyCount();
         Destroy(this.gameObject);
     }
     #endregion

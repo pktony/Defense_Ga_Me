@@ -13,7 +13,7 @@ public class InstantUnitFactory : FactoryAbs_Unit<InstantUnitType>
         GameObject obj = Instantiate(thisUnit.unitPrefab, this.transform);
         Unit unit = obj.GetComponent<Unit>();
 
-        unit.SetStats(thisUnit.attackPower, thisUnit.attackRange, thisUnit.attackCoolTime);
+        unit.SetStats(thisUnit);
         unit.transform.localPosition = Vector3.zero;
         return unit;
     }

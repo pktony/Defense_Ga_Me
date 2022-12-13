@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     InputActions inputs;
     Camera mainCam;
 
+    private ISelectable selectedCharacter;
     private IUnit selectedUnit;
 
     private void Awake()
@@ -39,17 +40,29 @@ public class PlayerController : MonoBehaviour
         Ray ray = mainCam.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit, 999f, LayerMask.GetMask("Default")))
         {
-            if(hit.collider.TryGetComponent<IUnit>(out IUnit unit))
+            if(hit.collider.TryGetComponent<ISelectable>(out ISelectable selectable))
             {
-                selectedUnit = unit;
-                unit.GetSelected();
+                selectedCharacter = selectable;
+                //unit.GetSelected();
+
+                if(selectedCharacter.IsUnit)
+                {// unit 일 때 
+                    if (hit.collider.TryGetComponent<IUnit>(out IUnit unit))
+                    {
+                        selectedUnit = unit;
+                    }
+                }
+                else
+                {// 적을 선택했을 때 
+
+                }
             }
             else
             {// 유닛 외 다른 선택을 함
-                if(selectedUnit != null)
-                {
-                    selectedUnit.Move(hit.point);
-                }
+                //if(selectedUnit != null)
+                //{
+                //    selectedUnit.Move(hit.point);
+                //}
             }
         }
     }

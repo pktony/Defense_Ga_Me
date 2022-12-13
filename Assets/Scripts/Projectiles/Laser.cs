@@ -32,7 +32,6 @@ public class Laser : MonoBehaviour
             fpsCounter += Time.deltaTime;
             if(fpsCounter >= 0.1f)
             {
-                Debug.Log(counter);
                 counter++;
                 counter %= boltTextures.Length;
                 lineRend.material.SetTexture("_MainTex", boltTextures[counter]);

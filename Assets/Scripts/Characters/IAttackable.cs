@@ -11,6 +11,8 @@ public interface IAttackable
 
     public bool IsDead { get; set; }
     public Vector3 CurrentPos { get; }
+    public Vector3 ParticlePos { get; }
+
+    //Laser -----
     public Transform Trans { get; }
-    public Transform ParticleParent { get; }
 }

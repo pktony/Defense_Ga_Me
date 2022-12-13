@@ -15,7 +15,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 2150076745043923894, guid: 276aa738f7a2a4efea05c95d47c769da,
     type: 3}
   classType: 4
-  attackPower: 15
+  attackPower: 999
   attackNumber: 1
-  attackCoolTime: 5
+  attackCoolTime: 2
   attackRange: 25
