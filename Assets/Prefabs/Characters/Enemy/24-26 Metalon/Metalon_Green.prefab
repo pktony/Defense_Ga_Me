@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3142730531510807048}
   - component: {fileID: 4135855097386075347}
   - component: {fileID: 5486906735597599748}
+  - component: {fileID: 3997434456698880621}
   m_Layer: 0
   m_Name: Metalon_Green
   m_TagString: Untagged
@@ -61,6 +62,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &3997434456698880621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967318217206218302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &75626978600743818
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 841742474384614778}
   - component: {fileID: 4159208380867856059}
   - component: {fileID: 2827346237296536098}
+  - component: {fileID: 3167753441657769986}
   m_Layer: 6
   m_Name: Bat_Green
   m_TagString: Untagged
@@ -109,6 +110,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3167753441657769986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807370577981253734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2908156413314936718
 PrefabInstance:
   m_ObjectHideFlags: 0

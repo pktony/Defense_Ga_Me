@@ -18,11 +18,6 @@ public class PlayerController : MonoBehaviour
         mainCam = Camera.main;
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void OnEnable()
     {
         inputs.Enable();
@@ -50,11 +45,16 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.TryGetComponent<IUnit>(out IUnit unit))
                     {
                         selectedUnit = unit;
+                        selectable.GetSelected();
+
+                        // Unit의 스탯 가져와서 UI 갱신
                     }
                 }
                 else
                 {// 적을 선택했을 때 
+                    selectable.GetSelected();
 
+                    // Enemy의 스탯을 가져와서 UI 갱신 
                 }
             }
             else

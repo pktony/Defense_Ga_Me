@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8567644795067629167}
   - component: {fileID: 8825427277527420749}
   - component: {fileID: 2737220673207382824}
+  - component: {fileID: -9057713567218206824}
   m_Layer: 0
   m_Name: Turret_FastRocket
   m_TagString: Untagged
@@ -63,6 +64,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-9057713567218206824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597899613567067369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e416a43ee84d199920caaa85c7196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1492687737096197942
 GameObject:
   m_ObjectHideFlags: 0

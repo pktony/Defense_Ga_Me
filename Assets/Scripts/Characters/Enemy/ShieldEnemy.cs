@@ -8,8 +8,6 @@ public class ShieldEnemy : Enemy
     private readonly float shieldRechargeAmount = 1f;
     private float shieldTimer = 0f;
 
-    private float maxShield;
-
     public System.Action<float, float> onShieldChange;
 
     public float Shield
@@ -17,15 +15,9 @@ public class ShieldEnemy : Enemy
         get => shield;
         set
         {
-            shield = Mathf.Clamp(value, 0f, maxShield);
-            onShieldChange?.Invoke(shield, maxShield);
+            shield = Mathf.Clamp(value, 0f, enemyStats.stats.maxShield);
+            onShieldChange?.Invoke(shield, enemyStats.stats.maxShield);
         }
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-        Shield = maxShield;
     }
 
     private void Update()
@@ -40,12 +32,12 @@ public class ShieldEnemy : Enemy
         }
     }
 
-    public override void SetStats(float maxHP, float dp, float moveSpeed, float shield = 0)
+    public override void SetStats(MonsterScriptables data)
     {
-        this.maxhealthPoint = maxHP;
-        this.defencePower = dp;
-        this.moveSpeed = moveSpeed;
-        this.maxShield = shield;
+        enemyStats.stats = new Stats_Enemy(data.name, data.maxHP, data.shield,
+            data.moveSpeed, data.dp);
+        HP = enemyStats.stats.maxHP;
+        Shield = enemyStats.stats.maxShield;
     }
 
     public override void GetAttack(float damage, bool isDPPenetratable = false)

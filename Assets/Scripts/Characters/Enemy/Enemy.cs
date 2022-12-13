@@ -7,11 +7,12 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     GameManager gameManager;
     Transform model;
 
-    protected float maxhealthPoint;
     protected float healthPoint;
-    protected float defencePower;
-    protected float moveSpeed;
     protected float shield;
+    //protected float maxhealthPoint;
+    //protected float defencePower;
+    //protected float moveSpeed;
+    protected EnemyStats enemyStats;
 
     private Transform[] waypoints;
     private int currentIndex = 0;
@@ -33,8 +34,8 @@ public abstract class Enemy : MonoBehaviour, IAttackable
             }
         }
     }
-    public float MaxHP => maxhealthPoint;
-    public float DP => defencePower;
+    public float MaxHP => enemyStats.stats.maxHP;
+    public float DP => enemyStats.stats.dp;
 
     public bool IsDead
     {
@@ -49,6 +50,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     private void Awake()
     {
         model = transform.GetChild(0);
+        enemyStats = GetComponent<EnemyStats>();
     }
 
     protected virtual void Start()
@@ -72,7 +74,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         Vector3 direction =
             (waypoints[currentIndex].position - transform.position).normalized;
 
-        transform.position += moveSpeed * Time.fixedDeltaTime
+        transform.position += enemyStats.stats.moveSpeed * Time.fixedDeltaTime
                     * direction;
 
         if ((waypoints[currentIndex].position - transform.position).sqrMagnitude
@@ -124,6 +126,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
             this.waypoints[i] = waypoints[i];
     }
 
-    public abstract void SetStats(float maxHP, float dp, float moveSpeed, float shield = 0f);
+    public abstract void SetStats(MonsterScriptables data);
     #endregion
 }

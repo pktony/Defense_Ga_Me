@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1421342491388486595}
   - component: {fileID: -8660113789336086059}
   - component: {fileID: -6911308499154717246}
+  - component: {fileID: -2597328082234507521}
   m_Layer: 0
   m_Name: Virus_White
   m_TagString: Untagged
@@ -61,6 +62,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &-2597328082234507521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158515335396623910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2231865456009514473
 PrefabInstance:
   m_ObjectHideFlags: 0

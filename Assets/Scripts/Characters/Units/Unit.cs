@@ -8,7 +8,7 @@ using UnityEditor;
 public abstract class Unit : MonoBehaviour, IUnit
 {
     private Animator anim;
-    private CharacterStats unitStats;
+    private UnitStats unitStats;
     
     private bool isMoving = false;
 
@@ -75,7 +75,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     #region UNITY EVENT 함수 ####################################################
     protected virtual void Awake()
     {
-        unitStats = GetComponent<CharacterStats>();
+        unitStats = GetComponent<UnitStats>();
         anim = GetComponentInChildren<Animator>();
 
         detectWaitSeconds = new WaitForSeconds(detectInterval);
@@ -111,11 +111,8 @@ public abstract class Unit : MonoBehaviour, IUnit
 
     public void SetStats(UnitData data)
     {
-        unitStats.stats = new Stats(data.name, data.attackPower,
-            data.attackCoolTime, data.attackRange);
-        //this.attackPower = attackPower;
-        //this.attackRange = attackRange;
-        //this.attackCoolTime = attackCoolTime;
+        unitStats.stats = new Stats_Unit(data.name, data.classType,
+            data.attackPower, data.attackCoolTime, data.attackRange, isDPPentratable);
     }
 
     private void MoveTo(Vector3 destination)

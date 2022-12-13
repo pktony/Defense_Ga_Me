@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 9005988825192373091}
   - component: {fileID: 5687398376019327138}
   - component: {fileID: 5794174630636803131}
+  - component: {fileID: 5591897135022842846}
   m_Layer: 6
   m_Name: SlimeVar_Green
   m_TagString: Untagged
@@ -109,6 +110,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5591897135022842846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864930015087662719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1483578566098292671
 PrefabInstance:
   m_ObjectHideFlags: 0

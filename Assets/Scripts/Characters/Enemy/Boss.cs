@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Boss : ShieldEnemy
 {
-    public override void SetStats(float maxHP, float dp, float moveSpeed, float shield)
+    public override void SetStats(MonsterScriptables data)
     {
-        this.maxhealthPoint = maxHP;
-        this.defencePower = dp;
-        this.moveSpeed = moveSpeed;
-        this.shield = shield;
+        enemyStats.stats = new Stats_Enemy(data.name, data.maxHP, data.shield,
+            data.moveSpeed, data.dp);
+        HP = enemyStats.stats.maxHP;
+        Shield = enemyStats.stats.maxShield;
     }
 }

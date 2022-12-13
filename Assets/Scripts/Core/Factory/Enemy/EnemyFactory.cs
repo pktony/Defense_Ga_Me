@@ -22,7 +22,7 @@ public class EnemyFactory : FactoryAbs_Monster<Monsters>
             enemy = Instantiate(monsterInfo.prefab).GetComponent<NormalEnemy>();
             enemy = enemy as NormalEnemy;
         }
-        enemy.SetStats(monsterInfo.maxHP, monsterInfo.dp, monsterInfo.moveSpeed, monsterInfo.shield);
+        enemy.SetStats(monsterInfo);
         enemy.InitializeWaypoints(waypoints);
         
         return enemy;

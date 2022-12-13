@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4436445799173785878}
   - component: {fileID: 1118979978067602135}
   - component: {fileID: 1226056399588574798}
+  - component: {fileID: -5855230987489768466}
   m_Layer: 6
   m_Name: Bat_Violet
   m_TagString: Untagged
@@ -109,6 +110,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5855230987489768466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209818698575381514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5983807866633648116
 PrefabInstance:
   m_ObjectHideFlags: 0

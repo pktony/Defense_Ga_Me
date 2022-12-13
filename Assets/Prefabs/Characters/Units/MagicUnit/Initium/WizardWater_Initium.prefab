@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 151211403945608742}
   - component: {fileID: 4708977060209394658}
   - component: {fileID: 3045520528821351440}
+  - component: {fileID: 3646912668391036627}
   m_Layer: 0
   m_Name: WizardWater_Initium
   m_TagString: Untagged
@@ -68,6 +69,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3646912668391036627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525891688814838047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e416a43ee84d199920caaa85c7196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8139907729306316444
 GameObject:
   m_ObjectHideFlags: 0

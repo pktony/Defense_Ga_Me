@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3657474161951957732}
   - component: {fileID: 3898780177654352341}
   - component: {fileID: -2765266446065113279}
+  - component: {fileID: -765594124369410269}
   m_Layer: 0
   m_Name: Chest_Red
   m_TagString: Untagged
@@ -59,6 +60,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19b44fe46de6445d4b529136e6a39c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-765594124369410269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167360890028384503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1136058078896513345

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9143298304305022641}
   - component: {fileID: 5545484696427767152}
   - component: {fileID: 5940596879268841961}
+  - component: {fileID: -957212881289528379}
   m_Layer: 6
   m_Name: Ghost_Green
   m_TagString: Untagged
@@ -78,6 +79,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-957212881289528379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727515518684973997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6910046131218997895
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,9 @@ public class CharacterStats : MonoBehaviour, ISelectable
 {
     private GameObject selectionCircle;
     private bool isSelected;
+    private bool isUnit;
 
-    public Stats stats;
+    //public Stats_Unit stats;
 
     public bool IsSelected
     {
@@ -28,11 +29,13 @@ public class CharacterStats : MonoBehaviour, ISelectable
         }
     }
 
-    public bool IsUnit { get; }
+    public bool IsUnit { get => isUnit; }
 
     private void Awake()
     {
         selectionCircle = transform.GetChild(1).gameObject;
+
+        isUnit = transform.CompareTag("Unit");
     }
 
     public bool GetSelected()

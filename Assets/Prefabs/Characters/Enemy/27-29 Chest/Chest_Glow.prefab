@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5985214991279273623}
   - component: {fileID: 8190789342343011449}
   - component: {fileID: -8663273255411885767}
+  - component: {fileID: 7736047206488631711}
   m_Layer: 0
   m_Name: Chest_Glow
   m_TagString: Untagged
@@ -61,6 +62,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &7736047206488631711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8922119074475570298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &608202995608195421
 PrefabInstance:
   m_ObjectHideFlags: 0

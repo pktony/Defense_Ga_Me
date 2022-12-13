@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 742485362280789752}
   - component: {fileID: 742485362280789753}
   - component: {fileID: 8346657779114184294}
+  - component: {fileID: 4939395218807527355}
   m_Layer: 0
   m_Name: Gunner_7mm
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 10
+  isDPPentratable: 0
 --- !u!136 &8346657779114184294
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -63,6 +65,18 @@ CapsuleCollider:
   m_Height: 2.05
   m_Direction: 1
   m_Center: {x: 0, y: 0.87, z: 0}
+--- !u!114 &4939395218807527355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742485362280789759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e416a43ee84d199920caaa85c7196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &742485361657867463
 PrefabInstance:
   m_ObjectHideFlags: 0

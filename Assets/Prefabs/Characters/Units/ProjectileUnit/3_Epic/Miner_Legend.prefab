@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2095267162795845700}
   - component: {fileID: 2635670436640671568}
   - component: {fileID: 4212469695108715356}
+  - component: {fileID: -5861264875893814071}
   m_Layer: 0
   m_Name: Miner_Legend
   m_TagString: Untagged
@@ -64,6 +65,18 @@ MonoBehaviour:
   moveSpeed: 5
   turnSpeed: 10
   isDPPentratable: 1
+--- !u!114 &-5861264875893814071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470498914471713661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e416a43ee84d199920caaa85c7196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &683569683732187457
 PrefabInstance:
   m_ObjectHideFlags: 0
