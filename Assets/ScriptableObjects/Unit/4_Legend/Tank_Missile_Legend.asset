@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 6100410037658089095, guid: 8f15b2abfefc244739e43dec28434a0c,
     type: 3}
+  unitName: Tank
   classType: 4
   attackPower: 999
   attackNumber: 1

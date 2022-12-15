@@ -10,19 +10,12 @@ public class EnemyFactory : FactoryAbs_Monster<Monsters>
     {
         MonsterScriptables monsterInfo = monsterScriptables[(int)type - 1];
 
-        Enemy enemy = null;
+        EnemyStats enemyStats;
 
-        if(monsterInfo.shield > 0f)
-        {
-            enemy = Instantiate(monsterInfo.prefab).GetComponent<ShieldEnemy>();
-            enemy = enemy as ShieldEnemy;
-        }
-        else
-        {
-            enemy = Instantiate(monsterInfo.prefab).GetComponent<NormalEnemy>();
-            enemy = enemy as NormalEnemy;
-        }
-        enemy.SetStats(monsterInfo);
+        enemyStats = Instantiate(monsterInfo.prefab).GetComponent<EnemyStats>();
+        enemyStats.SetStats(monsterInfo);
+
+        Enemy enemy = enemyStats.GetComponent<Enemy>();
         enemy.InitializeWaypoints(waypoints);
         
         return enemy;

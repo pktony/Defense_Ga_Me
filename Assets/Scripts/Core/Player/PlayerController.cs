@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private ISelectable selectedCharacter;
     private IUnit selectedUnit;
 
+    public ISelectable SelectedCharacter => selectedCharacter;
+
     private void Awake()
     {
         inputs = new();
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         inputs.Disable();
     }
 
+    
     private void OnSelection(InputAction.CallbackContext _)
     {
         Ray ray = mainCam.ScreenPointToRay(Mouse.current.position.ReadValue());
@@ -37,8 +40,17 @@ public class PlayerController : MonoBehaviour
         {
             if(hit.collider.TryGetComponent<ISelectable>(out ISelectable selectable))
             {
+                if(selectedCharacter != null)
+                {// 이미 선택된 경우 원래 캐릭터를 선택해제
+                    selectedCharacter.UnSelect();
+
+                    if (selectedCharacter == selectable)
+                    {// 같은 캐릭터를 선택한 경우 선택된 캐릭터 해제
+                        selectedCharacter = null;
+                        return;
+                    }
+                }
                 selectedCharacter = selectable;
-                //unit.GetSelected();
 
                 if(selectedCharacter.IsUnit)
                 {// unit 일 때 
@@ -46,23 +58,15 @@ public class PlayerController : MonoBehaviour
                     {
                         selectedUnit = unit;
                         selectable.GetSelected();
-
-                        // Unit의 스탯 가져와서 UI 갱신
                     }
                 }
                 else
                 {// 적을 선택했을 때 
                     selectable.GetSelected();
-
-                    // Enemy의 스탯을 가져와서 UI 갱신 
                 }
             }
             else
             {// 유닛 외 다른 선택을 함
-                //if(selectedUnit != null)
-                //{
-                //    selectedUnit.Move(hit.point);
-                //}
             }
         }
     }

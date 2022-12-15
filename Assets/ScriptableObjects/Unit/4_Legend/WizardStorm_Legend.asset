@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 2150076745043923894, guid: 276aa738f7a2a4efea05c95d47c769da,
     type: 3}
+  unitName: Wizard Storm
   classType: 4
   attackPower: 999
   attackNumber: 1

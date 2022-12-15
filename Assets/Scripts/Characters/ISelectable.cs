@@ -1,7 +1,13 @@
+using UnityEngine;
 using UnitSpace;
 
 public interface ISelectable
 {
+    /// <summary>
+    /// UI cam 용 프롶퍼티
+    /// </summary>
+    public Vector3 currentPos { get; }
+
     public bool IsSelected { get; set; }
     public bool IsUnit { get; }
     /// <summary>

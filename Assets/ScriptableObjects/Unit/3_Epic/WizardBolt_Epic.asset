@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 3343917644996945183, guid: b1e7bbbf41c1241e8ac769727550ad7a,
     type: 3}
+  unitName: Wizard Thunder
   classType: 3
   attackPower: 1
   attackNumber: 1

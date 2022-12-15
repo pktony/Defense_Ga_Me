@@ -25,7 +25,7 @@ public class Unit_Laser : Unit_Instant
             if (target != null && !target.IsDead)
             {
                 particle.UseParticle(target.ParticlePos);
-                target.GetAttack(AttackPower, isDPPentratable);
+                target.GetAttack(AttackPower, unitStats.IsDPPenetratable);
                 attackCount++;
             }
             else

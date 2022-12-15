@@ -7,11 +7,11 @@ public class InstantUnitFactory : FactoryAbs_Unit<InstantUnitType>
 {
     [SerializeField] private UnitData[] unitDatas;
 
-    public override Unit Create(InstantUnitType type)
+    public override UnitStats Create(InstantUnitType type)
     {
         UnitData thisUnit = unitDatas[(int)type];
         GameObject obj = Instantiate(thisUnit.unitPrefab, this.transform);
-        Unit unit = obj.GetComponent<Unit>();
+        UnitStats unit = obj.GetComponent<UnitStats>();
 
         unit.SetStats(thisUnit);
         unit.transform.localPosition = Vector3.zero;

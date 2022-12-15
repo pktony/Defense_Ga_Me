@@ -6,15 +6,17 @@ using UnitSpace;
 public class ProjectileUnit_Factory : FactoryAbs_Unit<ProjectileUnitType>
 {
     [SerializeField] UnitData_Projectile[] unitDatas;
-    public override Unit Create(ProjectileUnitType type)
+    public override UnitStats Create(ProjectileUnitType type)
     {
         UnitData_Projectile thisUnit = unitDatas[(int)type];
         GameObject obj = Instantiate(thisUnit.unitPrefab, this.transform);
-        Unit_Projectile unit = obj.GetComponent<Unit_Projectile>();
+        UnitStats unitStats = obj.GetComponent<UnitStats>();
+        unitStats.SetStats(thisUnit);
+        unitStats.transform.localPosition = Vector3.zero;
 
-        unit.SetStats(thisUnit);
+        Unit_Projectile unit = obj.GetComponent<Unit_Projectile>();
         unit.InitializeProjectile((ProjectileID)thisUnit.projectileData.projectileID);
-        unit.transform.localPosition = Vector3.zero;
-        return unit;
+
+        return unitStats;
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 8574254178818929727, guid: 8357db5dfb1b14a0689f88be92c62578,
     type: 3}
+  unitName: SOLDIER
   classType: 6
   attackPower: 1
   attackNumber: 1

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class ShieldEnemy : Enemy
 {
@@ -12,11 +14,11 @@ public class ShieldEnemy : Enemy
 
     public float Shield
     {
-        get => shield;
+        get => enemyStats.Shield;
         set
         {
-            shield = Mathf.Clamp(value, 0f, enemyStats.stats.maxShield);
-            onShieldChange?.Invoke(shield, enemyStats.stats.maxShield);
+            enemyStats.Shield = Mathf.Clamp(value, 0f, enemyStats.stats.maxShield);
+            onShieldChange?.Invoke(Shield, enemyStats.stats.maxShield);
         }
     }
 
@@ -32,26 +34,26 @@ public class ShieldEnemy : Enemy
         }
     }
 
-    public override void SetStats(MonsterScriptables data)
-    {
-        enemyStats.stats = new Stats_Enemy(data.name, data.maxHP, data.shield,
-            data.moveSpeed, data.dp);
-        HP = enemyStats.stats.maxHP;
-        Shield = enemyStats.stats.maxShield;
-    }
+    //public override void SetStats(MonsterScriptables data)
+    //{
+    //    enemyStats.stats = new Stats_Enemy(data.name, data.maxHP, data.shield,
+    //        data.moveSpeed, data.dp);
+    //    HP = enemyStats.stats.maxHP;
+    //    Shield = enemyStats.stats.maxShield;
+    //}
 
     public override void GetAttack(float damage, bool isDPPenetratable = false)
     {
-        if(shield > 0f)
+        if(Shield > 0f)
         {// 실드가 있을 때는 실드를 깍고
             if (!isDPPenetratable)
-                shield -= Mathf.Max(1f, damage - DP);
+                Shield -= Mathf.Max(1f, damage - DP);
             else
-                shield -= Mathf.Max(1f, damage);
+                Shield -= Mathf.Max(1f, damage);
 
-            if (shield < 0f)
+            if (Shield < 0f)
                 {// 실드보다 데미지가 쎌경우 남은 데미지를 HP로 데미지 입힘 
-                    damage = -shield;
+                    damage = -Shield;
                 }
             else
                 return;

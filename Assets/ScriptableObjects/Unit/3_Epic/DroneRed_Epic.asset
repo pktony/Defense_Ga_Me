@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 7087913824761627397, guid: 3310e021c019e422ea647fa820ab698a,
     type: 3}
+  unitName: Drone Red
   classType: 3
   attackPower: 1
   attackNumber: 3

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 4831659743450222896, guid: edd376adfac44489ca0732da0e0867ed,
     type: 3}
+  unitName: Officer M
   classType: 1
   attackPower: 5
   attackNumber: 1

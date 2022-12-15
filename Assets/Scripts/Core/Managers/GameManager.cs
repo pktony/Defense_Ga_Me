@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
 
     private Spawner spawner;
     private ProjectileDataManager projectileDatas;
+    private TextUIController textUIs;
 
     [HideInInspector] public Golds golds;
     [HideInInspector] public EnemyCount enemyCount;
@@ -73,17 +74,17 @@ public class GameManager : Singleton<GameManager>
         }
 
 #if UNITY_EDITOR
-        for(int i = 0; i < levelInfos.Count; i++)
-        {
-            levelInfos[i].monster = (Monsters)i;
-            // Boss Rounds
-            //23, 35, 50, 66, 80, 95,96,97,98,99,100
-            if(i == 23 || i == 35 || i == 50 || i == 66 || i == 80 || i == 95 ||
-               (i >= 95 && i <= 100))
-            {
-                levelInfos[i].isBoss = true;
-            }
-        }
+        //for(int i = 0; i < levelInfos.Count; i++)
+        //{
+        //    levelInfos[i].monster = (Monsters)i;
+        //    // Boss Rounds
+        //    //23, 35, 50, 66, 80, 95,96,97,98,99,100
+        //    if(i == 23 || i == 35 || i == 50 || i == 66 || i == 80 || i == 95 ||
+        //       (i >= 95 && i <= 100))
+        //    {
+        //        levelInfos[i].isBoss = true;
+        //    }
+        //}
 
 
         if (UnityEngine.InputSystem.Keyboard.current.digit1Key.wasPressedThisFrame)
@@ -108,7 +109,11 @@ public class GameManager : Singleton<GameManager>
         killCount = GetComponent<KillCount>();
         golds = GetComponent<Golds>();
 
+        textUIs = FindObjectOfType<TextUIController>();
+        textUIs.InitializeUIs();
+
         enemyCount.ResetCount();
+        killCount.ResetCount();
         golds.ResetCount();
         Round = 0;
     }

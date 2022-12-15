@@ -8,7 +8,7 @@ using UnityEditor;
 public abstract class Unit : MonoBehaviour, IUnit
 {
     private Animator anim;
-    private UnitStats unitStats;
+    protected UnitStats unitStats;
     
     private bool isMoving = false;
 
@@ -19,14 +19,8 @@ public abstract class Unit : MonoBehaviour, IUnit
     private float detectInterval = 0.5f;
     private float stoppingDistance = 1;
 
-    //private Stats stats;
-    //private float attackCoolTime = 3.0f;
-    //private float attackRange = 10f;
-    //private int attackPower = 1;
-
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] protected float turnSpeed = 10f;
-    [SerializeField] protected bool isDPPentratable = false;
 
     protected IAttackable attackTarget;
     #region IUNIT #############################################################
@@ -108,12 +102,6 @@ public abstract class Unit : MonoBehaviour, IUnit
             MoveTo(destination);
     }
     #endregion
-
-    public void SetStats(UnitData data)
-    {
-        unitStats.stats = new Stats_Unit(data.name, data.classType,
-            data.attackPower, data.attackCoolTime, data.attackRange, isDPPentratable);
-    }
 
     private void MoveTo(Vector3 destination)
     {

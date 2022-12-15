@@ -10,13 +10,13 @@ public abstract class FactoryAbs_Unit<T> : MonoBehaviour
     /// <param name="type">스폰할 유닛의 타입</param>
     /// <param name="parent">생성 유닛 부모 오브젝트</param>
     /// <returns>생성한 유닛</returns>
-    public Unit SpawnUnit(T type, Transform parent)
+    public UnitStats SpawnUnit(T type, Transform parent)
     {
-        Unit unit = this.Create(type);
+        UnitStats unit = this.Create(type);
         unit.transform.SetParent(parent);
         unit.transform.position = parent.position;
         return unit;
     }
 
-    public abstract Unit Create(T type);
+    public abstract UnitStats Create(T type);
 }

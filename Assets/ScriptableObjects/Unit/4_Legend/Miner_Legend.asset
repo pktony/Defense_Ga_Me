@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 6470498914471713661, guid: 798d319f4da7141f5b52e5f0054b0267,
     type: 3}
+  unitName: Mine Expert
   classType: 4
   attackPower: 5
   attackNumber: 1

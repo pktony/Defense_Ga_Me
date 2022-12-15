@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IAttackable
@@ -7,11 +8,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     GameManager gameManager;
     Transform model;
 
-    protected float healthPoint;
-    protected float shield;
-    //protected float maxhealthPoint;
-    //protected float defencePower;
-    //protected float moveSpeed;
     protected EnemyStats enemyStats;
 
     private Transform[] waypoints;
@@ -23,12 +19,12 @@ public abstract class Enemy : MonoBehaviour, IAttackable
 
     public float HP
     {
-        get => healthPoint;
+        get => enemyStats.hp;
         set
         {
-            healthPoint = Mathf.Clamp(value, 0f, MaxHP);
-            onHealthChange?.Invoke(healthPoint, MaxHP);
-            if(healthPoint <= 0f)
+            enemyStats.hp = Mathf.Clamp(value, 0f, enemyStats.stats.maxHP);
+            onHealthChange?.Invoke(HP, MaxHP);
+            if(HP <= 0f)
             {
                 Die();
             }
@@ -126,6 +122,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
             this.waypoints[i] = waypoints[i];
     }
 
-    public abstract void SetStats(MonsterScriptables data);
+    //public abstract void SetStats(MonsterScriptables data);
     #endregion
 }

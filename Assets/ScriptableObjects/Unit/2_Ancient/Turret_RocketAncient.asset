@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 7506571213788664425, guid: 8879169d73ea94540bfceac09364d84d,
     type: 3}
+  unitName: Old Turret
   classType: 2
   attackPower: 20
   attackNumber: 1

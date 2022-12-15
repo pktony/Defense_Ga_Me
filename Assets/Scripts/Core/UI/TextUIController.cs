@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UIManager : MonoBehaviour
+public class TextUIController : MonoBehaviour
 {
-    GameManager gameManager;
+    private GameManager gameManager;
 
     TextMeshProUGUI roundText;
     TextMeshProUGUI timeText;
@@ -13,6 +13,12 @@ public class UIManager : MonoBehaviour
     TextMeshProUGUI enemyText;
     TextMeshProUGUI killText;
 
+    private float currentGold = 0;
+    private int finalGold = 999;
+
+    [SerializeField] private float smoothness = 10f;
+
+    #region UNITY EVENT 함수 ####################################################
     private void Awake()
     {
         roundText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -22,7 +28,17 @@ public class UIManager : MonoBehaviour
         killText = transform.GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
     }
 
-    private void Start()
+    private void Update()
+    {
+         currentGold = Mathf.Lerp(currentGold, finalGold, smoothness * Time.deltaTime);
+         goldText.text = currentGold.ToString("0");
+    }
+    #endregion
+
+    /// <summary>
+    /// UI 관련 델리게이트 등록 
+    /// </summary>
+    public void InitializeUIs()
     {
         gameManager = GameManager.Inst;
         gameManager.onRoundChange += RefreshRound;
@@ -31,6 +47,7 @@ public class UIManager : MonoBehaviour
         gameManager.golds.onGoldChange += RefreshGoldCount;
         gameManager.onTimeChange += RefreshTime;
     }
+
 
     private void RefreshEnemyCount(int count, int maxRound)
     {
@@ -57,6 +74,7 @@ public class UIManager : MonoBehaviour
 
     private void RefreshGoldCount(int gold)
     {
-        goldText.text = gold.ToString();
+        finalGold = gold;
+        //goldText.text = tempGold.ToString();
     }
 }

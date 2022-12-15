@@ -4,34 +4,16 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour, ISelectable
 {
-    private GameObject selectionCircle;
-    private bool isSelected;
+    protected GameObject selectionCircle;
+    protected bool isSelected;
+
     private bool isUnit;
 
-    //public Stats_Unit stats;
-
-    public bool IsSelected
-    {
-        get => isSelected;
-        set
-        {
-            if (!isSelected)
-            {// 선택되지 않았으면
-                selectionCircle.SetActive(true);
-                Debug.Log("selected");
-            }
-            else
-            {// 이미 선택 됐으면
-                UnSelect();
-                return;
-            }
-            isSelected = value;
-        }
-    }
-
+    public Vector3 currentPos => transform.position;
+    public virtual bool IsSelected { get; set;}
     public bool IsUnit { get => isUnit; }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         selectionCircle = transform.GetChild(1).gameObject;
 
@@ -46,9 +28,6 @@ public class CharacterStats : MonoBehaviour, ISelectable
 
     public void UnSelect()
     {
-        selectionCircle.SetActive(false);
-        isSelected = false;
+        IsSelected = false;
     }
-
-
 }
