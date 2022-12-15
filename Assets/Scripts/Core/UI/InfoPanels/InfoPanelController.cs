@@ -14,10 +14,11 @@ public class InfoPanelController : MonoBehaviour
 
     private void Awake()
     {
-        infoPanel_Unit = transform.GetChild(0).GetComponent<InfoPanel_Unit>();
-        infoPanel_Enemy = transform.GetChild(1).GetComponent<InfoPanel_Enemy>();
+        infoPanel_Unit = transform.GetChild(1).GetComponent<InfoPanel_Unit>();
+        infoPanel_Enemy = transform.GetChild(2).GetComponent<InfoPanel_Enemy>();
 
         uiCam = FindObjectOfType<UICam>();
+        HideAllPanels();
     }
 
     public void ShowUnitPanel()

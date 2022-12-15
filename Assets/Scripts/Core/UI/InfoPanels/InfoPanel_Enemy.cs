@@ -7,20 +7,21 @@ using UnitSpace;
 public class InfoPanel_Enemy : InfoPanelAbs
 {
     private TextMeshProUGUI enemyName;
-    private TextMeshProUGUI shield;
     private TextMeshProUGUI hp;
+    private TextMeshProUGUI shield;
     private TextMeshProUGUI dp;
     private TextMeshProUGUI moveSpeed;
 
     protected override void Awake()
     {
         base.Awake();
-        enemyName = transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        Transform statParent = transform.GetChild(2);
-        shield = statParent.GetChild(0).GetComponent<TextMeshProUGUI>();
-        hp = statParent.GetChild(1).GetComponent<TextMeshProUGUI>();
-        dp = statParent.GetChild(2).GetComponent<TextMeshProUGUI>();
-        moveSpeed = statParent.GetChild(3).GetComponent<TextMeshProUGUI>();
+        Transform infoParent = transform.GetChild(1);
+        enemyName = infoParent.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        Transform statParent = infoParent.GetChild(1);
+        hp = statParent.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+        shield = statParent.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        dp = statParent.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
+        moveSpeed = statParent.GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
     public void SetDatas(ref Stats_Enemy stats, float currentShield, float currentHP)
