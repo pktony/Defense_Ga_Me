@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1455548633
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1455548634}
-  m_Layer: 0
-  m_Name: ParticleParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1455548634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455548633}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 563728061390585149}
-  m_Father: {fileID: 2172502781364863516}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2150076745043923894
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,9 +11,10 @@ GameObject:
   - component: {fileID: 2172502781364863516}
   - component: {fileID: 3625677560966422209}
   - component: {fileID: 7204966929904479655}
+  - component: {fileID: 3167154910979843421}
   m_Layer: 0
   m_Name: WizardFire
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 2711671118823242709}
   - {fileID: 2688949108514163755}
-  - {fileID: 1455548634}
+  - {fileID: 5107047372233191087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,7 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 10
-  isDPPentratable: 0
   attackNumber: 1
 --- !u!136 &7204966929904479655
 CapsuleCollider:
@@ -98,6 +66,94 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3167154910979843421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150076745043923894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e416a43ee84d199920caaa85c7196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDPPentratable: 0
+--- !u!1001 &2010960035742705142
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2172502781364863516}
+    m_Modifications:
+    - target: {fileID: 6717046249125464920, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_Name
+      value: Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c839ce957dc4d4e069de6213dbf283b0, type: 3}
+--- !u!4 &5107047372233191087 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6717046249125464921, guid: c839ce957dc4d4e069de6213dbf283b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2010960035742705142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2715126722951190315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,22 +298,17 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3714112389636380627}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7070846979635975536
+--- !u!1001 &5498104532299178255
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1455548634}
+    m_TransformParent: {fileID: 5107047372233191087}
     m_Modifications:
     - target: {fileID: 7346059776469657672, guid: 5c811306c3e5244908f2246394ce47af,
         type: 3}
       propertyPath: m_Name
       value: CFXR4 Sword Trail FIRE (360 Spiral)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346059776469657674, guid: 5c811306c3e5244908f2246394ce47af,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7346059776469657677, guid: 5c811306c3e5244908f2246394ce47af,
         type: 3}
@@ -316,9 +367,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c811306c3e5244908f2246394ce47af, type: 3}
---- !u!4 &563728061390585149 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7346059776469657677, guid: 5c811306c3e5244908f2246394ce47af,
-    type: 3}
-  m_PrefabInstance: {fileID: 7070846979635975536}
-  m_PrefabAsset: {fileID: 0}

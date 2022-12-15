@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3476359212360026050}
   - component: {fileID: 3476359212360026053}
   - component: {fileID: 1730783704}
+  - component: {fileID: 8433217811704156037}
+  - component: {fileID: 7357576271378190949}
+  - component: {fileID: 5605267134947097603}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -349,42 +352,6 @@ MonoBehaviour:
   - monster: 100
     spawnNumber: 1
     isBoss: 1
-  unitClassInfo:
-  - className: Normal
-    percentage: 50
-    unitClasses: 0
-    isSellable: 1
-    isExchangable: 0
-  - className: Rare
-    percentage: 25
-    unitClasses: 1
-    isSellable: 1
-    isExchangable: 0
-  - className: Ancient
-    percentage: 18.815
-    unitClasses: 2
-    isSellable: 1
-    isExchangable: 0
-  - className: Epic
-    percentage: 5.125
-    unitClasses: 3
-    isSellable: 1
-    isExchangable: 0
-  - className: Legend
-    percentage: 1
-    unitClasses: 4
-    isSellable: 0
-    isExchangable: 0
-  - className: Myth
-    percentage: 0.05
-    unitClasses: 5
-    isSellable: 0
-    isExchangable: 1
-  - className: Initium
-    percentage: 0.01
-    unitClasses: 6
-    isSellable: 0
-    isExchangable: 0
   tempRound: 1
 --- !u!114 &1730783704
 MonoBehaviour:
@@ -405,3 +372,39 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d2890a6a28b243b68e006ae8205e23f, type: 2}
   - {fileID: 11400000, guid: a8436d4e8bdf34fd190f62df2bce6526, type: 2}
   - {fileID: 11400000, guid: 440138bddbd024f0da411c1b6453d823, type: 2}
+--- !u!114 &8433217811704156037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476359212360026052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c7e28b2264e477090c75c0d585329a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7357576271378190949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476359212360026052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fb5b88177934aea83975d922ed4846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5605267134947097603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476359212360026052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44d69370ddfd45f6a63c9b544df4967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

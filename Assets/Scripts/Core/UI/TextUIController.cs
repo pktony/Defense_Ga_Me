@@ -26,6 +26,8 @@ public class TextUIController : MonoBehaviour
         goldText = transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
         enemyText = transform.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
         killText = transform.GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
+
+        GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
     private void Update()

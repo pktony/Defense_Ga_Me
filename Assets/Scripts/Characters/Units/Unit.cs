@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnitSpace;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -24,7 +25,7 @@ public abstract class Unit : MonoBehaviour, IUnit
 
     protected IAttackable attackTarget;
     #region IUNIT #############################################################
-    
+    public UnitSpace.UnitClasses ClassType => unitStats.stats.classType;
     public int AttackPower
     {
         get => unitStats.stats.attackPower;

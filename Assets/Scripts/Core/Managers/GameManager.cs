@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     private Spawner spawner;
     private ProjectileDataManager projectileDatas;
     private TextUIController textUIs;
+    private PlayerController player;
 
     [HideInInspector] public Golds golds;
     [HideInInspector] public EnemyCount enemyCount;
@@ -21,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     private const float TIME_NORMAL = 5f;
     private const float TIME_BOSS = 330f;
     private const int KILL_REWARD = 5;
+    private const int UNIT_PRICE = 10;
 
     private int round = 1;
     private float timeLeft;
@@ -34,6 +36,7 @@ public class GameManager : Singleton<GameManager>
 
     #region PROPERTIES ########################################################
     public ProjectileDataManager ProjectileDatas => projectileDatas;
+    public PlayerController Player => player;
     public int Round
     {
         get => round;
@@ -61,6 +64,27 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     #region UNITY EVENT 함수 ####################################################
+    protected override void Initialize()
+    {
+        base.Initialize();
+        spawner = FindObjectOfType<Spawner>();
+        projectileDatas = GetComponent<ProjectileDataManager>();
+        player = FindObjectOfType<PlayerController>();
+
+        enemyCount = GetComponent<EnemyCount>();
+        killCount = GetComponent<KillCount>();
+        golds = GetComponent<Golds>();
+
+        textUIs = FindObjectOfType<TextUIController>();
+        textUIs.InitializeUIs();
+
+        enemyCount.ResetCount();
+        killCount.ResetCount();
+        golds.ResetCount();
+        golds.Count = 10000;
+        Round = 0;
+    }
+
     private void Start()
     {
         ResetTime(false);
@@ -98,25 +122,6 @@ public class GameManager : Singleton<GameManager>
         }
 #endif
     }
-
-    protected override void Initialize()
-    {
-        base.Initialize();
-        spawner = FindObjectOfType<Spawner>();
-        projectileDatas = GetComponent<ProjectileDataManager>();
-
-        enemyCount = GetComponent<EnemyCount>();
-        killCount = GetComponent<KillCount>();
-        golds = GetComponent<Golds>();
-
-        textUIs = FindObjectOfType<TextUIController>();
-        textUIs.InitializeUIs();
-
-        enemyCount.ResetCount();
-        killCount.ResetCount();
-        golds.ResetCount();
-        Round = 0;
-    }
     #endregion
 
 
@@ -153,8 +158,18 @@ public class GameManager : Singleton<GameManager>
         killCount.ChangeCountBy(1);
     }
 
-    public void GetGolds()
+    public void GetKillReward()
     {
         golds.ChangeCountBy(KILL_REWARD);
+    }
+
+    public void GetGolds(int sellPrice)
+    {
+        golds.ChangeCountBy(sellPrice);
+    }
+
+    public bool CanBuyUnit()
+    {
+        return golds.IsEnoughGold(UNIT_PRICE);
     }
 }

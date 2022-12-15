@@ -16,7 +16,14 @@ public class BuyButton : MonoBehaviour
 
     private void BuyUnit()
     {
-        float randNumber = RandomSeedGenerator.GenerateRandomNumber();
-        UnitManager.Inst.SpawnUnit(randNumber);
+        if (GameManager.Inst.CanBuyUnit())
+        {
+            float randNumber = RandomSeedGenerator.GenerateRandomNumber();
+            UnitManager.Inst.SpawnUnit(randNumber);
+        }
+        else
+        {
+            Debug.Log("Not Enough Money");
+        }
     }
 }

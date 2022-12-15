@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9057713567218206824}
   m_Layer: 0
   m_Name: Turret_FastRocket
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 10
-  isDPPentratable: 1
 --- !u!135 &2737220673207382824
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -76,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8e416a43ee84d199920caaa85c7196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDPPentratable: 0
 --- !u!1 &1492687737096197942
 GameObject:
   m_ObjectHideFlags: 0

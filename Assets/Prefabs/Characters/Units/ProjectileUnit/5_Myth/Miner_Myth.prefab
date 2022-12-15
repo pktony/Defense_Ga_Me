@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2185825413092330529}
   - component: {fileID: 2870401066093519669}
   - component: {fileID: 4121862511174809401}
+  - component: {fileID: -3767952179020666941}
   m_Layer: 0
   m_Name: Miner_Myth
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +64,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turnSpeed: 10
-  isDPPentratable: 1
+--- !u!114 &-3767952179020666941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525059146662575896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db8d7bc0cb6848488449cb92d570062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &737176102955003172
 PrefabInstance:
   m_ObjectHideFlags: 0

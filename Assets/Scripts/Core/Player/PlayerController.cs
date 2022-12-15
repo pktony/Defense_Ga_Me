@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     Camera mainCam;
 
     private ISelectable selectedCharacter;
-    private IUnit selectedUnit;
+    private Unit selectedUnit;
 
     public ISelectable SelectedCharacter => selectedCharacter;
 
@@ -54,9 +54,9 @@ public class PlayerController : MonoBehaviour
 
                 if(selectedCharacter.IsUnit)
                 {// unit 일 때 
-                    if (hit.collider.TryGetComponent<IUnit>(out IUnit unit))
+                    if (hit.collider.TryGetComponent<Unit>(out Unit unit))
                     {
-                        selectedUnit = unit;
+                        UnitManager.Inst.SetSelectedUnit(unit);
                         selectable.GetSelected();
                     }
                 }

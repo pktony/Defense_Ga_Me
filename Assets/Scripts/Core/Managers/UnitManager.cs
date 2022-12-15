@@ -41,6 +41,18 @@ public class UnitManager : Singleton<UnitManager>
         }
     }
 
+    public void SellSelectedUnit()
+    {
+        int sellPrice = unitClassInfo[(int)selectedUnit.ClassType].sellPrice;
+        GameManager.Inst.GetGolds(sellPrice);
+        GameManager.Inst.Player.SelectedCharacter.UnSelect(); // UI 캠 비활성화
+        Destroy(selectedUnit.gameObject);
+    }
+
+    public void SetSelectedUnit(Unit selectedUnit)
+    {
+        this.selectedUnit = selectedUnit;
+    }
 #if UNITY_EDITOR
     //private void Update()
     //{

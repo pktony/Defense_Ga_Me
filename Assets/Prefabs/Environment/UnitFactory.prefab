@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45ff24d1e5b14b8393d5e54c854fe6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: 11
-  projectileUnit: 4
+  unit: 1
+  projectileUnit: 5
 --- !u!114 &7653549143311673848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +67,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a3984db089ff4d19af5b80d1be5a0d0, type: 2}
   - {fileID: 11400000, guid: beec08453d52d490eb581ee25425dc1c, type: 2}
   - {fileID: 11400000, guid: da277d5c7fb104d8782b65bb2df15257, type: 2}
-  - {fileID: 11400000, guid: c8818cdb20bc24cc999deabf81b3e67c, type: 2}
-  - {fileID: 11400000, guid: 0adf7eab0bb17465cae8b591ee067f8e, type: 2}
   - {fileID: 11400000, guid: 63cd731b25ecd496a8121282e1f05972, type: 2}
   - {fileID: 11400000, guid: 23092ff13fcef476cb7e54cb6ea51e7e, type: 2}
   - {fileID: 11400000, guid: dd018c2bd5b164c13be62010e5def462, type: 2}

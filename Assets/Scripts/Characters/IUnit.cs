@@ -6,6 +6,8 @@ public interface IUnit
 {
     public int AttackPower { get; set; }
 
+    public UnitSpace.UnitClasses ClassType { get; }
+
     /// <summary>
     /// 공격 함수 
     /// </summary>

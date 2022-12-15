@@ -4,24 +4,20 @@ using UnityEngine;
 
 public abstract class InfoPanelAbs : MonoBehaviour
 {
-    private CanvasGroup group;
+    UI_Fade fadeUI;
 
     protected virtual void Awake()
     {
-        group = GetComponent<CanvasGroup>();
+        fadeUI = GetComponent<UI_Fade>();
     }
 
     public void ShowPanel()
     {
-        group.alpha = 1f;
-        group.interactable = true;
-        group.blocksRaycasts = true;
+        fadeUI.ShowImage(0.2f);
     }
 
     public void HidePanel()
     {
-        group.alpha = 0f;
-        group.interactable = false;
-        group.blocksRaycasts = false;
+        fadeUI.HideImage(0.2f);
     }
 }

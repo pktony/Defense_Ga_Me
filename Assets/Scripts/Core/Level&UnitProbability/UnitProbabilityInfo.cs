@@ -8,4 +8,5 @@ public class UnitProbabilityInfo
     public UnitClasses unitClasses;
     public bool isSellable;
     public bool isExchangable;
+    public int sellPrice;
 }

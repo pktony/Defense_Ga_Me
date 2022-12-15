@@ -17,7 +17,7 @@ public class KillCount : CountAbsInt
             if (count == REWARDED_KILL)
             {
                 count = 0;
-                GameManager.Inst.GetGolds();
+                GameManager.Inst.GetKillReward();
             }
             onEnemykill?.Invoke(count, REWARDED_KILL);
         }
