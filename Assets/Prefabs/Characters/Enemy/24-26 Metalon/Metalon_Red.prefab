@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7024624876305455701}
   - component: {fileID: -6477018159475254195}
   - component: {fileID: 8012450750132840917}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Metalon_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

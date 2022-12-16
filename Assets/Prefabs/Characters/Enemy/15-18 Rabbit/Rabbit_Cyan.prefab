@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7395179907403506188}
   - component: {fileID: 8657129466705235605}
   - component: {fileID: -1039757222107310258}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Rabbit_Cyan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

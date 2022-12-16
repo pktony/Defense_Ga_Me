@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 8508601883464989995, guid: 47ba1a1efb05a4c80aa1b43c273ea827,
         type: 3}
       propertyPath: m_Name
-      value: Ghost_Brown_Mid
+      value: Ghost_Brown_Mid Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ba1a1efb05a4c80aa1b43c273ea827, type: 3}

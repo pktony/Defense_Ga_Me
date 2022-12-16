@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 7632185006184222003, guid: bccfdbe7a708f4f4fb723bab29db1c69,
         type: 3}
       propertyPath: m_Name
-      value: SlimeVar_Blue_Mid
+      value: SlimeVar_Blue_Mid Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccfdbe7a708f4f4fb723bab29db1c69, type: 3}

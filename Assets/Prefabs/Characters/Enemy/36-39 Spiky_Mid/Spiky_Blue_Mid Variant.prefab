@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 7317625832770218662, guid: d52c742e7f6664dfa85c35ace025ae75,
         type: 3}
       propertyPath: m_Name
-      value: Spiky_Blue
+      value: Spiky_Blue_Mid Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d52c742e7f6664dfa85c35ace025ae75, type: 3}

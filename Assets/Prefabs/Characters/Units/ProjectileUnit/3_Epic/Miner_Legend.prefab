@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2635670436640671568}
   - component: {fileID: 4212469695108715356}
   - component: {fileID: -5861264875893814071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Miner_Legend
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -159,6 +159,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2095267162795845700}
     m_Modifications:
+    - target: {fileID: 7072444061582351952, guid: 910177ec26b76c14996c2d53627a6def,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 68f142c8fb55d47018eb7526811915e1,
+        type: 2}
     - target: {fileID: 7072444061591351794, guid: 910177ec26b76c14996c2d53627a6def,
         type: 3}
       propertyPath: m_RootOrder

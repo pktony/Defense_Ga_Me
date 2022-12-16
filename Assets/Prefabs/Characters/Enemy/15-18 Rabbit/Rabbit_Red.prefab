@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5166088424805272509}
   - component: {fileID: 6428074405165442852}
   - component: {fileID: -763593240850802629}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Rabbit_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

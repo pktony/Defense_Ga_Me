@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8825427277527420749}
   - component: {fileID: 2737220673207382824}
   - component: {fileID: -9057713567218206824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret_FastRocket
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ Animator:
   m_GameObject: {fileID: 8578361522185281168}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c16726737b9794f438542742d1a4def1, type: 3}
-  m_Controller: {fileID: 9100000, guid: f46e6f41fcc23d642912a2680fe55438, type: 2}
+  m_Controller: {fileID: 22100000, guid: 560b3dfae34dd41e1a587c2c4c2a3031, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

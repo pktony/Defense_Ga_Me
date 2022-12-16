@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 5395211951119459680, guid: 890f207d77d6f451286182d74df66257,
         type: 3}
       propertyPath: m_Name
-      value: Rabbit_Red
+      value: Rabbit_Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7329361872091666843, guid: 890f207d77d6f451286182d74df66257,
         type: 3}

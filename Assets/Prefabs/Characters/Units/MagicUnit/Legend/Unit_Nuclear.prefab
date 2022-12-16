@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8091857473714249073}
   - component: {fileID: 8574254178818929666}
   - component: {fileID: -7049579755749321324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit_Nuclear
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -659,6 +659,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8574254178818929724}
     m_Modifications:
+    - target: {fileID: 2836004473841745626, guid: f432554f564e69242897607d34218939,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 68f142c8fb55d47018eb7526811915e1,
+        type: 2}
     - target: {fileID: 2836004475591197023, guid: f432554f564e69242897607d34218939,
         type: 3}
       propertyPath: m_RootOrder

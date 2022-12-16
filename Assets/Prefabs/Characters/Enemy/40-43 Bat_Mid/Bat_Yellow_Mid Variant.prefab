@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 7784082974488561879, guid: 8bf340dc7bf4a4ced98567b7f16659c0,
         type: 3}
       propertyPath: m_Name
-      value: Bat_Yellow_Mid
+      value: Bat_Yellow_Mid Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf340dc7bf4a4ced98567b7f16659c0, type: 3}

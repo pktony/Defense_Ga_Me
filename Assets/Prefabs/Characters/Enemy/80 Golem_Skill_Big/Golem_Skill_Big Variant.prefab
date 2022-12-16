@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 2846957400005907357, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}
       propertyPath: m_Name
-      value: Golem_Skill_Big
+      value: Golem_Skill_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4908056113786802807, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}

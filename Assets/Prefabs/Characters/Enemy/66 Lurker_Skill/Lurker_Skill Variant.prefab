@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 52472277802465611, guid: 6bd215777aeba45b481c44763b209fb4,
         type: 3}
       propertyPath: m_Name
-      value: Lurker_Skill
+      value: Lurker_Skill Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3671625908854049215, guid: 6bd215777aeba45b481c44763b209fb4,
         type: 3}

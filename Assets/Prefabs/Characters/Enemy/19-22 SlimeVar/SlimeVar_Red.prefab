@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6011577383774997241}
   - component: {fileID: 5614247484869207648}
   - component: {fileID: -1283245110617062163}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: SlimeVar_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

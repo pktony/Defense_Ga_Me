@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 7617602877530618896, guid: ffbeecd327d7a44b4a27a0985178328c,
         type: 3}
       propertyPath: m_Name
-      value: Bat_Red_Big
+      value: Bat_Red_Big Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbeecd327d7a44b4a27a0985178328c, type: 3}

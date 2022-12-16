@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2870401066093519669}
   - component: {fileID: 4121862511174809401}
   - component: {fileID: -3767952179020666941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Miner_Myth
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -173,6 +173,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3820830409cd24473bf842cb1b88228a, type: 2}
+    - target: {fileID: 7072444061582351952, guid: 910177ec26b76c14996c2d53627a6def,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 68f142c8fb55d47018eb7526811915e1,
+        type: 2}
     - target: {fileID: 7072444061591351794, guid: 910177ec26b76c14996c2d53627a6def,
         type: 3}
       propertyPath: m_RootOrder

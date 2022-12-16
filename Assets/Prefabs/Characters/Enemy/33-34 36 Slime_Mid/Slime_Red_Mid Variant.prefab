@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 8900863585892111767, guid: 111cb768bfc154da29ae79bd00bc8b6f,
         type: 3}
       propertyPath: m_Name
-      value: Slime_Red_Mid
+      value: Slime_Red_Mid Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111cb768bfc154da29ae79bd00bc8b6f, type: 3}

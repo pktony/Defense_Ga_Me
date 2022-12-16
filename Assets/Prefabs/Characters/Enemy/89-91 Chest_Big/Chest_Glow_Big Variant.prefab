@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 2462325297199376413, guid: f7a90bf7529434cecb68303580241d08,
         type: 3}
       propertyPath: m_Name
-      value: Chest_Glow_Big
+      value: Chest_Glow_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7016535064904366098, guid: f7a90bf7529434cecb68303580241d08,
         type: 3}

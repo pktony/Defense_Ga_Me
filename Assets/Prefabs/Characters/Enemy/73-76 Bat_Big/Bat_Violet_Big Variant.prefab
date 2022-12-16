@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1953264116679938405, guid: 4ca515e19e4b04e91875d2a35d5d32e4,
         type: 3}
       propertyPath: m_Name
-      value: Bat_Violet_Big
+      value: Bat_Violet_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3779602251501514142, guid: 4ca515e19e4b04e91875d2a35d5d32e4,
         type: 3}

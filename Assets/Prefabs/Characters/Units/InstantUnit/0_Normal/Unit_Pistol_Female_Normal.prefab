@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2292282148518474902}
   - component: {fileID: -4065299918376849817}
   - component: {fileID: 909529864242848558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit_Pistol_Female_Normal
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -297,6 +297,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultFemalePBR
       objectReference: {fileID: 0}
+    - target: {fileID: 8117583199093232115, guid: f0aa068246263dd4ba7a61b712d2c765,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 2a0e4698a5489435abd86263efba1964,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0aa068246263dd4ba7a61b712d2c765, type: 3}
 --- !u!4 &2315661668683236586 stripped

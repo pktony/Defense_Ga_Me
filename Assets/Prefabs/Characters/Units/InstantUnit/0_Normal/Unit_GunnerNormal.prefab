@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1141259094506490746}
   - component: {fileID: 8360816155252170388}
   - component: {fileID: 7589082241267804825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit_GunnerNormal
   m_TagString: Unit
   m_Icon: {fileID: 0}

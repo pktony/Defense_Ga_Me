@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 8885714180460662380, guid: 125da08a3a4184960bd393653a31c664,
         type: 3}
       propertyPath: m_Name
-      value: Chest_Black_Big
+      value: Chest_Black_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8927883181736902424, guid: 125da08a3a4184960bd393653a31c664,
         type: 3}

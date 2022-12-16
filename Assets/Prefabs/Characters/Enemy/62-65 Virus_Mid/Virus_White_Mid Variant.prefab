@@ -105,7 +105,7 @@ PrefabInstance:
     - target: {fileID: 8158515335396623910, guid: 1731bb87569984281a110950bb3dff0d,
         type: 3}
       propertyPath: m_Name
-      value: Virus_White_Mid
+      value: Virus_White_Mid Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1731bb87569984281a110950bb3dff0d, type: 3}

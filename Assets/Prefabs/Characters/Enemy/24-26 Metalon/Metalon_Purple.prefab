@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1656448611340018973}
   - component: {fileID: -6549795376426561523}
   - component: {fileID: 6972800957584456189}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Metalon_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}

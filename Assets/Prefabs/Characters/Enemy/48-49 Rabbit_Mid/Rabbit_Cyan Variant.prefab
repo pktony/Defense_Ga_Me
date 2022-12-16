@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 7768412849353264337, guid: 92d1c94b8ef7e42c6b3939f35b5604c1,
         type: 3}
       propertyPath: m_Name
-      value: Rabbit_Cyan
+      value: Rabbit_Cyan Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92d1c94b8ef7e42c6b3939f35b5604c1, type: 3}

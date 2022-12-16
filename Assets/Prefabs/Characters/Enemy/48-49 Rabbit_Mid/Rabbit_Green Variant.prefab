@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 5211653005088095800, guid: c5c00f817d9a24087a8e49a9360664f1,
         type: 3}
       propertyPath: m_Name
-      value: Rabbit_Green
+      value: Rabbit_Green Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7438602632624947907, guid: c5c00f817d9a24087a8e49a9360664f1,
         type: 3}

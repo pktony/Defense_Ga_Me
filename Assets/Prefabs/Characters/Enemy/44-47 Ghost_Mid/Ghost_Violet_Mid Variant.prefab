@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 399030419324521627, guid: 33ceda26517c54b43b1d7508734ba551,
         type: 3}
       propertyPath: m_Name
-      value: Ghost_Violet_Mid
+      value: Ghost_Violet_Mid Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1868675584712350440, guid: 33ceda26517c54b43b1d7508734ba551,
         type: 3}

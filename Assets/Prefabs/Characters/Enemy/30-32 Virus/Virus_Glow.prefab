@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8426210012984853714}
   - component: {fileID: -3105924670900746526}
   - component: {fileID: 329439830753951443}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Virus_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

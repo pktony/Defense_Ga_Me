@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 5262438918677344481, guid: ab235a630870647749bc937f894eff7d,
         type: 3}
       propertyPath: m_Name
-      value: Golem_Skill_2
+      value: Golem_Skill_2 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab235a630870647749bc937f894eff7d, type: 3}

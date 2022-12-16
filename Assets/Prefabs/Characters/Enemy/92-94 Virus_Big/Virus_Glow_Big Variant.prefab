@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2369380939754258936, guid: b4ffb499907324a148c3a2b15e3279f4,
         type: 3}
       propertyPath: m_Name
-      value: Virus_Glow_Big
+      value: Virus_Glow_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4157435719206520258, guid: b4ffb499907324a148c3a2b15e3279f4,
         type: 3}

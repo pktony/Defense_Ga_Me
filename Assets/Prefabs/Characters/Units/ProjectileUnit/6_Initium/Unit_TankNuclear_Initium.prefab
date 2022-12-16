@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3890326645924810295}
   - component: {fileID: 1237568452987557860}
   - component: {fileID: 2913874178584693289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit_TankNuclear_Initium
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 2053901558740282399}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 0a5ee16daf4604cd9a7ad950594f47dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

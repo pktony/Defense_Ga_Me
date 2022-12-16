@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 4279617927963265395, guid: 564c12d957f144ff8a0d11d381f4c7d0,
         type: 3}
       propertyPath: m_Name
-      value: SlimeVar_Yellow_Big
+      value: SlimeVar_Yellow_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4453713920446539706, guid: 564c12d957f144ff8a0d11d381f4c7d0,
         type: 3}

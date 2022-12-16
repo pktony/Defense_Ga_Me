@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8190789342343011449}
   - component: {fileID: -8663273255411885767}
   - component: {fileID: 7736047206488631711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chest_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

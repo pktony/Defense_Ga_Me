@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4831659743450222897}
   - component: {fileID: -2934541001898923657}
   - component: {fileID: 113355352029767029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit_AR_Male_Rare
   m_TagString: Unit
   m_Icon: {fileID: 0}

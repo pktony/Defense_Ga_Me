@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 7151387116717001983, guid: e3480b6f4f50e49e5a6db43824c2a766,
         type: 3}
       propertyPath: m_Name
-      value: Virus_Black_Big
+      value: Virus_Black_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8496595634696156107, guid: e3480b6f4f50e49e5a6db43824c2a766,
         type: 3}

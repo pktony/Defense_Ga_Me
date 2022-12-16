@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4159208380867856059}
   - component: {fileID: 2827346237296536098}
   - component: {fileID: 3167753441657769986}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Bat_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

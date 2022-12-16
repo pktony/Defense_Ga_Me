@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 209818698575381514, guid: d2f5ec21bda8f4ab4ab3ac7b18915825,
         type: 3}
       propertyPath: m_Name
-      value: Bat_Violet_Mid
+      value: Bat_Violet_Mid Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3279139068078209265, guid: d2f5ec21bda8f4ab4ab3ac7b18915825,
         type: 3}

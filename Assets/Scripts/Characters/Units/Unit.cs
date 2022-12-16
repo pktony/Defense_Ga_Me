@@ -10,7 +10,7 @@ public abstract class Unit : MonoBehaviour, IUnit
 {
     private Animator anim;
     protected UnitStats unitStats;
-    
+
     private bool isMoving = false;
 
     private float attackTimer = 0f;
@@ -45,13 +45,13 @@ public abstract class Unit : MonoBehaviour, IUnit
     }
 
     public void Move(Vector3 destination)
-    { 
+    {
         IsMoving = true;
         destination.y = 0f;
         this.destination = destination;
     }
 
-    
+
     #endregion
 
     public bool IsMoving
@@ -61,9 +61,15 @@ public abstract class Unit : MonoBehaviour, IUnit
         {
             isMoving = value;
             if (!isMoving)
+            {
                 StartCoroutine(detectCoroutine);
+                anim.SetBool("isMoving", false);
+            }
             else
+            {
                 StopCoroutine(detectCoroutine);
+                anim.SetBool("isMoving", true);
+            }
         }
     }
 
@@ -71,17 +77,17 @@ public abstract class Unit : MonoBehaviour, IUnit
     protected virtual void Awake()
     {
         unitStats = GetComponent<UnitStats>();
-        anim = GetComponentInChildren<Animator>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
 
         detectWaitSeconds = new WaitForSeconds(detectInterval);
         detectCoroutine = FindTarget();
-        
+
         IsMoving = false;
     }
 
     private void Update()
     {
-        if(!isMoving)
+        if (!isMoving)
         {
             if (attackTarget != null)
             {
@@ -89,7 +95,7 @@ public abstract class Unit : MonoBehaviour, IUnit
             }
 
             attackTimer += Time.deltaTime;
-            if(attackTimer > unitStats.stats.attackCoolTime)
+            if (attackTimer > unitStats.stats.attackCoolTime)
             {
                 Attack(attackTarget);
                 attackTimer = 0f;
@@ -134,7 +140,12 @@ public abstract class Unit : MonoBehaviour, IUnit
                 transform.position, unitStats.stats.attackRange, LayerMask.GetMask("Enemy"));
 
             if (colls.Length > 0)
-                attackTarget = colls[0].GetComponent<IAttackable>();
+            {
+                if (colls[0].TryGetComponent<IAttackable>(out IAttackable attackable))
+                    attackTarget = attackable;
+                else
+                    attackTarget = null;
+            }
             else
                 attackTarget = null;
             yield return detectWaitSeconds;

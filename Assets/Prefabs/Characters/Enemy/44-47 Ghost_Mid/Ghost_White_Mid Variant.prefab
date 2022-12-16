@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 3550544926952056124, guid: d7e5b65f6e7de4dd2a5279ce5de4609e,
         type: 3}
       propertyPath: m_Name
-      value: Ghost_White_Mid
+      value: Ghost_White_Mid Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5651863276251240146, guid: d7e5b65f6e7de4dd2a5279ce5de4609e,
         type: 3}

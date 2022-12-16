@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 2374253657738282951, guid: 6337f395b308c49c1a2386b9e6909255,
         type: 3}
       propertyPath: m_Name
-      value: Spiky_Red
+      value: Spiky_Red_Mid Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5181055883589956815, guid: 6337f395b308c49c1a2386b9e6909255,
         type: 3}

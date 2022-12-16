@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 8922119074475570298, guid: 76edac4e643714d06a02b0e998045325,
         type: 3}
       propertyPath: m_Name
-      value: Chest_Glow
+      value: Chest_Glow Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76edac4e643714d06a02b0e998045325, type: 3}

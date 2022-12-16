@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5604672044902579767}
   - component: {fileID: 5999764573938700974}
   - component: {fileID: 1439809777471827650}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Spiky_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

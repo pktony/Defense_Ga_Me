@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wizard
+  m_Controller: {fileID: 9100000, guid: 6defa2fea7e9a934a8d2cafa30dc567a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9e6c2d8b423b3db4ca189e8497d60f1e, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 7606797ac0e0043c2984e4cc3278d7b7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5f93101c8d17f41c6a081237e4d4b16c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8a17a78f9d38340e8b45cb1098968ec1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 51d2900bd54004c8f8c5ca8dc25ecd4b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3117a504c08c644d1b57e258ca36bd87, type: 2}

@@ -90,6 +90,4 @@ public class UnitFactoryController : MonoBehaviour
     {
         projectileUnitFactory.SpawnUnit(type, this.transform);
     }
-
-
 }

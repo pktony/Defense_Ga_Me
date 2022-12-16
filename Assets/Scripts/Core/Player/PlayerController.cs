@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private void OnSelection(InputAction.CallbackContext _)
     {
         Ray ray = mainCam.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit, 999f, LayerMask.GetMask("Default")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 999f))
         {
             if(hit.collider.TryGetComponent<ISelectable>(out ISelectable selectable))
             {
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
                     if (selectedCharacter == selectable)
                     {// 같은 캐릭터를 선택한 경우 선택된 캐릭터 해제
                         selectedCharacter = null;
+                        selectedUnit = null;
                         return;
                     }
                 }
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.TryGetComponent<Unit>(out Unit unit))
                     {
                         UnitManager.Inst.SetSelectedUnit(unit);
+                        selectedUnit = unit;
                         selectable.GetSelected();
                     }
                 }
@@ -67,6 +69,12 @@ public class PlayerController : MonoBehaviour
             }
             else
             {// 유닛 외 다른 선택을 함
+                if(selectedUnit != null)
+                {
+                    Vector3 newPos = hit.point;
+                    newPos.y = 0f;
+                    selectedUnit.Move(newPos);
+                }
             }
         }
     }

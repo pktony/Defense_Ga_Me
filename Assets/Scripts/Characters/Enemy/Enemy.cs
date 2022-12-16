@@ -7,6 +7,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
 {
     GameManager gameManager;
     Transform model;
+    Animator anim;
 
     protected EnemyStats enemyStats;
 
@@ -36,7 +37,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     public bool IsDead
     {
         get => isDead;
-        set => isDead = value; //파티클 돌려주는 작업 필요 
+        set => isDead = value; 
     }
     public Vector3 CurrentPos => model.transform.forward * 3.0f + transform.position;
     public Vector3 ParticlePos => transform.position + Vector3.up * 1f;
@@ -47,6 +48,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     {
         model = transform.GetChild(0);
         enemyStats = GetComponent<EnemyStats>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
     protected virtual void Start()
@@ -96,8 +98,9 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     private void Die()
     {
         isDead = true;
+        anim.SetBool("isDead", isDead);
         gameManager.DecreaseEnemyCount();
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 3f);
     }
     #endregion
 
@@ -121,7 +124,5 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         for (int i = 0; i < waypoints.Length; i++)
             this.waypoints[i] = waypoints[i];
     }
-
-    //public abstract void SetStats(MonsterScriptables data);
     #endregion
 }

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 76196585323725146, guid: cb379f5b8c1624d3a92549778d07644f,
         type: 3}
       propertyPath: m_Name
-      value: Metalon_Green_Big
+      value: Metalon_Green_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1993835635553517434, guid: cb379f5b8c1624d3a92549778d07644f,
         type: 3}

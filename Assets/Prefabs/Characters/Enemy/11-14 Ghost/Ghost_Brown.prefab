@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8897607594609873910}
   - component: {fileID: 7349346169440845679}
   - component: {fileID: 263433672206623359}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ghost_Brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}

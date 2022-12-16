@@ -13,11 +13,11 @@ public abstract class InfoPanelAbs : MonoBehaviour
 
     public void ShowPanel()
     {
-        fadeUI.ShowImage(0.2f);
+        fadeUI.ShowImage();
     }
 
     public void HidePanel()
     {
-        fadeUI.HideImage(0.2f);
+        fadeUI.HideImage();
     }
 }

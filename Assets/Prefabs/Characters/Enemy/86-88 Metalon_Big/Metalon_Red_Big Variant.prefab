@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 3465473151855257528, guid: 5af8a040ed21b4178a6dbc5052ed977a,
         type: 3}
       propertyPath: m_Name
-      value: Metalon_Red_Big
+      value: Metalon_Red_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7708425250733441017, guid: 5af8a040ed21b4178a6dbc5052ed977a,
         type: 3}

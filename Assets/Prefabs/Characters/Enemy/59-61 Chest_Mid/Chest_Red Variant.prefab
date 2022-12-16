@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 8167360890028384503, guid: 304152ecd7c174891b5eb4d4b83a84d5,
         type: 3}
       propertyPath: m_Name
-      value: Chest_Red
+      value: Chest_Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8421002382664012501, guid: 304152ecd7c174891b5eb4d4b83a84d5,
         type: 3}

@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 2813612821395851085, guid: 29b9f4158fb2145fabf4f17bef588188,
         type: 3}
       propertyPath: m_Name
-      value: Ghost_Brown_Big
+      value: Ghost_Brown_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7121557928455090741, guid: 29b9f4158fb2145fabf4f17bef588188,
         type: 3}

@@ -34,14 +34,6 @@ public class ShieldEnemy : Enemy
         }
     }
 
-    //public override void SetStats(MonsterScriptables data)
-    //{
-    //    enemyStats.stats = new Stats_Enemy(data.name, data.maxHP, data.shield,
-    //        data.moveSpeed, data.dp);
-    //    HP = enemyStats.stats.maxHP;
-    //    Shield = enemyStats.stats.maxShield;
-    //}
-
     public override void GetAttack(float damage, bool isDPPenetratable = false)
     {
         if(Shield > 0f)

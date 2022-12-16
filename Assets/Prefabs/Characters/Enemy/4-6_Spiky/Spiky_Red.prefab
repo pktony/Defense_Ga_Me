@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3286798410338134298}
   - component: {fileID: 3682172277260666243}
   - component: {fileID: 6370886222022753598}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Spiky_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

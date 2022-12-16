@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 9158154323004794093, guid: f3943c13113874e6e82c43fd20ca997c,
         type: 3}
       propertyPath: m_Name
-      value: Spiky_Red_Mid Variant
+      value: Spiky_Red_Big
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3943c13113874e6e82c43fd20ca997c, type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6100410037658089094}
   - component: {fileID: -4063895511530040980}
   - component: {fileID: 7988256539048298570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tank_Missile
   m_TagString: Unit
   m_Icon: {fileID: 0}

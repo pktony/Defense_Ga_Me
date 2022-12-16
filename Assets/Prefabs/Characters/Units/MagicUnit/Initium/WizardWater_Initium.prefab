@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4708977060209394658}
   - component: {fileID: 3045520528821351440}
   - component: {fileID: 3646912668391036627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WizardWater_Initium
   m_TagString: Unit
   m_Icon: {fileID: 0}

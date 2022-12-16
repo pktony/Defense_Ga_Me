@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 2617106180420162792, guid: 5efca24e5f6a644a8b19356dad2010e7,
         type: 3}
       propertyPath: m_Name
-      value: Bat_Green_Big
+      value: Bat_Green_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8963011641637645399, guid: 5efca24e5f6a644a8b19356dad2010e7,
         type: 3}

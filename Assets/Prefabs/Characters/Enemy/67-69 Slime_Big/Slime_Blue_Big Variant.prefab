@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 4600558188563738343, guid: ae9095b4c4956475d9b0df2850bbeaf9,
         type: 3}
       propertyPath: m_Name
-      value: Slime_Blue_Big
+      value: Slime_Blue_Big Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5866226173786149026, guid: ae9095b4c4956475d9b0df2850bbeaf9,
         type: 3}
