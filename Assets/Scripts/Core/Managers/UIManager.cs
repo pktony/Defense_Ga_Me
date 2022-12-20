@@ -15,5 +15,8 @@ public class UIManager : Singleton<UIManager>
         infoPanels = FindObjectOfType<InfoPanelController>();
     }
 
-
+    public void PopupText(string text)
+    {
+        textUIs.PopupText.ShowText(text, 50);
+    }
 }

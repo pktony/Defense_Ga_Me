@@ -69,6 +69,13 @@ public class PlayerController : MonoBehaviour
             }
             else
             {// 유닛 외 다른 선택을 함
+                //if(hit.collider.CompareTag("UI"))
+                //{
+                //    selectedCharacter.UnSelect();
+                //    selectedCharacter = null;
+                //    selectedUnit = null;
+                //    return;
+                //}
                 if(selectedUnit != null)
                 {
                     Vector3 newPos = hit.point;

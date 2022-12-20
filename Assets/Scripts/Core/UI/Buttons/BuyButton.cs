@@ -20,6 +20,7 @@ public class BuyButton : MonoBehaviour
         {
             float randNumber = RandomSeedGenerator.GenerateRandomNumber();
             UnitManager.Inst.SpawnUnit(randNumber);
+            GameManager.Inst.golds.ChangeCountBy(-10);
         }
         else
         {

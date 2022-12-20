@@ -33,6 +33,32 @@ public class InfoPanel_Unit : InfoPanelAbs
     {
         unitName.text = stats.name;
         unitClass.text = stats.classType.ToString();
+        UnitSpace.UnitClasses classes = stats.classType;
+        switch(classes)
+        {
+            case UnitSpace.UnitClasses.Normal:
+                unitClass.color = Color.white;
+                break;
+            case UnitSpace.UnitClasses.Rare:
+                unitClass.color = Color.green;
+                break;
+            case UnitSpace.UnitClasses.Ancient:
+                unitClass.color = Color.blue + Color.green;
+                break;
+            case UnitSpace.UnitClasses.Epic:
+                unitClass.color = Color.gray;
+                break;
+            case UnitSpace.UnitClasses.Legend:
+                unitClass.color = Color.yellow;
+                break;
+            case UnitSpace.UnitClasses.Myth:
+                unitClass.color = Color.red;
+                break;
+            case UnitSpace.UnitClasses.Initium:
+                unitClass.color = Color.black;
+                break;
+        }
+
         attackPower.text = stats.attackPower.ToString();
         attackSpeed.text = string.Format("{0:0.00} / sec",
             1 / stats.attackCoolTime);

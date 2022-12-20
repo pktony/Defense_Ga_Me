@@ -19,7 +19,7 @@ public class GameManager : Singleton<GameManager>
     public int tempRound;
 #endif
     private const int MAX_ROUND = 100;
-    private const float TIME_NORMAL = 5f;
+    private const float TIME_NORMAL = 180f;
     private const float TIME_BOSS = 330f;
     private const int KILL_REWARD = 5;
     private const int UNIT_PRICE = 10;
@@ -88,13 +88,14 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         ResetTime(false);
+        TimeLeft = 30f;
     }
 
     private void Update()
     {
         if (!isGameover)
         {
-            //TimeLeft -= Time.deltaTime;
+            TimeLeft -= Time.deltaTime;
         }
 
 #if UNITY_EDITOR

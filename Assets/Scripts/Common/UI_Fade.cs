@@ -9,23 +9,26 @@ public class UI_Fade : MonoBehaviour
     private Image image;
     private CanvasGroup group;
 
+    [SerializeField]
+    private float fadeTime = 1.0f;
+
     private void Awake()
     {
         image = GetComponent<Image>();
         group = GetComponent<CanvasGroup>();
     }
 
-    public void ShowImage(float fadeTime = 1f)
+    public void ShowImage()
     {
-        StartCoroutine(AdjustAlpha(true, fadeTime));
+        StartCoroutine(AdjustAlpha(true));
     }
 
-    public void HideImage(float fadeTime = 1f)
+    public void HideImage()
     {
-        StartCoroutine(AdjustAlpha(false, fadeTime));
+        StartCoroutine(AdjustAlpha(false));
     }
 
-    private IEnumerator AdjustAlpha(bool isShow, float fadeTime)
+    private IEnumerator AdjustAlpha(bool isShow)
     {
         float deltaTime = Time.deltaTime / fadeTime;
         if (isShow)

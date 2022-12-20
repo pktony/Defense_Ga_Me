@@ -13,10 +13,14 @@ public class TextUIController : MonoBehaviour
     TextMeshProUGUI enemyText;
     TextMeshProUGUI killText;
 
+    private UI_PopupText popupText;
+
     private float currentGold = 0;
     private int finalGold = 999;
 
-    [SerializeField] private float smoothness = 10f;
+    [SerializeField] private float TextSmoothness = 10f;
+
+    public UI_PopupText PopupText => popupText;
 
     #region UNITY EVENT 함수 ####################################################
     private void Awake()
@@ -28,11 +32,12 @@ public class TextUIController : MonoBehaviour
         killText = transform.GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
 
         GetComponent<Canvas>().worldCamera = Camera.main;
+        popupText = transform.GetChild(5).GetComponent<UI_PopupText>();
     }
 
     private void Update()
     {
-         currentGold = Mathf.Lerp(currentGold, finalGold, smoothness * Time.deltaTime);
+         currentGold = Mathf.Lerp(currentGold, finalGold, TextSmoothness * Time.deltaTime);
          goldText.text = currentGold.ToString("0");
     }
     #endregion

@@ -36,6 +36,7 @@ public class UnitManager : Singleton<UnitManager>
             if (randomNumber < probabilityRanges[i])
             {
                 unitController.SpawnUnit(unitClassInfo[i].unitClasses);
+                UIManager.Inst.PopupText(unitClassInfo[i].className);
                 break;
             }
         }
@@ -43,10 +44,13 @@ public class UnitManager : Singleton<UnitManager>
 
     public void SellSelectedUnit()
     {
-        int sellPrice = unitClassInfo[(int)selectedUnit.ClassType].sellPrice;
-        GameManager.Inst.GetGolds(sellPrice);
-        GameManager.Inst.Player.SelectedCharacter.UnSelect(); // UI 캠 비활성화
-        Destroy(selectedUnit.gameObject);
+        if (selectedUnit != null)
+        {
+            int sellPrice = unitClassInfo[(int)selectedUnit.ClassType].sellPrice;
+            GameManager.Inst.GetGolds(sellPrice);
+            GameManager.Inst.Player.SelectedCharacter.UnSelect(); // UI 캠 비활성화
+            Destroy(selectedUnit.gameObject);
+        }
     }
 
     public void SetSelectedUnit(Unit selectedUnit)
