@@ -23,6 +23,7 @@ public class GameManager : Singleton<GameManager>
     private const float TIME_BOSS = 330f;
     private const int KILL_REWARD = 5;
     private const int UNIT_PRICE = 10;
+    private const int EXCHANGE_PRICE = 20;
 
     private int round = 1;
     private float timeLeft;
@@ -88,7 +89,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         ResetTime(false);
-        TimeLeft = 30f;
+        TimeLeft = 5f;
     }
 
     private void Update()
@@ -99,16 +100,19 @@ public class GameManager : Singleton<GameManager>
         }
 
 #if UNITY_EDITOR
-        //for(int i = 0; i < levelInfos.Count; i++)
+        //for (int i = 0; i < levelInfos.Count; i++)
         //{
         //    levelInfos[i].monster = (Monsters)i;
         //    // Boss Rounds
         //    //23, 35, 50, 66, 80, 95,96,97,98,99,100
-        //    if(i == 23 || i == 35 || i == 50 || i == 66 || i == 80 || i == 95 ||
+        //    if (i == 23 || i == 35 || i == 50 || i == 66 || i == 80 || i == 95 ||
         //       (i >= 95 && i <= 100))
         //    {
         //        levelInfos[i].isBoss = true;
+        //        levelInfos[i].spawnNumber = 1;
         //    }
+        //    else
+        //        levelInfos[i].spawnNumber = 20;
         //}
 
 
@@ -139,7 +143,6 @@ public class GameManager : Singleton<GameManager>
     private void RequestSpawn(int round, int spawnNumber)
     {
         spawner.SpawnEnemy((Monsters)round, spawnNumber);
-        enemyCount.ChangeCountBy(1);
     }
 
     private void ResetTime(bool isBoss = false)
@@ -172,5 +175,10 @@ public class GameManager : Singleton<GameManager>
     public bool CanBuyUnit()
     {
         return golds.IsEnoughGold(UNIT_PRICE);
+    }
+
+    public bool HasEnoughGoldToExchange()
+    {
+        return golds.IsEnoughGold(EXCHANGE_PRICE);
     }
 }

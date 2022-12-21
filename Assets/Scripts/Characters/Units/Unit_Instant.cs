@@ -31,8 +31,8 @@ public class Unit_Instant : Unit
         int playCount = attackNumber;
         while (playCount > 0)
         {
-            if (target != null || !target.IsDead)
-            {
+            if (ReferenceEquals(target, null) || !target.IsDead)
+            { // Fake Null
                 target.GetAttack(AttackPower);
                 particle.UseParticle(target.ParticlePos);
                 particle.ReturnParitcle();

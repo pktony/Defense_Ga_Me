@@ -36,7 +36,8 @@ public class UnitManager : Singleton<UnitManager>
             if (randomNumber < probabilityRanges[i])
             {
                 unitController.SpawnUnit(unitClassInfo[i].unitClasses);
-                UIManager.Inst.PopupText(unitClassInfo[i].className);
+                UIManager.Inst.PopupText(unitClassInfo[i].className,
+                    unitClassInfo[i].color);
                 break;
             }
         }
@@ -48,7 +49,6 @@ public class UnitManager : Singleton<UnitManager>
         {
             int sellPrice = unitClassInfo[(int)selectedUnit.ClassType].sellPrice;
             GameManager.Inst.GetGolds(sellPrice);
-            GameManager.Inst.Player.SelectedCharacter.UnSelect(); // UI 캠 비활성화
             Destroy(selectedUnit.gameObject);
         }
     }
@@ -56,7 +56,23 @@ public class UnitManager : Singleton<UnitManager>
     public void SetSelectedUnit(Unit selectedUnit)
     {
         this.selectedUnit = selectedUnit;
+        UIManager.Inst.DisableButtons(IsExchangable(), IsSellable());
     }
+
+    public void ExchangeUnit()
+    {
+        if(IsExchangable())
+        {
+            //GameManager.Inst.Player.SelectedCharacter.UnSelect();
+            Destroy(selectedUnit.gameObject);
+            SpawnUnit(probabilityRanges[(int)selectedUnit.ClassType]);
+        }
+    }
+
+    private bool IsExchangable() => unitClassInfo[(int)selectedUnit.ClassType].isExchangable;
+    private bool IsSellable() => unitClassInfo[(int)selectedUnit.ClassType].isSellable;
+
+
 #if UNITY_EDITOR
     //private void Update()
     //{

@@ -20,7 +20,7 @@ public class UnitStats : CharacterStats
                 selectionCircle.SetActive(true);
                 UIManager.Inst.InfoPanels.UnitPanel.SetDatas(ref stats);
                 UIManager.Inst.InfoPanels.ShowUnitPanel();
-                Debug.Log("selected");
+                //Debug.Log("selected");
             }
             else
             {// 이미 선택 됐으면

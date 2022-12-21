@@ -2,106 +2,110 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CanvasGroup))]
-public class UI_Popup : MonoBehaviour
+namespace UIs
 {
-    private CanvasGroup group;
-    private RectTransform rect;
-
-    enum animationStyle { shrink, pop, fade, instant}
-
-    [SerializeField]
-    private animationStyle style;
-
-    [SerializeField] [Range(0.01f, 0.5f)]
-    private float popupTime = 1f;
-
-    private const float ERROR_CORRECTION_NUM = 0.05f;
-    private bool isShow = true;
-    private bool isMoving = false;
-
-    private void Awake()
+    [RequireComponent(typeof(CanvasGroup))]
+    public class UI_Popup : MonoBehaviour
     {
-        group = GetComponent<CanvasGroup>();
-        rect = GetComponent<RectTransform>();
-    }
+        private CanvasGroup group;
+        private RectTransform rect;
 
-    public void OpenCloseWindow()
-    {
-        if (isMoving) return;
-        switch(style)
+        enum animationStyle { shrink, pop, fade, instant }
+
+        [SerializeField]
+        private animationStyle style;
+
+        [SerializeField]
+        [Range(0.01f, 0.5f)]
+        private float popupTime = 1f;
+
+        private const float ERROR_CORRECTION_NUM = 0.05f;
+        private bool isShow = true;
+        private bool isMoving = false;
+
+        private void Awake()
         {
-            case animationStyle.shrink:
-                StartCoroutine(AdjustWindowSize_Shrink(this.isShow));
-                break;
-            case animationStyle.pop:
-                StartCoroutine(AdjustWindowSize_Pop(this.isShow));
-                break;
-            case animationStyle.fade:
-                break;
-            case animationStyle.instant:
-                break;
+            group = GetComponent<CanvasGroup>();
+            rect = GetComponent<RectTransform>();
         }
-        this.isShow = !this.isShow ;
-    }
 
-    private IEnumerator AdjustWindowSize_Shrink(bool isShow)
-    {
-        isMoving = true;
-        float deltaTime = Time.unscaledDeltaTime / popupTime;
-        if(isShow)
-        {// 나타나기
-            ShowPanels();
-            while (rect.localScale.x < 1f - ERROR_CORRECTION_NUM)
+        public void OpenCloseWindow()
+        {
+            if (isMoving) return;
+            switch (style)
             {
-                rect.localScale = Vector2.Lerp(rect.localScale, Vector2.one, deltaTime);
+                case animationStyle.shrink:
+                    StartCoroutine(AdjustWindowSize_Shrink(this.isShow));
+                    break;
+                case animationStyle.pop:
+                    StartCoroutine(AdjustWindowSize_Pop(this.isShow));
+                    break;
+                case animationStyle.fade:
+                    break;
+                case animationStyle.instant:
+                    break;
+            }
+            this.isShow = !this.isShow;
+        }
+
+        private IEnumerator AdjustWindowSize_Shrink(bool isShow)
+        {
+            isMoving = true;
+            float deltaTime = Time.unscaledDeltaTime / popupTime;
+            if (isShow)
+            {// 나타나기
+                ShowPanels();
+                while (rect.localScale.x < 1f - ERROR_CORRECTION_NUM)
+                {
+                    rect.localScale = Vector2.Lerp(rect.localScale, Vector2.one, deltaTime);
+                    yield return null;
+                }
+            }
+            else
+            {// 숨기기
+                while (rect.localScale.x > ERROR_CORRECTION_NUM)
+                {
+                    rect.localScale = Vector2.Lerp(rect.localScale, Vector2.zero, deltaTime);
+                    yield return null;
+                }
+                HidePanels();
+            }
+            isMoving = false;
+        }
+
+        private IEnumerator AdjustWindowSize_Pop(bool isShow)
+        {
+            float timer = 0f;
+            float deltaTime = Time.unscaledDeltaTime / popupTime;
+            if (isShow)
+            {
+                ShowPanels();
                 yield return null;
             }
-        }
-        else
-        {// 숨기기
-            while (rect.localScale.x > ERROR_CORRECTION_NUM)
+
+            while (timer < popupTime)
             {
-                rect.localScale = Vector2.Lerp(rect.localScale, Vector2.zero, deltaTime);
+                timer += Time.unscaledDeltaTime;
+                rect.localScale = Vector2.Lerp(rect.localScale, Vector2.one * 1.2f, deltaTime);
                 yield return null;
             }
-            HidePanels();
+            rect.localScale = Vector2.one;
+            if (!isShow) HidePanels();
         }
-        isMoving = false;
-    }
 
-    private IEnumerator AdjustWindowSize_Pop(bool isShow)
-    {
-        float timer = 0f;
-        float deltaTime = Time.unscaledDeltaTime / popupTime;
-        if (isShow)
+        private void ShowPanels()
         {
-            ShowPanels();
-            yield return null;
+            group.alpha = 1f;
+            group.interactable = true;
+            group.blocksRaycasts = true;
         }
 
-        while (timer < popupTime)
+        private void HidePanels()
         {
-            timer += Time.unscaledDeltaTime;
-            rect.localScale = Vector2.Lerp(rect.localScale, Vector2.one * 1.2f, deltaTime);
-            yield return null;
+            group.alpha = 0f;
+            group.interactable = false;
+            group.blocksRaycasts = false;
         }
-        rect.localScale = Vector2.one;
-        if (!isShow) HidePanels();
-    }
 
-    private void ShowPanels()
-    {
-        group.alpha = 1f;
-        group.interactable = true;
-        group.blocksRaycasts = true;
     }
-
-    private void HidePanels()
-    {
-        group.alpha = 0f;
-        group.interactable = false;
-        group.blocksRaycasts = false;
-    }
-
 }

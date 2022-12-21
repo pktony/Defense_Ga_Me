@@ -48,42 +48,49 @@ MonoBehaviour:
   - className: Normal
     percentage: 50
     unitClasses: 0
+    color: {r: 1, g: 1, b: 1, a: 0}
     isSellable: 1
     isExchangable: 0
     sellPrice: 3
   - className: Rare
     percentage: 25
     unitClasses: 1
+    color: {r: 0.07539296, g: 1, b: 0, a: 0}
     isSellable: 1
     isExchangable: 0
     sellPrice: 5
   - className: Ancient
     percentage: 18.815
     unitClasses: 2
+    color: {r: 0.89599895, g: 0, b: 1, a: 1}
     isSellable: 1
     isExchangable: 0
     sellPrice: 7
   - className: Epic
     percentage: 5.125
     unitClasses: 3
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     isSellable: 1
     isExchangable: 0
     sellPrice: 10
   - className: Legend
     percentage: 1
     unitClasses: 4
+    color: {r: 1, g: 0.9780377, b: 0, a: 1}
     isSellable: 1
     isExchangable: 0
     sellPrice: 15
   - className: Myth
     percentage: 0.05
     unitClasses: 5
+    color: {r: 1, g: 0, b: 0, a: 1}
     isSellable: 0
     isExchangable: 0
     sellPrice: 0
   - className: Initium
     percentage: 0.01
     unitClasses: 6
+    color: {r: 0, g: 0, b: 0, a: 1}
     isSellable: 0
     isExchangable: 0
     sellPrice: 0

@@ -50,8 +50,6 @@ public abstract class Unit : MonoBehaviour, IUnit
         destination.y = 0f;
         this.destination = destination;
     }
-
-
     #endregion
 
     public bool IsMoving

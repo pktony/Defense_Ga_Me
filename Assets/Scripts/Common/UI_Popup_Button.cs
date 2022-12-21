@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_Popup_Button : MonoBehaviour, IPointerClickHandler
+namespace UIs
 {
-    [SerializeField]
-    private UI_Popup popupWindow;
-
-    public void OnPointerClick(PointerEventData eventData)
+    public class UI_Popup_Button : MonoBehaviour, IPointerClickHandler
     {
-        popupWindow.OpenCloseWindow();
+        [SerializeField]
+        private UI_Popup popupWindow;
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            popupWindow.OpenCloseWindow();
+        }
     }
 }

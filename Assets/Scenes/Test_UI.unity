@@ -212,6 +212,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &569859986 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2056688315565358426, guid: 9de1d1d4f60c74093bb011c7a299b4e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1968198623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &591342038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -758,6 +764,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1051995738, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051995738, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051995738, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051995738, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584991779, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584991779, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584991779, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584991779, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1968516113, guid: 9de1d1d4f60c74093bb011c7a299b4e2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -960,6 +998,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1605603064057614385, guid: 3fa1524a4898048718b75ddd69459118,
+        type: 3}
+      propertyPath: uiCanvas
+      value: 
+      objectReference: {fileID: 569859986}
     - target: {fileID: 1605603064057614398, guid: 3fa1524a4898048718b75ddd69459118,
         type: 3}
       propertyPath: m_RootOrder
@@ -1083,6 +1126,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UnitManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731997021699474502, guid: b9e4adc7963db46ebb55c12883d7a740,
+        type: 3}
+      propertyPath: unitClassInfo.Array.data[0].isExchangable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731997021699474502, guid: b9e4adc7963db46ebb55c12883d7a740,
+        type: 3}
+      propertyPath: unitClassInfo.Array.data[4].isExchangable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731997021699474502, guid: b9e4adc7963db46ebb55c12883d7a740,
+        type: 3}
+      propertyPath: unitClassInfo.Array.data[5].isExchangable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9e4adc7963db46ebb55c12883d7a740, type: 3}

@@ -3384,7 +3384,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iconsDouble_155
+      name: _Exchange
       rect:
         serializedVersion: 2
         x: 1024
@@ -5501,6 +5501,7 @@ TextureImporter:
       iconsDouble_121: -391629263
       iconsDouble_9: 1733335733
       iconsDouble_55: -1046965950
+      _Exchange: -938570294
       iconsDouble_81: -403321436
       iconsDouble_234: 1003224098
       iconsDouble_236: 2021659972
@@ -5509,25 +5510,24 @@ TextureImporter:
       iconsDouble_110: 1817891419
       iconsDouble_223: -2080201044
       iconsDouble_28: 1207654760
-      iconsDouble_155: -938570294
+      iconsDouble_174: 138464039
       iconsDouble_104: -1088073591
       iconsDouble_246: -585772447
-      iconsDouble_174: 138464039
-      iconsDouble_38: -289130743
       iconsDouble_224: -342209318
+      iconsDouble_38: -289130743
       iconsDouble_47: -215629838
       _Sell: 262548358
       iconsDouble_60: 371769208
       iconsDouble_192: -1525843347
       iconsDouble_122: -156332356
       iconsDouble_105: -36838583
-      iconsDouble_40: -1296028796
+      iconsDouble_165: 187058549
       iconsDouble_103: 1421107814
       iconsDouble_143: -590101726
       iconsDouble_140: -1366095315
       iconsDouble_164: -1293013339
       _Unit: 470759596
-      iconsDouble_165: 187058549
+      iconsDouble_40: -1296028796
       iconsDouble_238: 273531225
       iconsDouble_218: 1320686353
       iconsDouble_123: 1301134295

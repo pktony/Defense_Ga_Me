@@ -3,55 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasGroup))]
-public class UI_Fade : MonoBehaviour
+namespace UIs
 {
-    private Image image;
-    private CanvasGroup group;
-
-    [SerializeField]
-    private float fadeTime = 1.0f;
-
-    private void Awake()
+    [RequireComponent(typeof(CanvasGroup))]
+    public class UI_Fade : MonoBehaviour
     {
-        image = GetComponent<Image>();
-        group = GetComponent<CanvasGroup>();
-    }
+        private Image image;
+        private CanvasGroup group;
 
-    public void ShowImage()
-    {
-        StartCoroutine(AdjustAlpha(true));
-    }
+        [SerializeField]
+        private float fadeTime = 1.0f;
 
-    public void HideImage()
-    {
-        StartCoroutine(AdjustAlpha(false));
-    }
-
-    private IEnumerator AdjustAlpha(bool isShow)
-    {
-        float deltaTime = Time.deltaTime / fadeTime;
-        if (isShow)
+        private void Awake()
         {
-            while (group.alpha < 1f)
-            {
-                group.alpha += deltaTime;
-                yield return null;
-            }
-            group.alpha = 1f;
-            group.interactable = true;
-            group.blocksRaycasts = true;
+            image = GetComponent<Image>();
+            group = GetComponent<CanvasGroup>();
         }
-        else
+
+        public void ShowImage()
         {
-            while (group.alpha > 0f)
+            StartCoroutine(AdjustAlpha(true));
+        }
+
+        public void HideImage()
+        {
+            StartCoroutine(AdjustAlpha(false));
+        }
+
+        private IEnumerator AdjustAlpha(bool isShow)
+        {
+            float deltaTime = Time.deltaTime / fadeTime;
+            if (isShow)
             {
-                group.alpha -= deltaTime;
-                yield return null;
+                while (group.alpha < 1f)
+                {
+                    group.alpha += deltaTime;
+                    yield return null;
+                }
+                group.alpha = 1f;
+                group.interactable = true;
+                group.blocksRaycasts = true;
             }
-            group.alpha = 0f;
-            group.interactable = false;
-            group.blocksRaycasts = false;
+            else
+            {
+                while (group.alpha > 0f)
+                {
+                    group.alpha -= deltaTime;
+                    yield return null;
+                }
+                group.alpha = 0f;
+                group.interactable = false;
+                group.blocksRaycasts = false;
+            }
         }
     }
 }

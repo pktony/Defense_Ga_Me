@@ -50,289 +50,289 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelInfos:
   - monster: 0
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 1
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 2
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 3
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 4
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 5
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 6
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 7
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 8
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 9
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 10
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 11
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 12
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 13
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 14
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 15
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 16
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 17
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 18
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 19
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 20
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 21
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 22
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 23
     spawnNumber: 1
     isBoss: 1
   - monster: 24
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 25
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 26
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 27
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 28
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 29
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 30
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 31
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 32
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 33
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 34
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 35
     spawnNumber: 1
     isBoss: 1
   - monster: 36
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 37
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 38
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 39
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 40
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 41
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 42
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 43
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 44
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 45
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 46
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 47
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 48
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 49
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 50
     spawnNumber: 1
     isBoss: 1
   - monster: 51
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 52
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 53
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 54
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 55
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 56
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 57
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 58
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 59
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 60
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 61
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 62
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 63
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 64
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 65
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 66
     spawnNumber: 1
     isBoss: 1
   - monster: 67
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 68
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 69
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 70
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 71
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 72
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 73
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 74
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 75
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 76
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 77
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 78
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 79
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 80
     spawnNumber: 1
     isBoss: 1
   - monster: 81
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 82
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 83
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 84
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 85
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 86
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 87
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 88
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 89
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 90
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 91
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 92
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 93
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 94
-    spawnNumber: 1
+    spawnNumber: 20
     isBoss: 0
   - monster: 95
     spawnNumber: 1
@@ -352,6 +352,9 @@ MonoBehaviour:
   - monster: 100
     spawnNumber: 1
     isBoss: 1
+  golds: {fileID: 8433217811704156037}
+  enemyCount: {fileID: 5605267134947097603}
+  killCount: {fileID: 7357576271378190949}
   tempRound: 1
 --- !u!114 &1730783704
 MonoBehaviour:

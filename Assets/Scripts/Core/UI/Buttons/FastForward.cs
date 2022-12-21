@@ -28,14 +28,14 @@ public class FastForward : MonoBehaviour
     {
         if(speed == playSpeeds.normal)
         {
-            Time.timeScale = 1.0f;
-            arrowImg.sprite = speedImages[0];
             speed = playSpeeds.x2;
+            arrowImg.sprite = speedImages[1];
+            Time.timeScale = 2.0f;
         }
         else if(speed == playSpeeds.x2)
         {
-            Time.timeScale = 2.0f;
-            arrowImg.sprite = speedImages[1];
+            Time.timeScale = 1.0f;
+            arrowImg.sprite = speedImages[0];
             speed = playSpeeds.normal;
         }
     }

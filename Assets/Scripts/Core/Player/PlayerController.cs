@@ -3,11 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
     InputActions inputs;
     Camera mainCam;
+    [SerializeField]
+    Canvas uiCanvas;
+
+    private GraphicRaycaster raycaster;
+    private PointerEventData eventData;
+    private List<RaycastResult> raycastResults;
 
     private ISelectable selectedCharacter;
     private Unit selectedUnit;
@@ -18,6 +26,10 @@ public class PlayerController : MonoBehaviour
     {
         inputs = new();
         mainCam = Camera.main;
+
+        raycaster = uiCanvas.GetComponent<GraphicRaycaster>();
+        eventData = new PointerEventData(null);
+        raycastResults = new();
     }
 
     private void OnEnable()
@@ -69,19 +81,39 @@ public class PlayerController : MonoBehaviour
             }
             else
             {// 유닛 외 다른 선택을 함
-                //if(hit.collider.CompareTag("UI"))
-                //{
-                //    selectedCharacter.UnSelect();
-                //    selectedCharacter = null;
-                //    selectedUnit = null;
-                //    return;
-                //}
-                if(selectedUnit != null)
+                if (selectedCharacter != null)
+                {
+                    eventData.position = Mouse.current.position.ReadValue();
+                    raycaster.Raycast(eventData, raycastResults);
+                    foreach (var result in raycastResults)
+                    {
+                        if (result.gameObject.CompareTag("UI"))
+                        {
+                            selectedCharacter.UnSelect();
+                            selectedCharacter = null;
+                            selectedUnit = null;
+                            raycastResults.Clear();
+                            return;
+                        }
+                    }
+                }
+
+                if (selectedUnit != null)
                 {
                     Vector3 newPos = hit.point;
                     newPos.y = 0f;
                     selectedUnit.Move(newPos);
                 }
+            }
+        }
+        else
+        {
+            if (selectedCharacter != null)
+            {
+                selectedCharacter.UnSelect();
+                selectedCharacter = null;
+                selectedUnit = null;
+                raycastResults.Clear();
             }
         }
     }

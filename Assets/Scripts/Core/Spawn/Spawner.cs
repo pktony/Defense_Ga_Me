@@ -41,6 +41,7 @@ public class Spawner : MonoBehaviour
         {
             enemyFactory.SpawnMonster(type, spawnParents[0]);
             enemiesToSpawn--;
+            GameManager.Inst.enemyCount.ChangeCountBy(1);
             yield return spawnWaitSeconds;
         }
     }

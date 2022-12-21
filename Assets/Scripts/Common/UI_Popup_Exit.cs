@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_Popup_Exit : MonoBehaviour, IPointerClickHandler
+namespace UIs
 {
-    private UI_Popup popupWindow;
-
-    private void Awake()
+    public class UI_Popup_Exit : MonoBehaviour, IPointerClickHandler
     {
-        popupWindow = GetComponentInParent<UI_Popup>();
-    }
+        private UI_Popup popupWindow;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        popupWindow.OpenCloseWindow() ;
+        private void Awake()
+        {
+            popupWindow = GetComponentInParent<UI_Popup>();
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            popupWindow.OpenCloseWindow();
+        }
     }
 }

@@ -13,15 +13,15 @@ public class UICam : MonoBehaviour
     }
 
     private void LateUpdate()
-    { 
-        FollowTarget(player.SelectedCharacter);
+    {
+        if (player.SelectedCharacter != null)
+        {
+            FollowTarget(player.SelectedCharacter);
+        }
     }
 
     private void FollowTarget(ISelectable target)
     {
-        if (target != null)
-        {
-            transform.position = target.currentPos + camOffset;
-        }
+        transform.position = target.currentPos + camOffset;
     }
 }
