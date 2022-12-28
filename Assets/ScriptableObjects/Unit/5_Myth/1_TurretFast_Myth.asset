@@ -16,6 +16,7 @@ MonoBehaviour:
     type: 3}
   unitName: Old Turret
   classType: 5
+  type: 2
   attackPower: 1
   attackNumber: 1
   attackCoolTime: 0.5

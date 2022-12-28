@@ -6,14 +6,15 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour, IAttackable
 {
     GameManager gameManager;
-    Transform model;
-    Animator anim;
+    protected Transform model;
 
+    protected Animator anim;
     protected EnemyStats enemyStats;
 
     private Transform[] waypoints;
     private int currentIndex = 0;
     private const float STOPPING_DIST = 0.1f;
+    protected float currentSpeed;
 
     private bool isDead = false;
     public System.Action<float, float> onHealthChange;
@@ -43,8 +44,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     public Vector3 ParticlePos => transform.position + Vector3.up * 1f;
     public Transform Trans => this.transform;
 
-
-    private void Awake()
+    protected virtual void Awake()
     {
         model = transform.GetChild(0);
         enemyStats = GetComponent<EnemyStats>();
@@ -55,6 +55,7 @@ public abstract class Enemy : MonoBehaviour, IAttackable
     {
         gameManager = GameManager.Inst;
         HP = MaxHP;
+        currentSpeed = enemyStats.stats.moveSpeed;
         LookTowardsWaypoint();
     }
 
@@ -66,13 +67,38 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         }
     }
 
+    #region PUBLIC 함수 #########################################################
+    public virtual void GetAttack(float damage, bool isDPPenetratable = false)
+    {
+        if (!isDead)
+        {
+            if (!isDPPenetratable)
+                HP -= Mathf.Max(1f, damage - DP);
+            else
+                HP -= Mathf.Max(1f, damage);
+            //Debug.Log($"{gameObject.name} HP : {HP}");
+        }
+    }
+
+    public void InitializeWaypoints(Transform[] waypoints)
+    {
+        this.waypoints = new Transform[waypoints.Length];
+        for (int i = 0; i < waypoints.Length; i++)
+            this.waypoints[i] = waypoints[i];
+    }
+    #endregion
+
+    #region PROTECTED 함수 ######################################################
+    
+    #endregion
+
     #region PRIVATE 함수 ########################################################
     private void Move()
     {
         Vector3 direction =
             (waypoints[currentIndex].position - transform.position).normalized;
 
-        transform.position += enemyStats.stats.moveSpeed * Time.fixedDeltaTime
+        transform.position += currentSpeed * Time.fixedDeltaTime
                     * direction;
 
         if ((waypoints[currentIndex].position - transform.position).sqrMagnitude
@@ -101,28 +127,6 @@ public abstract class Enemy : MonoBehaviour, IAttackable
         anim.SetBool("isDead", isDead);
         gameManager.DecreaseEnemyCount();
         Destroy(this.gameObject, 3f);
-    }
-    #endregion
-
-
-    #region PUBLIC 함수 #########################################################
-    public virtual void GetAttack(float damage, bool isDPPenetratable = false)
-    {
-        if (!isDead)
-        {
-            if (!isDPPenetratable)
-                HP -= Mathf.Max(1f, damage - DP);
-            else
-                HP -= Mathf.Max(1f, damage);
-            //Debug.Log($"{gameObject.name} HP : {HP}");
-        }
-    }
-
-    public void InitializeWaypoints(Transform[] waypoints)
-    {
-        this.waypoints = new Transform[waypoints.Length];
-        for (int i = 0; i < waypoints.Length; i++)
-            this.waypoints[i] = waypoints[i];
     }
     #endregion
 }

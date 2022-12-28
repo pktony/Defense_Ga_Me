@@ -11,6 +11,7 @@ public struct Stats_Unit
     public float attackCoolTime;
     public float attackRange;
     public bool isDPPentratable;
+    public UnitTypes type;
 
     /// <summary>
     /// Stat 설정용 구조체 생성자
@@ -21,11 +22,12 @@ public struct Stats_Unit
     /// <param name="attackSpeed">유닛의 공격 쿨타임</param>
     /// <param name="attackRange">유닛의 공격 사거리 </param>
     /// <param name="isDPPentratable">방어력 무시 여부</param>
-    public Stats_Unit(string name, UnitClasses classType, int AP,
+    public Stats_Unit(string name, UnitClasses classType, UnitTypes type, int AP,
         float attackSpeed, float attackRange, bool isDPPentratable)
     {
         this.name = name;
         this.classType = classType;
+        this.type = type;
         this.attackPower = AP;
         this.attackCoolTime = attackSpeed;
         this.attackRange = attackRange;

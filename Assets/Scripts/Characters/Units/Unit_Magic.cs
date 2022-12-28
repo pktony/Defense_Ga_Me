@@ -75,9 +75,4 @@ public class Unit_Magic : Unit
             magics.Enqueue(usedMagic);
         }
     }
-
-    protected override void Upgrade()
-    {
-        throw new System.NotImplementedException();
-    }
 }

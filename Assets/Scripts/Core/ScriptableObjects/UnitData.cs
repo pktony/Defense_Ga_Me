@@ -8,6 +8,7 @@ public class UnitData : ScriptableObject
     public GameObject unitPrefab;
     public string unitName = "";
     public UnitSpace.UnitClasses classType;
+    public UnitSpace.UnitTypes type;
     public int attackPower;
     public int attackNumber = 1;
     public float attackCoolTime;

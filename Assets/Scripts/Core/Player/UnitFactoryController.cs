@@ -61,7 +61,7 @@ public class UnitFactoryController : MonoBehaviour
     /// 유닛을 생성
     /// </summary>
     /// <param name="type">생성할 유닛의 타입</param>
-    public void SpawnUnit(UnitClasses type)
+    public UnitStats SpawnUnit(UnitClasses type)
     {
         int randNum = RandomSeedGenerator.GenerateRandomInteger();
 
@@ -72,22 +72,22 @@ public class UnitFactoryController : MonoBehaviour
            unit == Units.Tank_Nuclear)
         {
             var convertedUnit = unit.ConvertEnumTo<ProjectileUnitType>();
-            SpawnProjectileUnit(convertedUnit);
+            return SpawnProjectileUnit(convertedUnit);
         }
         else
         {
             var convertedUnit = unit.ConvertEnumTo<InstantUnitType>();
-            SpawnInstantUnit(convertedUnit);
+            return SpawnInstantUnit(convertedUnit);
         }
     }
 
-    private void SpawnInstantUnit(InstantUnitType type)
+    private UnitStats SpawnInstantUnit(InstantUnitType type)
     {
-        instantUnitFactory.SpawnUnit(type, this.transform);
+        return instantUnitFactory.SpawnUnit(type, this.transform);
     }
 
-    private void SpawnProjectileUnit(ProjectileUnitType type)
+    private UnitStats SpawnProjectileUnit(ProjectileUnitType type)
     {
-        projectileUnitFactory.SpawnUnit(type, this.transform);
+        return projectileUnitFactory.SpawnUnit(type, this.transform);
     }
 }

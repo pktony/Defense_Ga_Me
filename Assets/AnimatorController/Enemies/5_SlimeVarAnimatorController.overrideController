@@ -6,10 +6,10 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 6_MetalonAnimatorController 5
+  m_Name: 5_SlimeVarAnimatorController
   m_Controller: {fileID: 9100000, guid: fb3b50867ac544914a0bff7d9df53e2c, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: d13b6710674ae45b98af1b8514062f02, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 3f71aa5de382743bcad9e6f4b6f5d043, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b5215954ce0b84a7d949112ab9ce8c5b, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 9b53cc48b4cff4e00bf54de93be14cbd, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: a93bdc79bf7e846649a909c7efb1528c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4e49698ae1d4b481ca27e8d4e6f5b58a, type: 2}

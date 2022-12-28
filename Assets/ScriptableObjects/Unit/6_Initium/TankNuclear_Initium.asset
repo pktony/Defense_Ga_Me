@@ -16,6 +16,7 @@ MonoBehaviour:
     type: 3}
   unitName: NUkE TANK
   classType: 6
+  type: 1
   attackPower: 1
   attackNumber: 1
   attackCoolTime: 5

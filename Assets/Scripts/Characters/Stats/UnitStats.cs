@@ -33,7 +33,7 @@ public class UnitStats : CharacterStats
 
     public void SetStats(UnitData data)
     {
-        stats = new Stats_Unit(data.unitName, data.classType,
-            data.attackPower, data.attackCoolTime, data.attackRange, isDPPentratable);
+        stats = new Stats_Unit(data.unitName, data.classType, data.type,
+            data.attackPower, data.attackCoolTime, data.attackRange, isDPPentratable) ;
     }
 }

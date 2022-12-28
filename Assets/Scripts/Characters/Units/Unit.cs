@@ -26,6 +26,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     protected IAttackable attackTarget;
     #region IUNIT #############################################################
     public UnitSpace.UnitClasses ClassType => unitStats.stats.classType;
+    public UnitSpace.UnitTypes UnitType => unitStats.stats.type;
     public int AttackPower
     {
         get => unitStats.stats.attackPower;
@@ -150,7 +151,10 @@ public abstract class Unit : MonoBehaviour, IUnit
         }
     }
 
-    protected abstract void Upgrade();
+    public void Upgrade()
+    {
+        unitStats.stats.attackPower *= 2;
+    }
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

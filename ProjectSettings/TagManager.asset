@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Unit
   - UI
+  - Golem
   layers:
   - Default
   - TransparentFX

@@ -166,6 +166,15 @@ namespace UnitSpace
         Initium
     }
 
+    public enum UnitTypes
+    {
+        Gunner,
+        Tank,
+        Turret,
+        Drone,
+        Wizard,
+    }
+
     public enum InstantUnitType : byte
     {
         //Normal

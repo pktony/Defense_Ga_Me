@@ -22,6 +22,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lurker_Skill Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 52472277802465611, guid: 6bd215777aeba45b481c44763b209fb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303428768251203575, guid: 6bd215777aeba45b481c44763b209fb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3671625908854049215, guid: 6bd215777aeba45b481c44763b209fb4,
         type: 3}
       propertyPath: m_RootOrder
@@ -77,6 +87,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4073270414441119286, guid: 6bd215777aeba45b481c44763b209fb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8019631729827569359, guid: 6bd215777aeba45b481c44763b209fb4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -87,5 +102,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5651526247108287306, guid: 6bd215777aeba45b481c44763b209fb4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6bd215777aeba45b481c44763b209fb4, type: 3}
+--- !u!1 &2216177481817056106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 52472277802465611, guid: 6bd215777aeba45b481c44763b209fb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2196378860228205089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2187404024674062850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216177481817056106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5319790ca634d44a8b6f37a5682262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillCoolTime: 5

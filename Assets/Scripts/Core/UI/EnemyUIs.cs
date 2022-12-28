@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class EnemyUIs : MonoBehaviour
 {
-    Enemy enemy;
+    protected Enemy enemy;
     Slider hpBar;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         hpBar = transform.GetChild(0).GetComponent<Slider>();
 
@@ -16,7 +16,7 @@ public class EnemyUIs : MonoBehaviour
         enemy.onHealthChange += RefreshHPBar;
     }
 
-    void RefreshHPBar(float hp, float maxHP)
+    private void RefreshHPBar(float hp, float maxHP)
     {
         hpBar.value = hp / maxHP;
     }

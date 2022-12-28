@@ -4,11 +4,29 @@ using UnityEngine;
 
 public class Boss : ShieldEnemy
 {
-    //public override void SetStats(MonsterScriptables data)
-    //{
-    //    enemyStats.stats = new Stats_Enemy(data.name, data.maxHP, data.shield,
-    //        data.moveSpeed, data.dp);
-    //    HP = enemyStats.stats.maxHP;
-    //    Shield = enemyStats.stats.maxShield;
-    //}
+    [SerializeField]
+    private float skillCoolTime;
+
+    private WaitForSeconds waitSeconds;
+
+    protected override void Start()
+    {
+        base.Start();
+        waitSeconds = new WaitForSeconds(skillCoolTime);
+        StartCoroutine(SkillCoroutine());
+    }
+
+    private IEnumerator SkillCoroutine()
+    {
+        while(!IsDead)
+        {
+            yield return waitSeconds;
+            UseSkill();
+        }
+    }
+
+    protected virtual void UseSkill()
+    {
+        anim.SetTrigger("onSkillUse");
+    }
 }

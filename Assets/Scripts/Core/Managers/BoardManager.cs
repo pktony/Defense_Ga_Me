@@ -13,4 +13,10 @@ public class BoardManager : Singleton<BoardManager>
     {
         board = FindObjectOfType<BoardEnemyInfo>();
     }
+
+    public Vector3[] GolemSkillPositions()
+    {
+        Vector3[] pos = new Vector3[4] { BoardTiles[0], BoardTiles[16], BoardTiles[32], BoardTiles[47] };
+        return pos;
+    }
 }

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class ShieldEnemy : Enemy
 {
@@ -22,6 +20,11 @@ public class ShieldEnemy : Enemy
         }
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        Shield = enemyStats.stats.maxShield;
+    }
     private void Update()
     {
         if(!IsDead)

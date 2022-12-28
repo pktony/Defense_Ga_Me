@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem_Skill Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8691423997445074304, guid: 64f3a9dd1230a43cb967385e36869177,
+        type: 3}
+      propertyPath: m_TagString
+      value: Golem
+      objectReference: {fileID: 0}
     - target: {fileID: 8789650402973957944, guid: 64f3a9dd1230a43cb967385e36869177,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -87,5 +92,27 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4435818175040223995, guid: 64f3a9dd1230a43cb967385e36869177, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 64f3a9dd1230a43cb967385e36869177, type: 3}
+--- !u!1 &2846957400005907357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8691423997445074304, guid: 64f3a9dd1230a43cb967385e36869177,
+    type: 3}
+  m_PrefabInstance: {fileID: 6853432690176261661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &104024824424010740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846957400005907357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef571096b8764f6495a4097e4ad7c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillCoolTime: 5
+  skillObj: {fileID: 4465005088219984368, guid: 84ad0af5e1deb491b803eaf2c1cd206e,
+    type: 3}

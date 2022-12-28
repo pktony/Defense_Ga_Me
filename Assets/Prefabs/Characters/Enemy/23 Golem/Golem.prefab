@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1945735017245387882}
-  - component: {fileID: 8666087848724900510}
   - component: {fileID: 6417784498823916491}
   - component: {fileID: -2382881177133798079}
+  - component: {fileID: 4435818175040223995}
+  - component: {fileID: 6950760010226942630}
   m_Layer: 3
   m_Name: Golem
   m_TagString: Untagged
@@ -37,18 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8666087848724900510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8691423997445074304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00993e4290689464e906bd4be2600409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &6417784498823916491
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -74,6 +63,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9074a831cdc94a43abd9acc56a91746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4435818175040223995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691423997445074304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00993e4290689464e906bd4be2600409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillCoolTime: 9999
+--- !u!54 &6950760010226942630
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691423997445074304}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &207838181626694828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,7 +212,7 @@ PrefabInstance:
     - target: {fileID: 9190827676465954441, guid: 4cf5666881e33479b9aee007b58ef6a5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 9190827676465954441, guid: 4cf5666881e33479b9aee007b58ef6a5,
         type: 3}

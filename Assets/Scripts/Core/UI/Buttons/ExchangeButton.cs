@@ -16,9 +16,6 @@ public class ExchangeButton : MonoBehaviour
 
     private void ExchangeUnit()
     {
-        if(GameManager.Inst.HasEnoughGoldToExchange())
-        {
-            UnitManager.Inst.ExchangeUnit();
-        }
+        UnitManager.Inst.ExchangeUnit();
     }
 }

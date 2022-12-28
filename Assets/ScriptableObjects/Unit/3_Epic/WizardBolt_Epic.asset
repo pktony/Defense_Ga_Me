@@ -16,6 +16,7 @@ MonoBehaviour:
     type: 3}
   unitName: Wizard Thunder
   classType: 3
+  type: 4
   attackPower: 1
   attackNumber: 1
   attackCoolTime: 5

@@ -38,9 +38,4 @@ public class Unit_Laser : Unit_Instant
         laser.TurnoffLaser();
         particle.ReturnParitcle();
     }
-
-    protected override void Upgrade()
-    {
-        throw new System.NotImplementedException();
-    }
 }

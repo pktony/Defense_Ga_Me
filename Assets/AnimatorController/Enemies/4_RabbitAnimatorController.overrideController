@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 4_RabbitAnimatorController 3
+  m_Name: 4_RabbitAnimatorController
   m_Controller: {fileID: 9100000, guid: fb3b50867ac544914a0bff7d9df53e2c, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: d13b6710674ae45b98af1b8514062f02, type: 2}

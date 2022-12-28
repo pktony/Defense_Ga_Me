@@ -6,10 +6,10 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 7_VirusAnimatorController 6
+  m_Name: 8_ChestAnimatorController
   m_Controller: {fileID: 9100000, guid: fb3b50867ac544914a0bff7d9df53e2c, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 9b53cc48b4cff4e00bf54de93be14cbd, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: b311bc913083b47348aad1a69b786833, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9da5880733fdc4667b78465e3a8c664e, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d13b6710674ae45b98af1b8514062f02, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 718a62ecf84ba4c5d9a1e5fb4f9566ed, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fcd02fbf1d74940e0a84f4ead1ba5bbb, type: 2}

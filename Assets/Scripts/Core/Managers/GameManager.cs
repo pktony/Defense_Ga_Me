@@ -94,10 +94,10 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (!isGameover)
-        {
-            TimeLeft -= Time.deltaTime;
-        }
+        //if (!isGameover)
+        //{
+        //    TimeLeft -= Time.deltaTime;
+        //}
 
 #if UNITY_EDITOR
         //for (int i = 0; i < levelInfos.Count; i++)
@@ -170,6 +170,11 @@ public class GameManager : Singleton<GameManager>
     public void GetGolds(int sellPrice)
     {
         golds.ChangeCountBy(sellPrice);
+    }
+
+    public void PayExchangeFee()
+    {
+        golds.ChangeCountBy(-EXCHANGE_PRICE);
     }
 
     public bool CanBuyUnit()

@@ -10,7 +10,8 @@ public class UnitManager : Singleton<UnitManager>
     public List<UnitProbabilityInfo> unitClassInfo;
     private float[] probabilityRanges;
 
-    private Dictionary<UnitClasses, List<Unit>> spawnedUnits;
+    private Dictionary<UnitTypes, List<Unit>> spawnedUnits;
+    private Dictionary<UnitTypes, int> upgradeFee;
     private Unit selectedUnit;
 
     private int classSeed;
@@ -26,7 +27,10 @@ public class UnitManager : Singleton<UnitManager>
         for(int i = 0; i < probabilityRanges.Length; i++)
         {
             probabilityRanges[i] = 100 - unitClassInfo[i].percentage;
-        }        
+        }
+
+        spawnedUnits = new Dictionary<UnitTypes, List<Unit>>();
+        upgradeFee = new Dictionary<UnitTypes, int>();
     }
 
     public void SpawnUnit(float randomNumber)
@@ -36,8 +40,9 @@ public class UnitManager : Singleton<UnitManager>
             if (randomNumber < probabilityRanges[i])
             {
                 unitController.SpawnUnit(unitClassInfo[i].unitClasses);
-                UIManager.Inst.PopupText(unitClassInfo[i].className,
-                    unitClassInfo[i].color);
+                if(unitClassInfo[i].unitClasses >= UnitClasses.Legend)
+                    UIManager.Inst.PopupText(unitClassInfo[i].className,
+                        unitClassInfo[i].color);
                 break;
             }
         }
@@ -63,13 +68,29 @@ public class UnitManager : Singleton<UnitManager>
     {
         if(IsExchangable())
         {
-            //GameManager.Inst.Player.SelectedCharacter.UnSelect();
             Destroy(selectedUnit.gameObject);
-            SpawnUnit(probabilityRanges[(int)selectedUnit.ClassType]);
+            SpawnUnit(probabilityRanges[(int)selectedUnit.ClassType] - 1.0f);
+            GameManager.Inst.PayExchangeFee();
         }
     }
 
-    private bool IsExchangable() => unitClassInfo[(int)selectedUnit.ClassType].isExchangable;
+    public void UpgradeUnit()
+    {
+        //UnitTypes unitType = selectedUnit.UnitType;
+        //int unitCount = spawnedUnits[unitType].Count;
+        //if (unitCount > 0)
+        //{
+        //    for (int i = 0; i < unitCount; i++)
+        //    {
+        //        spawnedUnits[unitType][i].Upgrade();
+        //    }
+        //}
+    }
+
+
+    private bool IsExchangable() =>
+        unitClassInfo[(int)selectedUnit.ClassType].isExchangable &&
+        GameManager.Inst.HasEnoughGoldToExchange();
     private bool IsSellable() => unitClassInfo[(int)selectedUnit.ClassType].isSellable;
 
 

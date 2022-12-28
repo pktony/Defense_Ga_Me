@@ -30,10 +30,4 @@ public class Unit_Projectile : Unit
         bullet = bulletObj.GetComponent<Projectiles>();
         bullet.InitializeProjectile(destination, AttackPower);
     }
-
-
-    protected override void Upgrade()
-    {
-        throw new System.NotImplementedException();
-    }
 }

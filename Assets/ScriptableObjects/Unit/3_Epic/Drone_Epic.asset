@@ -16,6 +16,7 @@ MonoBehaviour:
     type: 3}
   unitName: Drone
   classType: 3
+  type: 3
   attackPower: 1
   attackNumber: 3
   attackCoolTime: 5

@@ -46,9 +46,4 @@ public class Unit_Instant : Unit
             yield return attackWaitSeconds;
         }
     }
-
-    protected override void Upgrade()
-    {
-        throw new System.NotImplementedException();
-    }
 }

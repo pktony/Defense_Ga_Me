@@ -16,6 +16,7 @@ MonoBehaviour:
     type: 3}
   unitName: WIZARD
   classType: 6
+  type: 4
   attackPower: 100
   attackNumber: 1
   attackCoolTime: 5
