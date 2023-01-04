@@ -14,15 +14,8 @@ public class Projectiles_Angled : Projectiles
     
     protected virtual void Start()
     {
-        //Vector3 shootVector = ProjectileHelper.ShootTowards(
-        //    barrel, destination, projectileData.flySpeed);
         transform.rotation = Quaternion.LookRotation(direction);
-        float distance = (destination - transform.position).magnitude;
-        float v0 = projectileData.flySpeed;
-        float shootAngle = ProjectileHelper.CalculateElevationAngle(distance, ref v0);
-        Vector3 elevation = Quaternion.AngleAxis(shootAngle, transform.right) * Vector3.up;
-        float yaw = ProjectileHelper.CalculateYawAngle(transform.forward, direction);
-        Vector3 velocity = Quaternion.AngleAxis(yaw, Vector3.up) * elevation * v0;
+        Vector3 velocity = CalculateProjectileVelocity();
         rigid.AddForce(velocity, ForceMode.VelocityChange);
     }
 
@@ -36,5 +29,16 @@ public class Projectiles_Angled : Projectiles
                 Explode();
             }
         }
+    }
+
+    private Vector3 CalculateProjectileVelocity()
+    {
+        float distance = (destination - transform.position).magnitude;
+        float v0 = projectileData.flySpeed;
+        float shootAngle = ProjectileHelper.CalculateElevationAngle(distance, ref v0);
+        Vector3 elevation = Quaternion.AngleAxis(shootAngle, transform.right) * Vector3.up;
+        float yaw = ProjectileHelper.CalculateYawAngle(transform.forward, direction);
+        Vector3 velocity = Quaternion.AngleAxis(yaw, Vector3.up) * elevation * v0;
+        return velocity;
     }
 }

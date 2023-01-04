@@ -14,6 +14,8 @@ namespace UIs
         [SerializeField]
         private float fadeTime = 1.0f;
 
+        private bool isShowing = false;
+
         private void Awake()
         {
             image = GetComponent<Image>();
@@ -22,16 +24,19 @@ namespace UIs
 
         public void ShowImage()
         {
-            StartCoroutine(AdjustAlpha(true));
+            if(!isShowing)
+                StartCoroutine(AdjustAlpha(true));
         }
 
         public void HideImage()
         {
-            StartCoroutine(AdjustAlpha(false));
+            if(!isShowing)
+                StartCoroutine(AdjustAlpha(false));
         }
 
         private IEnumerator AdjustAlpha(bool isShow)
         {
+            isShowing = true;
             float deltaTime = Time.deltaTime / fadeTime;
             if (isShow)
             {
@@ -55,6 +60,7 @@ namespace UIs
                 group.interactable = false;
                 group.blocksRaycasts = false;
             }
+            isShowing = false;
         }
     }
 }

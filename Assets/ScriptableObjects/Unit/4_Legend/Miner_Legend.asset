@@ -16,7 +16,8 @@ MonoBehaviour:
     type: 3}
   unitName: Mine Expert
   classType: 4
-  attackPower: 5
+  type: 0
+  attackPower: 20
   attackNumber: 1
   attackCoolTime: 5
   attackRange: 25

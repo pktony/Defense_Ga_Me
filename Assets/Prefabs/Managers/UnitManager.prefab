@@ -85,7 +85,7 @@ MonoBehaviour:
     unitClasses: 5
     color: {r: 1, g: 0, b: 0, a: 1}
     isSellable: 0
-    isExchangable: 0
+    isExchangable: 1
     sellPrice: 0
   - className: Initium
     percentage: 0.01

@@ -34,7 +34,7 @@ public class Unit_Magic : Unit
 
     public override void Attack(IAttackable target)
     {
-        if (attackTarget != null)
+        if (!ReferenceEquals(attackTarget, null))
         {
             base.Attack(target);
             StartCoroutine(MagicSwitch(target.CurrentPos));

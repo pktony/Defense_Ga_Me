@@ -33,6 +33,7 @@ public class ShieldEnemy : Enemy
             if(shieldTimer > shieldRechargeInterval)
             {
                 Shield += shieldRechargeAmount;
+                shieldTimer = 0f;
             }
         }
     }

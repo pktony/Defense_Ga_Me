@@ -8,6 +8,12 @@ public class Projectile_Golem : Projectile_Angled_Mine
     [SerializeField]
     private float healAmount = 10f;
 
+    protected override void Start()
+    {
+        base.Start();
+        Destroy(this.gameObject, 30f);
+    }
+
     protected override void Update()
     {
         if (!isExploded && !isLanded)

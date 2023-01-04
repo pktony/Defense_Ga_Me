@@ -7,7 +7,6 @@ public class Unit_Instant : Unit
     protected UnitParticleController particle;
 
     private WaitForSeconds attackWaitSeconds;
-    [SerializeField] protected int attackNumber = 3;
 
     protected override void Awake()
     {
@@ -19,7 +18,7 @@ public class Unit_Instant : Unit
 
     public override void Attack(IAttackable target)
     {
-        if (target != null)
+        if (!ReferenceEquals(target, null) && !target.IsDead)
         {
             base.Attack(target);
             StartCoroutine(ShootProcess(target));
@@ -28,14 +27,13 @@ public class Unit_Instant : Unit
 
     protected virtual IEnumerator ShootProcess(IAttackable target)
     {
-        int playCount = attackNumber;
+        int playCount = unitStats.stats.attackNumber;
         while (playCount > 0)
         {
             if (ReferenceEquals(target, null) || !target.IsDead)
             { // Fake Null
                 target.GetAttack(AttackPower);
                 particle.UseParticle(target.ParticlePos);
-                particle.ReturnParitcle();
                 playCount--;
             }
             else
@@ -44,6 +42,7 @@ public class Unit_Instant : Unit
                 break;
             }
             yield return attackWaitSeconds;
+            particle.ReturnParitcle();
         }
     }
 }

@@ -20,7 +20,7 @@ public class Unit_Laser : Unit_Instant
     {
         laser.ShootLaser(target);
         int attackCount = 0;
-        while (attackCount < attackNumber)
+        while (attackCount < unitStats.stats.attackNumber)
         {
             if (target != null && !target.IsDead)
             {

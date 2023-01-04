@@ -16,7 +16,8 @@ MonoBehaviour:
     type: 3}
   unitName: Soldier
   classType: 0
-  attackPower: 1
+  type: 0
+  attackPower: 5
   attackNumber: 1
   attackCoolTime: 2
   attackRange: 10

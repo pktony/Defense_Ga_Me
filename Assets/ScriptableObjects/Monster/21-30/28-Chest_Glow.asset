@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 28-Chest_Glow
   m_EditorClassIdentifier: 
   prefab: {fileID: 8922119074475570298, guid: 76edac4e643714d06a02b0e998045325, type: 3}
-  maxHP: 50
+  maxHP: 100
   dp: 5
   moveSpeed: 5
-  shield: 10
+  shield: 30

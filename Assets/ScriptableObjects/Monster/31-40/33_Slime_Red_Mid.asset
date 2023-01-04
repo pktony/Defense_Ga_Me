@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 33_Slime_Red_Mid
   m_EditorClassIdentifier: 
   prefab: {fileID: 8254020376402960732, guid: 2834b53f37dd44c74b483a341ad32cdf, type: 3}
-  maxHP: 50
-  dp: 0
+  maxHP: 100
+  dp: 10
   moveSpeed: 5
   shield: -1

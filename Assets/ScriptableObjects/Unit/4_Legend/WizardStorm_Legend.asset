@@ -17,7 +17,7 @@ MonoBehaviour:
   unitName: Wizard Storm
   classType: 4
   type: 4
-  attackPower: 999
+  attackPower: 20
   attackNumber: 1
   attackCoolTime: 2
   attackRange: 25

@@ -17,7 +17,7 @@ MonoBehaviour:
   unitName: Tank
   classType: 4
   type: 1
-  attackPower: 999
+  attackPower: 20
   attackNumber: 1
   attackCoolTime: 5
   attackRange: 25

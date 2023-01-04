@@ -17,7 +17,7 @@ namespace UIs
 
         [SerializeField]
         [Range(0.01f, 0.5f)]
-        private float popupTime = 1f;
+        private float popupTime = 0.5f;
 
         private const float ERROR_CORRECTION_NUM = 0.05f;
         private bool isShow = true;
@@ -77,20 +77,19 @@ namespace UIs
         {
             float timer = 0f;
             float deltaTime = Time.unscaledDeltaTime / popupTime;
-            if (isShow)
-            {
-                ShowPanels();
-                yield return null;
-            }
+            if (isShow) ShowPanels();
+            else HidePanels();
+
+            this.isShow = isShow;
 
             while (timer < popupTime)
             {
                 timer += Time.unscaledDeltaTime;
-                rect.localScale = Vector2.Lerp(rect.localScale, Vector2.one * 1.2f, deltaTime);
+                rect.localScale =
+                    Vector2.Lerp(rect.localScale, Vector2.one * 1.1f, deltaTime);
                 yield return null;
             }
             rect.localScale = Vector2.one;
-            if (!isShow) HidePanels();
         }
 
         private void ShowPanels()

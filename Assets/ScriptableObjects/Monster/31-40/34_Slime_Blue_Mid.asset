@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 34_Slime_Blue_Mid
   m_EditorClassIdentifier: 
   prefab: {fileID: 4600558188563738343, guid: ae9095b4c4956475d9b0df2850bbeaf9, type: 3}
-  maxHP: 50
-  dp: 0
+  maxHP: 100
+  dp: 13
   moveSpeed: 5
   shield: -1

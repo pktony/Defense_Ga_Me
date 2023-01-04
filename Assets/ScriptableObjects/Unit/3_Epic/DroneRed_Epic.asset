@@ -17,7 +17,7 @@ MonoBehaviour:
   unitName: Drone Red
   classType: 3
   type: 3
-  attackPower: 1
+  attackPower: 10
   attackNumber: 3
   attackCoolTime: 5
   attackRange: 25

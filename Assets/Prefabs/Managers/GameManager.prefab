@@ -355,7 +355,7 @@ MonoBehaviour:
   golds: {fileID: 8433217811704156037}
   enemyCount: {fileID: 5605267134947097603}
   killCount: {fileID: 7357576271378190949}
-  tempRound: 1
+  tempRound: 50
 --- !u!114 &1730783704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +375,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d2890a6a28b243b68e006ae8205e23f, type: 2}
   - {fileID: 11400000, guid: a8436d4e8bdf34fd190f62df2bce6526, type: 2}
   - {fileID: 11400000, guid: 440138bddbd024f0da411c1b6453d823, type: 2}
+  - {fileID: 11400000, guid: 97ae44a4b9e1048a08c70048bfcdb72b, type: 2}
+  - {fileID: 11400000, guid: 97ae44a4b9e1048a08c70048bfcdb72b, type: 2}
 --- !u!114 &8433217811704156037
 MonoBehaviour:
   m_ObjectHideFlags: 0

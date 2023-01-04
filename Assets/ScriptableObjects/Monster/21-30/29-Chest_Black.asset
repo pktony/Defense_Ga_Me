@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 29-Chest_Black
   m_EditorClassIdentifier: 
   prefab: {fileID: 7726693822635163012, guid: 82f3f9f08080d480784c2b4f3aecac33, type: 3}
-  maxHP: 50
-  dp: 5
+  maxHP: 100
+  dp: 8
   moveSpeed: 5
-  shield: 15
+  shield: 30

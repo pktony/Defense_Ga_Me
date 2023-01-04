@@ -16,7 +16,8 @@ MonoBehaviour:
     type: 3}
   unitName: Officer M
   classType: 0
-  attackPower: 999
+  type: 0
+  attackPower: 5
   attackNumber: 1
   attackCoolTime: 3
   attackRange: 15

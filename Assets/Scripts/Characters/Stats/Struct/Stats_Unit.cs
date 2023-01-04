@@ -8,6 +8,7 @@ public struct Stats_Unit
     public string name;
     public UnitClasses classType;
     public int attackPower;
+    public int attackNumber;
     public float attackCoolTime;
     public float attackRange;
     public bool isDPPentratable;
@@ -23,12 +24,13 @@ public struct Stats_Unit
     /// <param name="attackRange">유닛의 공격 사거리 </param>
     /// <param name="isDPPentratable">방어력 무시 여부</param>
     public Stats_Unit(string name, UnitClasses classType, UnitTypes type, int AP,
-        float attackSpeed, float attackRange, bool isDPPentratable)
+        int attackNum, float attackSpeed, float attackRange, bool isDPPentratable)
     {
         this.name = name;
         this.classType = classType;
         this.type = type;
         this.attackPower = AP;
+        this.attackNumber = attackNum;
         this.attackCoolTime = attackSpeed;
         this.attackRange = attackRange;
         this.isDPPentratable = isDPPentratable;

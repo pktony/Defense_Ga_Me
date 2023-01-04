@@ -17,8 +17,8 @@ public abstract class Unit : MonoBehaviour, IUnit
     private WaitForSeconds detectWaitSeconds;
     private IEnumerator detectCoroutine;
     private Vector3 destination;
-    private float detectInterval = 0.5f;
-    private float stoppingDistance = 1;
+    private readonly float detectInterval = 0.5f;
+    private readonly float stoppingDistance = 1;
 
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] protected float turnSpeed = 10f;
@@ -88,7 +88,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     {
         if (!isMoving)
         {
-            if (attackTarget != null)
+            if (!ReferenceEquals(attackTarget, null))
             {
                 LookTowardsTarget();
             }
@@ -120,7 +120,7 @@ public abstract class Unit : MonoBehaviour, IUnit
 
     protected virtual void LookTowardsTarget()
     {
-        if (!attackTarget.IsDead && attackTarget != null)
+        if (!attackTarget.IsDead)
         {
             Vector3 lookDir = attackTarget.CurrentPos - transform.position;
             lookDir = lookDir.normalized;

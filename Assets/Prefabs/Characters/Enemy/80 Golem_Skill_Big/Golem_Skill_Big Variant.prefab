@@ -7,6 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 104024824424010740, guid: 43c60035a8f194778992eb78cac75418,
+        type: 3}
+      propertyPath: skillObj
+      value: 
+      objectReference: {fileID: 4465005088219984368, guid: 342d1b0b818fd4681865fa4d078f8e32,
+        type: 3}
+    - target: {fileID: 2482127787868736568, guid: 43c60035a8f194778992eb78cac75418,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2803302479610036517, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -22,6 +33,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem_Skill_Big Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4564256981412594773, guid: 43c60035a8f194778992eb78cac75418,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564256981412594773, guid: 43c60035a8f194778992eb78cac75418,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564256981412594773, guid: 43c60035a8f194778992eb78cac75418,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564256981742703423, guid: 43c60035a8f194778992eb78cac75418,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8809d05acc5d74123a554eeecbff9d9b, type: 2}
     - target: {fileID: 4908056113786802807, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}
       propertyPath: m_RootOrder
@@ -30,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 4908056113786802807, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 17.17
       objectReference: {fileID: 0}
     - target: {fileID: 4908056113786802807, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}
@@ -40,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 4908056113786802807, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5.46
       objectReference: {fileID: 0}
     - target: {fileID: 4908056113786802807, guid: 43c60035a8f194778992eb78cac75418,
         type: 3}

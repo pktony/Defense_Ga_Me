@@ -16,4 +16,4 @@ MonoBehaviour:
   maxHP: 50
   dp: 5
   moveSpeed: 5
-  shield: 15
+  shield: 50

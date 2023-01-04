@@ -14,7 +14,7 @@ public class MagicTriggerHelper : MonoBehaviour
 
     private void Awake()
     {
-        unit = transform.parent.GetComponent<Unit_Magic>();
+        unit = transform.parent.GetComponentInParent<Unit_Magic>();
 
         tickWaitSeconds = new WaitForSeconds(tick);
     }

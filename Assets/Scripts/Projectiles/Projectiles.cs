@@ -7,14 +7,14 @@ public class Projectiles : MonoBehaviour
     protected SphereCollider coll;
     protected Rigidbody rigid;
     protected ParticleSystem explosionParticle;
+    protected GameObject model;
 
     [SerializeField] protected ProjectileData projectileData;
     protected Vector3 destination;
     protected Vector3 direction;
     private float attackPower;
 
-    private const float INVALID_ANGLE = -9999f;
-    protected const float explosionDistance = 0.1f;
+    protected const float explosionDistance = 0.2f;
 
     protected bool isExploded = false;
 
@@ -28,6 +28,9 @@ public class Projectiles : MonoBehaviour
         coll = GetComponent<SphereCollider>();
         coll.enabled = false;
         rigid = GetComponent<Rigidbody>();
+        model = transform.GetChild(0).gameObject;
+
+        Destroy(this.gameObject, 3f);
     }
 
     public void InitializeProjectile(Vector3 destination, float attackPower, bool isAngled = false)
@@ -65,6 +68,7 @@ public class Projectiles : MonoBehaviour
     protected void Explode()
     {
         isExploded = true;
+        model.SetActive(false);
         rigid.velocity = Vector3.zero;
         rigid.isKinematic = true;
         coll.enabled = true;

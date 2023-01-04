@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private ISelectable selectedCharacter;
     private Unit selectedUnit;
 
+    private bool isCameraMove = false;
+    private Vector3 touchOrigin;
+
     public ISelectable SelectedCharacter => selectedCharacter;
 
     private void Awake()
@@ -36,22 +39,42 @@ public class PlayerController : MonoBehaviour
     {
         inputs.Enable();
         inputs.Player.Select_Move.performed += OnSelection;
+        inputs.Player.Select_Move.canceled += OnSelection;
     }
 
     private void OnDisable()
     {
+        inputs.Player.Select_Move.canceled -= OnSelection;
         inputs.Player.Select_Move.performed -= OnSelection;
         inputs.Disable();
     }
 
-    
-    private void OnSelection(InputAction.CallbackContext _)
+    private void Update()
     {
+        if (isCameraMove)
+            MoveCamera();
+    }
+
+
+    private void OnSelection(InputAction.CallbackContext context)
+    {
+        if(selectedCharacter != null)
+        {// 카메라 움직임
+            if (context.canceled)
+            {
+                isCameraMove = false;
+                return;
+            }
+            isCameraMove = true;
+            //touchOrigin = hit.point;
+        }
+
+
         Ray ray = mainCam.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit, 999f))
         {
             if(hit.collider.TryGetComponent<ISelectable>(out ISelectable selectable))
-            {
+            {// 유닛을 클릭했을 경우
                 if(selectedCharacter != null)
                 {// 이미 선택된 경우 원래 캐릭터를 선택해제
                     selectedCharacter.UnSelect();
@@ -116,5 +139,14 @@ public class PlayerController : MonoBehaviour
                 raycastResults.Clear();
             }
         }
+    }
+
+    private void MoveCamera()
+    {
+        Vector2 direction =
+            touchOrigin - mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Debug.Log($"{touchOrigin} - {mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue())}");
+
+        
     }
 }

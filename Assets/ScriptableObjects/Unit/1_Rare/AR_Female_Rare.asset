@@ -16,7 +16,8 @@ MonoBehaviour:
     type: 3}
   unitName: Officer F
   classType: 1
+  type: 0
   attackPower: 5
-  attackNumber: 1
+  attackNumber: 3
   attackCoolTime: 3
   attackRange: 15

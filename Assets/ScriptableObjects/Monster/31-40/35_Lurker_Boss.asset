@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 35_Lurker_Boss
   m_EditorClassIdentifier: 
   prefab: {fileID: 52472277802465611, guid: 6bd215777aeba45b481c44763b209fb4, type: 3}
-  maxHP: 50
+  maxHP: 300
   dp: 5
   moveSpeed: 5
   shield: 50

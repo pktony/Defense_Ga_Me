@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Projectile_Angled_Mine : Projectiles_Angled
 {
-    [SerializeField] protected float rotationSpeed = 300f;
+    [SerializeField]
+    protected float rotationSpeed = 300f;
+
     protected override void Update()
     {
         if (!isExploded)

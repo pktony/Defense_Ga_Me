@@ -44,7 +44,7 @@ public class Laser : MonoBehaviour
     {
         lineRend.SetPosition(0, transform.position);
         this.target = target.Trans;
-        lineRend.SetPosition(1, target.CurrentPos);
+        lineRend.SetPosition(1, target.ParticlePos);
         lineRend.enabled = true;
     }
 

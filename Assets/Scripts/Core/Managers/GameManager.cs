@@ -19,8 +19,8 @@ public class GameManager : Singleton<GameManager>
     public int tempRound;
 #endif
     private const int MAX_ROUND = 100;
-    private const float TIME_NORMAL = 180f;
-    private const float TIME_BOSS = 330f;
+    private const float TIME_NORMAL = 100f;
+    private const float TIME_BOSS = 180f;
     private const int KILL_REWARD = 5;
     private const int UNIT_PRICE = 10;
     private const int EXCHANGE_PRICE = 20;
@@ -82,7 +82,7 @@ public class GameManager : Singleton<GameManager>
         enemyCount.ResetCount();
         killCount.ResetCount();
         golds.ResetCount();
-        golds.Count = 10000;
+        golds.Count = 9999;
         Round = 0;
     }
 
@@ -118,6 +118,7 @@ public class GameManager : Singleton<GameManager>
 
         if (UnityEngine.InputSystem.Keyboard.current.digit1Key.wasPressedThisFrame)
         {
+            //Time.timeScale = 16f;
             Round = tempRound;
             RequestSpawn(Round, 1);
         }
@@ -177,6 +178,8 @@ public class GameManager : Singleton<GameManager>
         golds.ChangeCountBy(-EXCHANGE_PRICE);
     }
 
+
+    #region BACKEND 함수 ########################################################
     public bool CanBuyUnit()
     {
         return golds.IsEnoughGold(UNIT_PRICE);
@@ -186,4 +189,5 @@ public class GameManager : Singleton<GameManager>
     {
         return golds.IsEnoughGold(EXCHANGE_PRICE);
     }
+    #endregion
 }

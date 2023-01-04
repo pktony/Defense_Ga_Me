@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 50_Golem_Skill_Mid
   m_EditorClassIdentifier: 
   prefab: {fileID: 2846957400005907357, guid: 43c60035a8f194778992eb78cac75418, type: 3}
-  maxHP: 50
-  dp: 5
+  maxHP: 300
+  dp: 30
   moveSpeed: 5
-  shield: 10
+  shield: 50

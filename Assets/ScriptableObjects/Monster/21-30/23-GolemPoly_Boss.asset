@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 23-GolemPoly_Boss
   m_EditorClassIdentifier: 
   prefab: {fileID: 8691423997445074304, guid: 64f3a9dd1230a43cb967385e36869177, type: 3}
-  maxHP: 100
-  dp: 5
+  maxHP: 1000
+  dp: 10
   moveSpeed: 5
   shield: 50

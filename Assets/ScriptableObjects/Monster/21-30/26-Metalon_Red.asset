@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 26-Metalon_Red
   m_EditorClassIdentifier: 
   prefab: {fileID: 2074238969878047943, guid: 4175297bc65504b44bca86747e2af1cc, type: 3}
-  maxHP: 50
+  maxHP: 100
   dp: 6
   moveSpeed: 5
   shield: 20
